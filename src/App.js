@@ -2,7 +2,7 @@ import './App.css';
 
 function App() {
   return (
-    <div>
+<div>
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <div className="container-fluid">
     <a className="navbar-brand" href=" ">Visual</a>
@@ -29,11 +29,47 @@ function App() {
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
         <button className="btn btn-outline-success" type="submit">Search</button>
       </form>
+      <i className="bi bi-cart-fill mx-2"></i>
     </div>
   </div>
 </nav>
-<div className="container-fluid">
-
+<div className="container">
+  <div className="row">
+    <div className="col">
+      <h3>Suositut</h3>
+    </div>
+    <div className="col">
+      <h3>Tarjoukset</h3>
+    </div>
+  </div>
+</div>
+<div className="container">
+  <div className="row">
+<div className="card col m-5">
+  <img src="img/cat.png" class="card-img-top" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href=" " class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+<div className="card col m-5">
+  <img src="img/cat.png" class="card-img-top" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href=" " class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+<div className="card col m-5">
+  <img src="img/cat.png" class="card-img-top" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href=" " class="btn btn-primary">Go somewhere</a>
+  </div>
+  </div>
+</div>
 </div>
 </div>
   );
