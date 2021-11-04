@@ -46,27 +46,48 @@ function App() {
 <div className="container">
   <div className="row">
 <div className="card col m-5">
+<div class="card">
+    <div class="card-body top-card">
+      <h5>Suositut</h5>
+      <a>Tutustu</a>
+    </div>
+  </div>
   <img src="img/cat.png" class="card-img-top" alt="..."/>
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href=" " class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title">Kissa</h5>
+    <p class="card-text">Esimerkkitekstiä kissapiirrustuksesta.</p>
+    <a href=" " className="tuotesivulle">Tuotesivulle</a><br></br>
+    <i class="bi bi-cart-fill mx-2"></i>
   </div>
 </div>
 <div className="card col m-5">
-  <img src="img/cat.png" class="card-img-top" alt="..."/>
+<div class="card">
+    <div class="card-body top-card">
+      <h5>Maalaukset</h5>
+      <a>Tutustu</a>
+    </div>
+  </div>
+  <img src="img/trees.png" class="card-img-top" alt="..."/>
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href=" " class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title">Puut</h5>
+    <p class="card-text">Maalauksesta esimerkkiasiaa.</p>
+    <a href=" " className="tuotesivulle">Tuotesivulle</a><br></br>
+    <i class="bi bi-cart-fill mx-2"></i>
   </div>
 </div>
 <div className="card col m-5">
-  <img src="img/cat.png" class="card-img-top" alt="..."/>
+<div class="card">
+    <div class="card-body top-card">
+      <h5>Valokuvat</h5>
+      <a>Tutustu</a>
+    </div>
+  </div>
+  <img src="img/elephant-dark.png" class="card-img-top" alt="..."/>
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href=" " class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title">Elefantti</h5>
+    <p class="card-text">Norsu-valokuvasta esimerkiksi asiaa.</p>
+    <a href=" " className="tuotesivulle">Tuotesivulle</a><br></br>
+    <i class="bi bi-cart-fill mx-2"></i>
   </div>
   </div>
 </div>
