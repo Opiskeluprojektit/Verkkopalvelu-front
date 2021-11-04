@@ -2,7 +2,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="container-fluid">
+    <div>
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <div className="container-fluid">
     <a className="navbar-brand" href=" ">Navbar</a>
@@ -16,13 +16,12 @@ function App() {
         </li>
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href=" " id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            Tuotteet
           </a>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a className="dropdown-item" href=" ">Action</a></li>
-            <li><a className="dropdown-item" href=" ">Another action</a></li>
-            <li><hr classNAme="dropdown-divider"></hr></li>
-            <li><a className="dropdown-item" href=" ">Something else here</a></li>
+            <li><a className="dropdown-item" href=" ">Eka tuote</a></li>
+            <li><a className="dropdown-item" href=" ">Toka tuote</a></li>
+            <li><a className="dropdown-item" href=" ">Kolmas tuote</a></li>
           </ul>
         </li>
       </ul>
@@ -33,6 +32,9 @@ function App() {
     </div>
   </div>
 </nav>
+<div className="container-fluid">
+
+</div>
 </div>
   );
 }
