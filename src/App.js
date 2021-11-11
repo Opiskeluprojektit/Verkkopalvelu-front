@@ -34,6 +34,7 @@ function App() {
             <li><a className="dropdown-item" href=" ">Piirrustusvälineet</a></li>
             <li><a className="dropdown-item" href=" ">Maalaustarvikkeet</a></li>
             <li><a className="dropdown-item" href=" ">Kehykset</a></li>
+
           </ul>
         </li>
       </ul>
@@ -54,7 +55,7 @@ function App() {
       <a>Tutustu</a>
     </div>
   </div>
-  <img src="img/cat.png" class="card-img-top" alt="..."/>
+  <img src="img/Kissa.png" class="card-img-top" alt="..."/>
   <div className="card-body">
     <h5 className="card-title">Kissa</h5>
     <p className="card-text">Esimerkkitekstiä kissapiirrustuksesta.</p>
@@ -69,7 +70,7 @@ function App() {
       <a>Tutustu</a>
     </div>
   </div>
-  <img src="img/trees.png" class="card-img-top" alt="..."/>
+  <img src="img/Puut.png" class="card-img-top" alt="..."/>
   <div className="card-body">
     <h5 className="card-title">Puut</h5>
     <p className="card-text">Maalauksesta esimerkkiasiaa.</p>
@@ -84,7 +85,7 @@ function App() {
       <a>Tutustu</a>
     </div>
   </div>
-  <img src="img/elephant-dark.png" class="card-img-top" alt="..."/>
+  <img src="img/Elefantti2.png" class="card-img-top" alt="..."/>
   <div className="card-body">
     <h5 className="card-title">Elefantti</h5>
     <p className="card-text">Norsu-valokuvasta esimerkiksi asiaa.</p>
