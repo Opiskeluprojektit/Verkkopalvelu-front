@@ -15,6 +15,10 @@ nav {
   margin-left: 7em;
 }
 
+a.nav-link {
+  color: black !important; 
+}
+
 .card {
   width: 18rem;
 }

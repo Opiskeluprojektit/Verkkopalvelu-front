@@ -12,22 +12,34 @@ function App() {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href=" ">Home</a>
+          <a className="nav-link active" aria-current="page" href=" ">Kotisivu</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link active" aria-current="page" href=" ">Maalaukset</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link active" aria-current="page" href=" ">Piirrustukset</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link active" aria-current="page" href=" ">Valokuvat</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link active" aria-current="page" href=" ">Illustrointi</a>
         </li>
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href=" " id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Tuotteet
+            Tarvikkeet
           </a>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a className="dropdown-item" href=" ">Eka tuote</a></li>
-            <li><a className="dropdown-item" href=" ">Toka tuote</a></li>
-            <li><a className="dropdown-item" href=" ">Kolmas tuote</a></li>
+            <li><a className="dropdown-item" href=" ">Piirrustusvälineet</a></li>
+            <li><a className="dropdown-item" href=" ">Maalaustarvikkeet</a></li>
+            <li><a className="dropdown-item" href=" ">Kehykset</a></li>
           </ul>
         </li>
       </ul>
       <form className="d-flex">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-        <button className="btn btn-outline-success" type="submit">Search</button>
+        <input className="form-control me-2" type="search" placeholder="Haku" aria-label="Search" />
+        <button className="btn btn-outline-success" type="submit">Haku</button>
       </form>
       <i className="bi bi-cart-fill mx-2"></i>
     </div>
