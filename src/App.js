@@ -12,35 +12,22 @@ function App() {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href=" ">Kotisivu</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href=" ">Maalaukset</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href=" ">Piirrustukset</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href=" ">Valokuvat</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href=" ">Illustrointi</a>
+          <a className="nav-link active" aria-current="page" href=" ">Home</a>
         </li>
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href=" " id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Tarvikkeet
+            Tuotteet
           </a>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a className="dropdown-item" href=" ">Piirrustusvälineet</a></li>
-            <li><a className="dropdown-item" href=" ">Maalaustarvikkeet</a></li>
-            <li><a className="dropdown-item" href=" ">Kehykset</a></li>
-
+            <li><a className="dropdown-item" href=" ">Eka tuote</a></li>
+            <li><a className="dropdown-item" href=" ">Toka tuote</a></li>
+            <li><a className="dropdown-item" href=" ">Kolmas tuote</a></li>
           </ul>
         </li>
       </ul>
       <form className="d-flex">
-        <input className="form-control me-2" type="search" placeholder="Haku" aria-label="Search" />
-        <button className="btn btn-outline-success" type="submit">Haku</button>
+        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+        <button className="btn btn-outline-success" type="submit">Search</button>
       </form>
       <i className="bi bi-cart-fill mx-2"></i>
     </div>
@@ -55,7 +42,7 @@ function App() {
       <a>Tutustu</a>
     </div>
   </div>
-  <img src="img/Kissa.png" class="card-img-top" alt="..."/>
+  <img src="img/cat.png" class="card-img-top" alt="..."/>
   <div className="card-body">
     <h5 className="card-title">Kissa</h5>
     <p className="card-text">Esimerkkitekstiä kissapiirrustuksesta.</p>
@@ -70,7 +57,7 @@ function App() {
       <a>Tutustu</a>
     </div>
   </div>
-  <img src="img/Puut.png" class="card-img-top" alt="..."/>
+  <img src="img/trees.png" class="card-img-top" alt="..."/>
   <div className="card-body">
     <h5 className="card-title">Puut</h5>
     <p className="card-text">Maalauksesta esimerkkiasiaa.</p>
@@ -85,7 +72,7 @@ function App() {
       <a>Tutustu</a>
     </div>
   </div>
-  <img src="img/Elefantti2.png" class="card-img-top" alt="..."/>
+  <img src="img/elephant-dark.png" class="card-img-top" alt="..."/>
   <div className="card-body">
     <h5 className="card-title">Elefantti</h5>
     <p className="card-text">Norsu-valokuvasta esimerkiksi asiaa.</p>
