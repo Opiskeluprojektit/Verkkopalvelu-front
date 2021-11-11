@@ -19,18 +19,6 @@ a#navbarDropdown.nav-link {
   color: black !important; 
 }
 
-.dropdown-content {
-  display: none !important;
-  position: absolute !important;
-  background-color: #f1f1f1 !important;
-  min-width: 160px !important;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2) !important;
-  z-index: 1 !important;
-}
-
-a.dropdown:hover a.dropdown-item {display: block !important;} 
-
-
 .card {
   width: 18rem;
 }
