@@ -102,9 +102,17 @@ https://www.bootdey.com/snippets/view/white-footer#html footerin koodit löytyy 
           <div className="col-12 col-sm-6 col-lg-4">
             <div className="single-footer-widget section_padding_0_130">
               <div className="footer-logo mb-3"></div>
-              <p>Visual is a .....
-                Tähän lisätietoa kaupasta( Yhteystiedot jne?)
-              </p>
+              <p>Visual on vuonna 2021 perustettu moderni taidekauppa. 
+                Idean takana on viisi innokasta opiskelijaa, jotka halusivat perustaa oman yrityksen.
+                Visual on suunnattu ihmisille, jotka haluavat luoda sekä
+                hankkia itselleen uniikkia taidetta ja samalla tukea suomalaisia taiteentekijöitä.
+                </p>
+                <p>
+                Kivijalkamyymälä: Taidetie 2, 34567 Oulu.
+                </p>
+                <p>
+                Puh: 012-3456789
+                </p>
               <div className="copywrite-text mb-5">
                 <p className="mb-0">This footer is made with <i class="lni-heart mr-1"></i> by<a class="ml-1" href="https://wrapbootstrap.com/user/DesigningWorld"> Designing World</a></p>
               </div>
@@ -113,40 +121,28 @@ https://www.bootdey.com/snippets/view/white-footer#html footerin koodit löytyy 
           </div>
           <div className="col-12 col-sm-6 col-lg">
             <div className="single-footer-widget section_padding_0_130">
-              <h5 className="widget-title">About</h5>
+              <h5 className="widget-title">Visual</h5>
               <div className="footer_menu">
-                <ul>
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Corporate Sale</a></li>
-                  <li><a href="#">Terms &amp; Policy</a></li>
-                  <li><a href="#">Community</a></li>
+              <ul>
+                  <li><a href="#">Tietoa meistä</a></li>
+                  <li><a href="#">Yhteystiedot</a></li>
+                  <li><a href="#">Työpaikat</a></li>
+                  <li><a href="#">Taiteilijat</a></li>
+                  <li><a href="#">Visual Yhteisö</a></li>
                 </ul>
               </div>
             </div>
           </div>
           <div className="col-12 col-sm-6 col-lg">
             <div className="single-footer-widget section_padding_0_130">
-              <h5 className="widget-title">Support</h5>
+              <h5 className="widget-title">Asiakaspalvelu</h5>
               <div className="footer_menu">
-                <ul>
-                  <li><a href="#">Help</a></li>
-                  <li><a href="#">Support</a></li>
-                  <li><a href="#">Privacy Policy</a></li>
-                  <li><a href="#">Term &amp; Conditions</a></li>
-                  <li><a href="#">Help &amp; Support</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-sm-6 col-lg">
-            <div className="single-footer-widget section_padding_0_130">
-              <h5 className="widget-title">Contact</h5>
-              <div className="footer_menu">
-                <ul>
-                  <li><a href="#">Call Centre</a></li>
-                  <li><a href="#">Email Us</a></li>
-                  <li><a href="#">Term &amp; Conditions</a></li>
-                  <li><a href="#">Help Center</a></li>
+              <ul>
+                  <li><a href="#">Usein kysytyt kysymykset</a></li>
+                  <li><a href="#">Palautukset</a></li>
+                  <li><a href="#">Tilaus- ja toimitusehdot</a></li>
+                  <li><a href="#">Reklamaatio</a></li>
+                  <li><a href="#">Evästeet</a></li>
                 </ul>
               </div>
             </div>
