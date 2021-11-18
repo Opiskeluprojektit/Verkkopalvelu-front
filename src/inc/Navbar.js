@@ -1,9 +1,25 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 export default function Navbar() {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost/verkkopalveluback/tuote/getcategories.php')
+      .then((response) => {
+        const json = response.data;
+        setCategories(json);
+      }).catch (error => {
+        if (error.response === undefined) {
+          alert(error);
+        } else {
+          alert(error.response.data.error);
+        }
+      })
+  },[])
+
     return (
-        
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <a className="navbar-brand" href=" ">Visual</a>
@@ -15,28 +31,18 @@ export default function Navbar() {
             <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href=" ">Kotisivu</a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href=" ">Maalaukset</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href=" ">Piirrustukset</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href=" ">Valokuvat</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href=" ">Illustrointi</a>
-              </li>
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href=" " id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Tarvikkeet
-                </a>
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a className="dropdown-item" href=" ">Piirrustusvälineet</a></li>
-                  <li><a className="dropdown-item" href=" ">Maalaustarvikkeet</a></li>
-                  <li><a className="dropdown-item" href=" ">Kehykset</a></li>
-                </ul>
-              </li>
+                <a className="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tuotteet</a>
+                  <ul className="dropdown-menu">
+                    {categories.map(category =>(
+                      <li>
+                        <Link>
+                        {category.trnimi}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                  </li>
             </ul>
             <form className="d-flex">
               <input className="form-control me-2" type="search" placeholder="Haku" aria-label="Search" />
