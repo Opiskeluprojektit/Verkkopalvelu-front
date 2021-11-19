@@ -35,3 +35,8 @@ h3 {
 .yhteystiedot p {
   margin-bottom: 1.5em;
 }
+
+div .tietoameista {
+  width: 70%;
+  margin-bottom: 3em;
+}
