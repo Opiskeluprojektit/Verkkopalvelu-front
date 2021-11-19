@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 
 export default function Kotisivu() {
     return (
@@ -13,11 +13,11 @@ export default function Kotisivu() {
             <a>Tutustu</a>
             </div>
         </div>
-        <img src="img/Kissa.png" class="card-img-top" alt="..."/>
+        <img src="img/Kissa.png" className="card-img-top" alt="..."/>
         <div className="card-body">
             <h5 className="card-title">Kissa</h5>
             <p className="card-text">Esimerkkitekstiä kissapiirrustuksesta.</p>
-            <a href=" " className="tuotesivulle">Tuotesivulle</a><br></br>
+            <a href="#" className="tuotesivulle">Tuotesivulle</a><br></br>
             <i className="bi bi-cart-fill mx-2"></i>
         </div>
         </div>
@@ -28,11 +28,11 @@ export default function Kotisivu() {
             <a>Tutustu</a>
             </div>
         </div>
-        <img src="img/Puut.png" class="card-img-top" alt="..."/>
+        <img src="img/Puut.png" className="card-img-top" alt="..."/>
         <div className="card-body">
             <h5 className="card-title">Puut</h5>
             <p className="card-text">Maalauksesta esimerkkiasiaa.</p>
-            <a href=" " className="tuotesivulle">Tuotesivulle</a><br></br>
+            <a href="#" className="tuotesivulle">Tuotesivulle</a><br></br>
             <i className="bi bi-cart-fill mx-2"></i>
         </div>
         </div>
@@ -43,11 +43,11 @@ export default function Kotisivu() {
             <a>Tutustu</a>
             </div>
         </div>
-        <img src="img/Elefantti2.png" class="card-img-top" alt="..."/>
+        <img src="img/Elefantti2.png" className="card-img-top" alt="..."/>
         <div className="card-body">
             <h5 className="card-title">Elefantti</h5>
             <p className="card-text">Norsu-valokuvasta esimerkiksi asiaa.</p>
-            <a href=" " className="tuotesivulle">Tuotesivulle</a><br></br>
+            <a href="#" className="tuotesivulle">Tuotesivulle</a><br></br>
             <i className="bi bi-cart-fill mx-2"></i>
         </div>
         </div>

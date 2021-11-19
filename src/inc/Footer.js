@@ -46,7 +46,7 @@ export default function Footer() {
                     <h5 className="widget-title">Asiakaspalvelu</h5>
                     <div className="footer_menu">
                     <ul>
-                        <li><Link to="#">Usein kysytyt kysymykset</Link></li>
+                        <li><Link to="/inc/UKK">Usein kysytyt kysymykset</Link></li>
                         <li><Link to="#">Palautukset</Link></li>
                         <li><Link to="#">Tilaus- ja toimitusehdot</Link></li>
                         <li><Link to="#">Reklamaatio</Link></li>

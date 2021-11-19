@@ -1,13 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 export default function Yhteystiedot() {
     return (
-        <div>
+        <div className="yhteystiedot">
             <h3>Yhteystiedot</h3>
-            <p>Löydät meidät myymälästä osoitteesta Taidetie 2, 34567 Oulu tai puhelimitse numerosta 012-3456789</p>
+            <h5>Aukioloajat</h5>
+            <p>Palvelemme sekä myymälässä että puhelimitse arkisin ma - pe klo 9 - 15.</p>
 
+            <h5>Myymälä</h5>
+            <p>Kivijalkamyymälämme sijaitsee osoitteessa Taidetie 2, 34567 Oulu.</p>
 
+            <h5>Asiakaspalvelu</h5>
+            <p>Asiakaspalvelumme palvelee numerossa 012-3456789.</p>
         </div>
     )
 }
