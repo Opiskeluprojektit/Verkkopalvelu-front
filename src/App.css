@@ -36,7 +36,8 @@ h3 {
   margin-bottom: 1.5em;
 }
 
-div .tietoameista {
+div .tietoameista,
+div .palautukset {
   width: 70%;
   margin-bottom: 3em;
 }

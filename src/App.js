@@ -6,6 +6,7 @@ import Footer from './inc/Footer';
 import Yhteystiedot from './inc/Yhteystiedot';
 import TietoaMeista from './inc/TietoaMeista';
 import UKK from './inc/UKK';
+import Palautukset from './inc/Palautukset';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/inc/Yhteystiedot" component={Yhteystiedot} />
           <Route path="/inc/TietoaMeista" component={TietoaMeista} />
           <Route path="/inc/UKK" component={UKK} />
+          <Route path="/inc/Palautukset" component={Palautukset} />
         </Switch>
       </div>
 

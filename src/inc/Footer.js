@@ -47,7 +47,7 @@ export default function Footer() {
                     <div className="footer_menu">
                     <ul>
                         <li><Link to="/inc/UKK">Usein kysytyt kysymykset</Link></li>
-                        <li><Link to="#">Palautukset</Link></li>
+                        <li><Link to="/inc/Palautukset">Palautukset</Link></li>
                         <li><Link to="#">Tilaus- ja toimitusehdot</Link></li>
                         <li><Link to="#">Reklamaatio</Link></li>
                         <li><Link to="#">Evästeet</Link></li>
