@@ -30,8 +30,8 @@ export default function Footer() {
                     <h5 className="widget-title">Visual</h5>
                     <div className="footer_menu">
                     <ul>
-                        <li><a href="#">Tietoa meistä</a></li>
-                        <li><a href="#">Yhteystiedot</a></li>
+                        <li><a href="/inc/TietoaMeista">Tietoa meistä</a></li>
+                        <li><a href="/inc/Yhteystiedot">Yhteystiedot</a></li>
                         <li><a href="#">Työpaikat</a></li>
                         <li><a href="#">Taiteilijat</a></li>
                         <li><a href="#">Visual Yhteisö</a></li>
