@@ -14,7 +14,7 @@ function App() {
 
   <div className="container">
         <Switch>
-          <Route exact path="/inc/Kotisivu" component={Kotisivu} />
+          <Route path="/" component={Kotisivu} exact />
           <Route path="/inc/Yhteystiedot" component={Yhteystiedot} />
           <Route path="/inc/TietoaMeista" component={TietoaMeista} />
         </Switch>

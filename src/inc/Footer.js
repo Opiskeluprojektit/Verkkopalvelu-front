@@ -1,4 +1,6 @@
+import './Footer.css';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
     return (
@@ -30,11 +32,11 @@ export default function Footer() {
                     <h5 className="widget-title">Visual</h5>
                     <div className="footer_menu">
                     <ul>
-                        <li><a href="/inc/TietoaMeista">Tietoa meistä</a></li>
-                        <li><a href="/inc/Yhteystiedot">Yhteystiedot</a></li>
-                        <li><a href="#">Työpaikat</a></li>
-                        <li><a href="#">Taiteilijat</a></li>
-                        <li><a href="#">Visual Yhteisö</a></li>
+                        <li><Link to="/inc/TietoaMeista">Tietoa meistä</Link></li>
+                        <li><Link to="/inc/Yhteystiedot">Yhteystiedot</Link></li>
+                        <li><Link to="#">Työpaikat</Link></li>
+                        <li><Link to="#">Taiteilijat</Link></li>
+                        <li><Link to="#">Visual Yhteisö</Link></li>
                         </ul>
                     </div>
                     </div>
@@ -44,11 +46,11 @@ export default function Footer() {
                     <h5 className="widget-title">Asiakaspalvelu</h5>
                     <div className="footer_menu">
                     <ul>
-                        <li><a href="#">Usein kysytyt kysymykset</a></li>
-                        <li><a href="#">Palautukset</a></li>
-                        <li><a href="#">Tilaus- ja toimitusehdot</a></li>
-                        <li><a href="#">Reklamaatio</a></li>
-                        <li><a href="#">Evästeet</a></li>
+                        <li><Link to="#">Usein kysytyt kysymykset</Link></li>
+                        <li><Link to="#">Palautukset</Link></li>
+                        <li><Link to="#">Tilaus- ja toimitusehdot</Link></li>
+                        <li><Link to="#">Reklamaatio</Link></li>
+                        <li><Link to="#">Evästeet</Link></li>
                         </ul>
                     </div>
                     </div>
