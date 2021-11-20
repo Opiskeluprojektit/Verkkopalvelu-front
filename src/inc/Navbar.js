@@ -2,10 +2,11 @@ import './Navbar.css';
 import React, {useState,useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Ostoskori from './Ostoskori';
 
 
 //Navi
-export default function Navbar() {
+export default function Navbar({cart}) {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -51,7 +52,12 @@ export default function Navbar() {
               <input className="form-control me-2" type="search" placeholder="Haku" aria-label="Search" />
               <button className="btn btn-outline-success" type="submit">Haku</button>
             </form>
-            <i className="bi bi-cart-fill mx-2"></i>
+            {/* Ostoskori */}
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item"></li>
+              <Ostoskori cart={cart}/>
+            </ul>
+            {/* vanha ostoskori-ikoni <i className="bi bi-cart-fill mx-2"></i> */}
           </div>
         </div>
       </nav>   
