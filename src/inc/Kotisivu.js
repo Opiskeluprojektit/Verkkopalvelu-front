@@ -13,7 +13,7 @@ export default function Kotisivu() {
             <a>Tutustu</a>
             </div>
         </div>
-        <img src="img/Kissa.png" className="card-img-top" alt="..."/>
+        <img src="http://localhost/verkkopalveluback/img/Kissa.png" className="card-img-top" alt="..."/>
         <div className="card-body">
             <h5 className="card-title">Kissa</h5>
             <p className="card-text">Esimerkkitekstiä kissapiirrustuksesta.</p>
@@ -28,7 +28,7 @@ export default function Kotisivu() {
             <a>Tutustu</a>
             </div>
         </div>
-        <img src="img/Puut.png" className="card-img-top" alt="..."/>
+        <img src="http://localhost/verkkopalveluback/img/Puut.png" className="card-img-top" alt="..."/>
         <div className="card-body">
             <h5 className="card-title">Puut</h5>
             <p className="card-text">Maalauksesta esimerkkiasiaa.</p>
@@ -43,7 +43,7 @@ export default function Kotisivu() {
             <a>Tutustu</a>
             </div>
         </div>
-        <img src="img/Elefantti2.png" className="card-img-top" alt="..."/>
+        <img src="http://localhost/verkkopalveluback/img/Elefantti2.png" className="card-img-top" alt="..."/>
         <div className="card-body">
             <h5 className="card-title">Elefantti</h5>
             <p className="card-text">Norsu-valokuvasta esimerkiksi asiaa.</p>
