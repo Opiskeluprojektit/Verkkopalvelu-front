@@ -8,6 +8,8 @@ import TietoaMeista from './inc/TietoaMeista';
 import UKK from './inc/UKK';
 import Palautukset from './inc/Palautukset';
 
+const URL = 'http://localhost/verkkopalveluback/';
+
 // Sivun osat, tehty reitityksellä
 function App() {
   return (
