@@ -9,6 +9,8 @@ import UKK from './inc/UKK';
 import Palautukset from './inc/Palautukset';
 import React, {useState,useEffect} from 'react';
 
+const URL = 'http://localhost/verkkopalveluback/';
+
 // Sivun osat, tehty reitityksellä
 function App() {
 
