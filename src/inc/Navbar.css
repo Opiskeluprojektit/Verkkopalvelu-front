@@ -1,0 +1,22 @@
+/* Navin css */
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Paprika&display=swap');
+
+nav {
+    border-bottom: solid;
+    border-top: solid;
+    margin-bottom: 1.5em;
+  }
+  
+  .navbar-brand {
+    font-family: 'Neucha', cursive;
+    font-size: 45px;
+    font-weight: bold;
+    margin-left: 7em;
+  }
+  
+  a#navbarDropdown.nav-link {
+    color: #000000E6 !important; 
+  }
+
