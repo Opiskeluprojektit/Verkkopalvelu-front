@@ -1,0 +1,67 @@
+.card {
+    width: 18rem;
+}
+  
+.top-card {
+    position: absolute;
+    top: 25px;
+    left: 5em;
+    background-color: white;
+    border-style: solid;
+    border-width: 0.5px;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.tuotesivulle {
+    text-decoration: none;
+    color: #000000;
+}
+  
+.tuotesivulle:hover {
+    font-weight: bolder;
+    color: #000000;
+}
+  
+.bi-cart-fill,
+  .bi-cart-plus-fill {
+    font-size: 20px;
+}
+  
+
+.maisemajulisteet {
+    margin-top: 3em;
+}
+
+.top-card-maisemajulisteet {
+  position: absolute;
+  top: 34em;
+  left: 63em;
+  background-color: rgb(245, 245, 245);
+  border-style: solid;
+  border-width: 0.5px;
+  padding: 2em 2.5em 2em 2.5em;
+}
+
+.inspiroidu {
+    margin-top: 5em;
+    width: 70%;
+}
+
+.tarvikkeet {
+  margin-top: 3em;
+}
+
+.carousel {
+  height: 50%;
+}
+
+.top-card-tarvikkeet {
+  position: absolute;
+  top: 33em;
+  left: 6em;
+  background-color: rgb(245, 245, 245);
+  border-style: solid;
+  border-width: 0.5px;
+  padding: 2em 2.5em 2em 2.5em;
+}
