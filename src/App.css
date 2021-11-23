@@ -3,6 +3,10 @@ h3 {
   margin-bottom: 1.5em;
 }
 
+img {
+  max-width: 100% !important;
+}
+
 .yhteystiedot p {
   margin-bottom: 1.5em;
 }

@@ -61,14 +61,16 @@ export default function Kotisivu(addToCart) {
         </div>
         </div>
 
-        <div className="row maisemajulisteet">
-            <div className="card">
+        <div className="row maisemajulisteet d-flex justify-content-center">
+            <div className="card card2">
                 <div className="card-body top-card-maisemajulisteet">
                 <h5>Maisemajulisteet</h5>
                 <a>Tutustu</a>
                 </div>
             </div>
-            <img src="http://localhost/verkkopalveluback/img/Valokuva/Valokuva13.jpg" className="card-img-top" alt="..."/>
+            <div>
+                <img src="http://localhost/verkkopalveluback/img/Valokuva/Valokuva13.jpg" className="card-img-top" alt="..."/>
+            </div>
         </div>
 
         <div className="row inspiroidu">
@@ -83,24 +85,19 @@ export default function Kotisivu(addToCart) {
         </div>
 
         <div className="row tarvikkeet">
-            <div className="card">
-                <div className="card-body top-card-tarvikkeet">
-                <h5>Tarvikkeet</h5>
-                <a>Tutustu</a>
-                </div>
-            </div>
+            <h5>TARVIKKEET</h5>
             <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
-                <div className="carousel-item active" data-bs-interval="10000">
+                <div className="carousel-item active" data-bs-interval="4000">
                 <img src="http://localhost/verkkopalveluback/img/Tarvikkeet/Kynät/Kynä2.png" class="d-block w-100" alt="..."/>
                 </div>
-                <div className="carousel-item">
+                <div className="carousel-item" data-bs-interval="4000">
                 <img src="http://localhost/verkkopalveluback/img/Tarvikkeet/Pensselit/Pensseli3.png" class="d-block w-100" alt="..."/>
                 </div>
-                <div className="carousel-item" data-bs-interval="2000">
+                <div className="carousel-item" data-bs-interval="4000">
                 <img src="http://localhost/verkkopalveluback/img/Tarvikkeet/Maalit/Maali1.png" class="d-block w-100" alt="..."/>
                 </div>
-                <div className="carousel-item">
+                <div className="carousel-item" data-bs-interval="4000">
                 <img src="http://localhost/verkkopalveluback/img/Tarvikkeet/Tarvikkeet3.jpg" class="d-block w-100" alt="..."/>
                 </div>
             </div>
