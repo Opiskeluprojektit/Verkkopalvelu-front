@@ -6,7 +6,7 @@ import Ostoskori from './Ostoskori';
 
 
 //Navi
-export default function Navbar({cart}) {
+export default function Navbar({cart, setCategory}) {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -14,6 +14,7 @@ export default function Navbar({cart}) {
       .then((response) => {
         const json = response.data;
         setCategories(json);
+        setCategory(json[0]);
       }).catch (error => {
         if (error.response === undefined) {
           alert(error);

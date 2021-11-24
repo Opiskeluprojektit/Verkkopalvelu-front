@@ -2,6 +2,7 @@ import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import Navbar from './inc/Navbar';
 import Kotisivu from './inc/Kotisivu';
+import Tuoteryhma from './inc/Tuoteryhma';
 import Footer from './inc/Footer';
 import Yhteystiedot from './inc/Yhteystiedot';
 import TietoaMeista from './inc/TietoaMeista';
@@ -14,6 +15,8 @@ const URL = 'http://localhost/verkkopalveluback/';
 // Sivun osat, tehty reitityksellä
 function App() {
 
+  //kategorian tilamuutuja
+  const [category, setCategory] = useState(null);
   //ostoskorin tilamuuttuja taulukkomuodossa-AK
   const [cart, setCart] = useState([]);
   
@@ -37,12 +40,13 @@ function App() {
   
   return (
 <div>
-  <Navbar cart={cart}/>
+  <Navbar cart={cart} setCategory={setCategory}/>
     
 
   <div className="container">
         <Switch>
-          <Route path="/" component={Kotisivu} exact        cart={cart} addToCart={addToCart}/>
+          <Route path="/" component={Kotisivu} exact        cart={cart} addToCart={addToCart}/>      
+          <Route path="/inc/Tuoteryhma" component={Tuoteryhma} />
           <Route path="/inc/Yhteystiedot" component={Yhteystiedot} />
           <Route path="/inc/TietoaMeista" component={TietoaMeista} />
           <Route path="/inc/UKK" component={UKK} />
