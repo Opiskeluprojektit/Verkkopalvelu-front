@@ -40,8 +40,7 @@ function App() {
   
   return (
 <div>
-  <Navbar cart={cart} setCategory={setCategory}/>
-    
+  <Navbar cart={cart} setCategory={setCategory} url={URL}/>   
 
   <div className="container">
         <Switch>

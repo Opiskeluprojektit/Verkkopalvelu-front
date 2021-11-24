@@ -6,11 +6,11 @@ import Ostoskori from './Ostoskori';
 
 
 //Navi
-export default function Navbar({cart, setCategory}) {
+export default function Navbar({cart, setCategory, url}) {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost/verkkopalveluback/tuote/getcategories.php')
+    axios.get(url + 'tuote/getcategories.php')
       .then((response) => {
         const json = response.data;
         setCategories(json);
@@ -40,8 +40,16 @@ export default function Navbar({cart, setCategory}) {
                 <a className="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tuotteet</a>
                   <ul className="dropdown-menu">
                     {categories.map(category =>(
-                      <li>
-                        <Link>
+                      <li key={category.trnimi}>
+                        <Link className="dropdown-item"
+                        to={{
+                          pathname: '/',
+                          state: {
+                            id: category.tuotenro,
+                            name: category.trnimi
+                          }
+                        }}
+                        >
                         {category.trnimi}
                         </Link>
                       </li>
