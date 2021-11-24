@@ -37,7 +37,7 @@ function App() {
   
   return (
 <div>
-  <Navbar cart={cart}/>
+  <Navbar url={URL} cart={cart}/>
     
 
   <div className="container">

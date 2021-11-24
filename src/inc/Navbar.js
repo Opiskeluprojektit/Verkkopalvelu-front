@@ -6,16 +6,16 @@ import Ostoskori from './Ostoskori';
 
 
 //Navi
-export default function Navbar({cart}) {
+export default function Navbar({url,cart}) {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost/verkkopalveluback/tuote/getcategories.php')
+    axios.get(url + 'tuote/getcategories.php')
       .then((response) => {
         const json = response.data;
         setCategories(json);
       }).catch (error => {
-        if (error.response === undefined) {
+        if (error.response === 'Nyt tuli virhe') {
           alert(error);
         } else {
           alert(error.response.data.error);
