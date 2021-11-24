@@ -15,7 +15,7 @@ export default function Navbar({url,cart}) {
         const json = response.data;
         setCategories(json);
       }).catch (error => {
-        if (error.response === 'Nyt tuli virhe') {
+        if (error.response === undefined) {
           alert(error);
         } else {
           alert(error.response.data.error);
