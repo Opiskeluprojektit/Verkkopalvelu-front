@@ -39,8 +39,16 @@ export default function Navbar({url,cart}) {
                 <a className="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tuotteet</a>
                   <ul className="dropdown-menu">
                     {categories.map(category =>(
-                      <li>
-                        <Link>
+                      <li key={category.trnimi}>
+                        <Link className="dropdown-item"
+                        to={{
+                          pathname: '/',
+                          state: {
+                            id: category.tuotenro,
+                            name: category.trnimi
+                          }
+                        }}
+                        >
                         {category.trnimi}
                         </Link>
                       </li>
