@@ -8,7 +8,7 @@ export default function Tuoteryhma({url, category}) {
     useEffect(() => {
         if (category !== null) {
 
-            axios.get(url + 'tuote/getproducts.php/' + category?.tuotenro)
+            axios.get(url + 'tuote/getproducts.php/' + category?.trnro)
             .then((response) => {
                 const json = response.data;
                 setTuotteet(json);
@@ -24,7 +24,7 @@ export default function Tuoteryhma({url, category}) {
     
     return (
         <div>
-            <h3>Products for {category?.name}</h3>
+            <h3>Products for {category?.tuotenimi}</h3>
             {tuotteet.map(tuote => (
                 <div key={tuote.tuotenro}>
                     <p>{tuote.tuotenimi}</p>
