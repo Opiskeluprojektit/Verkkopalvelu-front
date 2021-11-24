@@ -7,9 +7,8 @@ export default function Tuoteryhma({url, category}) {
 
     useEffect(() => {
         if (category !== null) {
-            const address = url + 'tuote/getproducts.php/' + category?.tuotenro;
 
-            axios.get(address)
+            axios.get(url + 'tuote/getproducts.php/' + category?.tuotenro)
             .then((response) => {
                 const json = response.data;
                 setTuotteet(json);

@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useLocation } from 'react-router-dom';
 import Navbar from './inc/Navbar';
 import Kotisivu from './inc/Kotisivu';
 import Tuoteryhma from './inc/Tuoteryhma';
@@ -20,6 +20,14 @@ function App() {
   //ostoskorin tilamuuttuja taulukkomuodossa-AK
   const [cart, setCart] = useState([]);
   
+  let location = useLocation();
+
+  useEffect(() => {
+    if (location.state !==undefined) {
+      setCategory({tuotenro: location.state.tuorenro,tuotenimi:location.state.tuotenimi});
+    }
+  }, [location.state])
+
   // Localsotragen ostoskorin tilamäärän nollaantumisen esto sivua päivitettäessä -AK
   useEffect(() => {
     if ('cart' in localStorage) {
@@ -45,7 +53,15 @@ function App() {
   <div className="container">
         <Switch>
           <Route path="/" component={Kotisivu} exact        cart={cart} addToCart={addToCart}/>      
-          <Route path="/inc/Tuoteryhma" component={Tuoteryhma} />
+          <Route
+            path="/inc/Tuoteryhma"
+            render={() => 
+              <Tuoteryhma
+                url={URL}
+                category={category}
+              />
+            }
+          />
           <Route path="/inc/Yhteystiedot" component={Yhteystiedot} />
           <Route path="/inc/TietoaMeista" component={TietoaMeista} />
           <Route path="/inc/UKK" component={UKK} />
