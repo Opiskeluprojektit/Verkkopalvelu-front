@@ -34,28 +34,28 @@ export default function Navbar({cart, setCategory, url}) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">Kotisivu</a>
+                <Link className="nav-link active" aria-current="page" to="inc/Kotisivu">Kotisivu</Link>
               </li>
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tuotteet</a>
                   <ul className="dropdown-menu">
                     {categories.map(category =>(
-                      <li key={category.trnimi}>
+                      <li key={category.id}>
                         <Link className="dropdown-item"
                         to={{
                           pathname: '/',
                           state: {
-                            id: category.tuotenro,
-                            name: category.trnimi
+                            id: category.id,
+                            name: category.name,
                           }
                         }}
                         >
-                        {category.trnimi}
+                        {category.name}
                         </Link>
                       </li>
                     ))}
                   </ul>
-                  </li>
+                </li>
             </ul>
             <form className="d-flex">
               <input className="form-control me-2" type="search" placeholder="Haku" aria-label="Search" />

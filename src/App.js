@@ -24,7 +24,7 @@ function App() {
 
   useEffect(() => {
     if (location.state !==undefined) {
-      setCategory({tuotenro: location.state.tuotenro,tuotenimi:location.state.tuotenimi});
+      setCategory({id: location.state.id,name:location.state.name});
     }
   }, [location.state])
 
@@ -52,15 +52,26 @@ function App() {
 
   <div className="container">
         <Switch>
-          <Route path="/" component={Kotisivu} exact        cart={cart} addToCart={addToCart}/>      
+          {/* <Route 
+            path="/" 
+            render={() =>
+            <Kotisivu
+              url={URL}       
+              cart={cart} 
+              addToCart={addToCart}
+              />
+            } 
+            exact
+            />      */}
           <Route
-            path="/inc/Tuoteryhma"
+            path="/"      /*HOX toimii siihen pisteeseen asti mitä Käyttäjätarina tuotteiden näyttäminen */
             render={() => 
               <Tuoteryhma
                 url={URL}
-                Tuoteryhma={category}
+                category={category}
               />
             }
+          
           />
           <Route path="/inc/Yhteystiedot" component={Yhteystiedot} />
           <Route path="/inc/TietoaMeista" component={TietoaMeista} />
