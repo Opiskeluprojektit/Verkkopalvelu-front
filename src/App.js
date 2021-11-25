@@ -24,11 +24,11 @@ function App() {
 
   useEffect(() => {
     if (location.state !==undefined) {
-      setCategory({tuotenro: location.state.tuorenro,tuotenimi:location.state.tuotenimi});
+      setCategory({tuotenro: location.state.tuotenro,tuotenimi:location.state.tuotenimi});
     }
   }, [location.state])
 
-  // Localsotragen ostoskorin tilamäärän nollaantumisen esto sivua päivitettäessä -AK
+  // Localstoragen ostoskorin tilamäärän nollaantumisen esto sivua päivitettäessä -AK
   useEffect(() => {
     if ('cart' in localStorage) {
       setCart(JSON.parse(localStorage.getItem('cart')))
@@ -58,7 +58,7 @@ function App() {
             render={() => 
               <Tuoteryhma
                 url={URL}
-                category={category}
+                Tuoteryhma={category}
               />
             }
           />
