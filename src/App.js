@@ -24,11 +24,11 @@ function App() {
 
   useEffect(() => {
     if (location.state !==undefined) {
-      setCategory({tuotenro: location.state.tuorenro,tuotenimi:location.state.tuotenimi});
+      setCategory({id: location.state.id,name:location.state.name});
     }
   }, [location.state])
 
-  // Localsotragen ostoskorin tilamäärän nollaantumisen esto sivua päivitettäessä -AK
+  // Localstoragen ostoskorin tilamäärän nollaantumisen esto sivua päivitettäessä -AK
   useEffect(() => {
     if ('cart' in localStorage) {
       setCart(JSON.parse(localStorage.getItem('cart')))
@@ -52,9 +52,8 @@ function App() {
 
   <div className="container">
         <Switch>
-          <Route path="/" component={Kotisivu} exact        cart={cart} addToCart={addToCart}/>      
           <Route
-            path="/inc/Tuoteryhma"
+            path="/Tuotteet"
             render={() => 
               <Tuoteryhma
                 url={URL}
@@ -62,10 +61,11 @@ function App() {
               />
             }
           />
-          <Route path="/inc/Yhteystiedot" component={Yhteystiedot} />
-          <Route path="/inc/TietoaMeista" component={TietoaMeista} />
-          <Route path="/inc/UKK" component={UKK} />
-          <Route path="/inc/Palautukset" component={Palautukset} />
+          <Route path="/" component={Kotisivu} exact/>
+          <Route path="/Yhteystiedot" component={Yhteystiedot}/>
+          <Route path="/TietoaMeista" component={TietoaMeista} />
+          <Route path="/UKK" component={UKK} />
+          <Route path="/Palautukset" component={Palautukset} />
         </Switch>
       </div>
 

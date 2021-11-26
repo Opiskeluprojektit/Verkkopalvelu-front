@@ -33,8 +33,8 @@ export default function Footer() {
                     <h5 className="widget-title">Visual</h5>
                     <div className="footer_menu">
                     <ul>
-                        <li><Link to="/inc/TietoaMeista">Tietoa meistä</Link></li>
-                        <li><Link to="/inc/Yhteystiedot">Yhteystiedot</Link></li>
+                        <li><Link to="/TietoaMeista">Tietoa meistä</Link></li>
+                        <li><Link to="/Yhteystiedot">Yhteystiedot</Link></li>
                         <li><Link to="#">Työpaikat</Link></li>
                         <li><Link to="#">Taiteilijat</Link></li>
                         <li><Link to="#">Visual Yhteisö</Link></li>
@@ -47,8 +47,8 @@ export default function Footer() {
                     <h5 className="widget-title">Asiakaspalvelu</h5>
                     <div className="footer_menu">
                     <ul>
-                        <li><Link to="/inc/UKK">Usein kysytyt kysymykset</Link></li>
-                        <li><Link to="/inc/Palautukset">Palautukset</Link></li>
+                        <li><Link to="/UKK">Usein kysytyt kysymykset</Link></li>
+                        <li><Link to="/Palautukset">Palautukset</Link></li>
                         <li><Link to="#">Tilaus- ja toimitusehdot</Link></li>
                         <li><Link to="#">Reklamaatio</Link></li>
                         <li><Link to="#">Evästeet</Link></li>

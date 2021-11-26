@@ -3,14 +3,14 @@ import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 
 export default function Tuoteryhma({url, category}) {
-    const [tuotteet, setTuotteet] = useState([]);
+    const [products, setProducts] = useState([]);
 
     useEffect(() => {
         if (category !== null) {
-            axios.get(url + 'tuote/getproducts.php/' + category?.tuotenro)
+            axios.get(url + 'tuote/getproducts.php/' + category?.id)
             .then((response) => {
                 const json = response.data;
-                setTuotteet(json);
+                setProducts(json);
             }).catch(error => {
                 if (error.response === undefined) {
                     alert(error);
@@ -22,13 +22,13 @@ export default function Tuoteryhma({url, category}) {
     }, [category])
     
     return (
-        <div>
+        <div style={{'padding-top': '100px'}}>
             <h3>Products for {category?.name}</h3>
-            {tuotteet.map(tuote => (
-                <div key={tuote.tuotenro}>
-                    <p>{tuote.tuotenimi}</p>
+            {products.map(product => (
+                <div key={product.id}>
+                    <p>{product.name}</p>
                     <div>
-                        <img src={url + 'IMG/' + tuote.tuotenimi} alt="" />
+                        <img src={url + 'IMG/' + product.image} alt="" />
                     </div>
                 </div>
             ))}
