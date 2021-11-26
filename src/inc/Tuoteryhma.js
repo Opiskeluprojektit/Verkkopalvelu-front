@@ -7,7 +7,6 @@ export default function Tuoteryhma({url, category}) {
 
     useEffect(() => {
         if (category !== null) {
-
             axios.get(url + 'tuote/getproducts.php/' + category?.tuotenro)
             .then((response) => {
                 const json = response.data;
