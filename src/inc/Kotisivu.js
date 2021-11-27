@@ -1,5 +1,6 @@
 import React from 'react';
 import './Kotisivu.css';
+import { Link } from 'react-router-dom'
 
 //Kotisivu
 export default function Kotisivu(addToCart) {
@@ -81,7 +82,8 @@ export default function Kotisivu(addToCart) {
             </p>
         </div>
 
-        <div className="row tarvikkeet">
+
+         <div className="row tarvikkeet">
             <h5>TARVIKKEET</h5>
             <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
@@ -97,7 +99,7 @@ export default function Kotisivu(addToCart) {
                 <div className="carousel-item" data-bs-interval="4000">
                 <img src="http://localhost/verkkopalveluback/img/Tarvikkeet3.jpg" class="d-block w-100" alt="..."/>
                 </div>
-            </div>
+            </div> 
         </div>
         </div>
         </div>        
