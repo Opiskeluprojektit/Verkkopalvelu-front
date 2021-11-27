@@ -14,7 +14,7 @@ export default function Kotisivu(addToCart) {
             <a>Tutustu</a>
             </div>
         </div>
-        <img src="http://localhost/verkkopalveluback/img/Piirustus/Kissa.png" className="card-img-top" alt="..."/>
+        <img src="http://localhost/verkkopalveluback/img/Piirustus16.png" className="card-img-top" alt="..."/>
         <div className="card-body">
             <h5 className="card-title">Kissa</h5>
             <p className="card-text">Esimerkkitekstiä kissapiirrustuksesta.</p>
@@ -31,7 +31,7 @@ export default function Kotisivu(addToCart) {
             <a>Tutustu</a>
             </div>
         </div>
-        <img src="http://localhost/verkkopalveluback/img/Illustrointi/Puut.png" className="card-img-top" alt="..."/>
+        <img src="http://localhost/verkkopalveluback/img/Illustrointi24.png" className="card-img-top" alt="..."/>
         <div className="card-body">
             <h5 className="card-title">Puut</h5>
             <p className="card-text">Maalauksesta esimerkkiasiaa.</p>
@@ -47,7 +47,7 @@ export default function Kotisivu(addToCart) {
             <a>Tutustu</a>
             </div>
         </div>
-        <img src="http://localhost/verkkopalveluback/img/Valokuva/Elefantti2.png" className="card-img-top" alt="..."/>
+        <img src="http://localhost/verkkopalveluback/img/Valokuva29.png" className="card-img-top" alt="..."/>
         <div className="card-body">
             <h5 className="card-title">Elefantti</h5>
             <p className="card-text">Norsu-valokuvasta esimerkiksi asiaa.</p>
@@ -66,7 +66,7 @@ export default function Kotisivu(addToCart) {
                 </div>
             </div>
             <div>
-                <img src="http://localhost/verkkopalveluback/img/Valokuva/Valokuva13.jpg" className="card-img-top" alt="..."/>
+                <img src="http://localhost/verkkopalveluback/img/Valokuva13.jpg" className="card-img-top" alt="..."/>
             </div>
         </div>
 
@@ -86,16 +86,16 @@ export default function Kotisivu(addToCart) {
             <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
                 <div className="carousel-item active" data-bs-interval="4000">
-                <img src="http://localhost/verkkopalveluback/img/Tarvikkeet/Kynät/Kynä2.png" class="d-block w-100" alt="..."/>
+                <img src="http://localhost/verkkopalveluback/img/Tarvikkeet_Kynä2.png" class="d-block w-100" alt="..."/>
                 </div>
                 <div className="carousel-item" data-bs-interval="4000">
-                <img src="http://localhost/verkkopalveluback/img/Tarvikkeet/Pensselit/Pensseli3.png" class="d-block w-100" alt="..."/>
+                <img src="http://localhost/verkkopalveluback/img/Tarvikkeet_Pensseli3.png" class="d-block w-100" alt="..."/>
                 </div>
                 <div className="carousel-item" data-bs-interval="4000">
-                <img src="http://localhost/verkkopalveluback/img/Tarvikkeet/Maalit/Maali1.png" class="d-block w-100" alt="..."/>
+                <img src="http://localhost/verkkopalveluback/img/Tarvikkeet_Maali1.png" class="d-block w-100" alt="..."/>
                 </div>
                 <div className="carousel-item" data-bs-interval="4000">
-                <img src="http://localhost/verkkopalveluback/img/Tarvikkeet/Tarvikkeet3.jpg" class="d-block w-100" alt="..."/>
+                <img src="http://localhost/verkkopalveluback/img/Tarvikkeet3.jpg" class="d-block w-100" alt="..."/>
                 </div>
             </div>
         </div>
