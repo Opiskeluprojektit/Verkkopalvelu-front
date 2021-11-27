@@ -27,22 +27,22 @@ function App() {
   
   let location = useLocation();
 
-/* Yksittäisen tuotteen näyttäminen /AK / Alla vielä toimiva location-state
+// Yksittäisen tuotteen näyttäminen /AK / Alla vielä toimiva location-state
   useEffect(() => {
     if (location.state !==undefined) {
-      if (location.pathname ==="/Tuoteryhma") {  //tuoteryhmän tuotteen näyttäminen
+      if (location.pathname ==="/Tuotteet") {  //tuoteryhmän tuotteen näyttäminen
         setCategory({id: location.state.id,name:location.state.name});
       } else if(location.pathname==="/Tuote") {  //klikataan yksittäistä tuotetta
         setProduct({id: location.state.id,name:location.state.name});
       }
     }
-  }, [location.state]) */
+  }, [location.state])
 
-  useEffect(() => {
+/*   useEffect(() => {
     if (location.state !==undefined) {
       setCategory({id: location.state.id,name:location.state.name});
     }
-  }, [location.state])
+  }, [location.state]) */
 
   // Localstoragen ostoskorin tilamäärän nollaantumisen esto sivua päivitettäessä -AK
   useEffect(() => {
@@ -77,13 +77,6 @@ function App() {
               />
             }
           />
-          <Route path="/" component={Kotisivu} exact/>
-          <Route path="/Yhteystiedot" component={Yhteystiedot}/>
-          <Route path="/TietoaMeista" component={TietoaMeista} />
-          <Route path="/UKK" component={UKK} />
-          <Route path="/Palautukset" component={Palautukset} />
-
-{/* Reititys tuote.js-sivulle / AK / Yksittäisen tuotteen näyttäminen
           <Route 
             path = "/Tuote"
             render={() =>
@@ -91,8 +84,14 @@ function App() {
               url={URL}
               product={product}
               addToCart={addToCart}
+              />
             }
-          />        */}
+          />        
+          <Route path="/" component={Kotisivu} exact/>
+          <Route path="/Yhteystiedot" component={Yhteystiedot}/>
+          <Route path="/TietoaMeista" component={TietoaMeista} />
+          <Route path="/UKK" component={UKK} />
+          <Route path="/Palautukset" component={Palautukset} />
         </Switch>
       </div>
 

@@ -25,18 +25,10 @@ export default function Tuoteryhma({url, category}) {
     
     return (
         <div style={{'padding-top': '100px'}}>
-            <h3>Products for {category?.name}</h3>
+            <h3>{category?.name}</h3>
             {products.map(product => (
                 <div key={product.id}>
-                    <p>{product.name}</p>
-                    <div>
-                        <img src={url + 'IMG/' + product.image} alt="" />
-                    </div>
-                    {/* Tuotteen lisäys ostoskoriin-painike /AK */}
-                    <button class="btn-secondary" type="button">Lisää <i className="bi bi-cart-fill mx-2"></i></button>  
-                    
-                    {/* Linkki tuote-sivulle / Yksittäisen tuotteen näyttäminen / AK
-                    <Link
+                        <Link
                         to={{
                           pathname: '/Tuote',
                           state: {
@@ -44,11 +36,14 @@ export default function Tuoteryhma({url, category}) {
                             name: product.name,
                           }
                         }}>
-                        {product.name}
+                        <p>{product.name}</p>
+                    
+                    <div>
+                        <img src={url + 'IMG/' + product.name + ".png"} alt="" />
+                    </div>
                     </Link>
-                    
-                    
-                    */}
+                    {/* Tuotteen lisäys ostoskoriin-painike /AK */}
+                    <button class="btn-secondary" type="button">Lisää <i className="bi bi-cart-fill mx-2"></i></button>  
                 </div>
             ))}
         </div>
