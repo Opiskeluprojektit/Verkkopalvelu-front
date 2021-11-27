@@ -39,7 +39,7 @@ export default function Tuoteryhma({url, category}) {
                         <p>{product.name}</p>
                     
                     <div>
-                        <img src={url + 'IMG/' + product.name + ".png"} alt="" />
+                        <img src={url + 'IMG/' + product.image} alt="" />
                     </div>
                     </Link>
                     {/* Tuotteen lisäys ostoskoriin-painike /AK */}
