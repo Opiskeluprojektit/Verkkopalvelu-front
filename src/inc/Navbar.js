@@ -66,7 +66,6 @@ export default function Navbar({cart, setCategory, url}) {
               <li className="nav-item"></li>
               <Ostoskori cart={cart}/>
             </ul>
-            {/* vanha ostoskori-ikoni <i className="bi bi-cart-fill mx-2"></i> */}
           </div>
         </div>
       </nav>   

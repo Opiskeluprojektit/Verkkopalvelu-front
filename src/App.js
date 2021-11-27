@@ -8,6 +8,7 @@ import Yhteystiedot from './inc/Yhteystiedot';
 import TietoaMeista from './inc/TietoaMeista';
 import UKK from './inc/UKK';
 import Palautukset from './inc/Palautukset';
+import Tuote from './inc/Tuote';  //Yksittäisen tuotteen näyttäminen / AK
 import React, {useState,useEffect} from 'react';
 
 const URL = 'http://localhost/verkkopalveluback/';
@@ -17,10 +18,25 @@ function App() {
 
   //kategorian tilamuutuja
   const [category, setCategory] = useState(null);
+
+  //Tuotteen tilamuuttuja  / yksittäisen tuotteen näyttö /AK
+  const [product,setProduct] = useState(null);
+
   //ostoskorin tilamuuttuja taulukkomuodossa-AK
   const [cart, setCart] = useState([]);
   
   let location = useLocation();
+
+/* Yksittäisen tuotteen näyttäminen /AK / Alla vielä toimiva location-state
+  useEffect(() => {
+    if (location.state !==undefined) {
+      if (location.pathname ==="/Tuoteryhma") {  //tuoteryhmän tuotteen näyttäminen
+        setCategory({id: location.state.id,name:location.state.name});
+      } else if(location.pathname==="/Tuote") {  //klikataan yksittäistä tuotetta
+        setProduct({id: location.state.id,name:location.state.name});
+      }
+    }
+  }, [location.state]) */
 
   useEffect(() => {
     if (location.state !==undefined) {
@@ -66,6 +82,17 @@ function App() {
           <Route path="/TietoaMeista" component={TietoaMeista} />
           <Route path="/UKK" component={UKK} />
           <Route path="/Palautukset" component={Palautukset} />
+
+{/* Reititys tuote.js-sivulle / AK / Yksittäisen tuotteen näyttäminen
+          <Route 
+            path = "/Tuote"
+            render={() =>
+              <Tuote
+              url={URL}
+              product={product}
+              addToCart={addToCart}
+            }
+          />        */}
         </Switch>
       </div>
 
