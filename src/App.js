@@ -74,6 +74,7 @@ function App() {
               <Tuoteryhma
                 url={URL}
                 category={category}
+                addToCart={addToCart}
               />
             }
           />

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 //Näyttää tuotteet tuoteryhmittäin
-export default function Tuoteryhma({url, category}) {
+export default function Tuoteryhma({url, category, addToCart}) {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -43,7 +43,7 @@ export default function Tuoteryhma({url, category}) {
                     </div>
                     </Link>
                     {/* Tuotteen lisäys ostoskoriin-painike /AK */}
-                    <button class="btn-secondary" type="button">Lisää <i className="bi bi-cart-fill mx-2"></i></button>  
+                    <button class="btn-secondary" type="button" onClick={e => addToCart(product)}>Lisää <i className="bi bi-cart-fill mx-2"></i></button>  
                 </div>
             ))}
         </div>
