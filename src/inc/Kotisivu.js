@@ -20,9 +20,6 @@ export default function Kotisivu(addToCart) {
             <h5 className="card-title">Kissa</h5>
             <p className="card-text">Esimerkkitekstiä kissapiirrustuksesta.</p>
             <a href="#" className="tuotesivulle">Tuotesivulle</a><br></br>
-
-            {/* <button class="btn-primary" type="button" onClick={e => addToCart(tuote)}>Lisää</button> OSTOSKORI/AK*/}
-            <button class="btn-secondary" type="button">Lisää <i className="bi bi-cart-fill mx-2"></i></button>
         </div>
         </div>
         <div className="card col m-5">
@@ -37,8 +34,6 @@ export default function Kotisivu(addToCart) {
             <h5 className="card-title">Puut</h5>
             <p className="card-text">Maalauksesta esimerkkiasiaa.</p>
             <a href="#" className="tuotesivulle">Tuotesivulle</a><br></br>
-            {/* <button class="btn-primary" type="button" onClick={e => addToCart(tuote)}>Lisää</button> OSTOSKORI/AK*/}
-            <button class="btn-secondary" type="button">Lisää <i className="bi bi-cart-fill mx-2"></i></button>
         </div>
         </div>
         <div className="card col m-5">
@@ -53,12 +48,9 @@ export default function Kotisivu(addToCart) {
             <h5 className="card-title">Elefantti</h5>
             <p className="card-text">Norsu-valokuvasta esimerkiksi asiaa.</p>
             <a href="#" className="tuotesivulle">Tuotesivulle</a><br></br>
-            {/* <button class="btn-primary" type="button" onClick={e => addToCart(tuote)}>Lisää</button> OSTOSKORI/AK */}
-            <button class="btn-secondary" type="button">Lisää <i className="bi bi-cart-fill mx-2"></i></button>
         </div>
         </div>
         </div>
-
         <div className="row maisemajulisteet d-flex justify-content-center">
             <div className="card card2">
                 <div className="card-body top-card-maisemajulisteet">
