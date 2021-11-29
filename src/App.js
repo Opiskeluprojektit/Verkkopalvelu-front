@@ -3,6 +3,7 @@ import { Route, Switch, useLocation } from 'react-router-dom';
 import Navbar from './inc/Navbar';
 import Kotisivu from './inc/Kotisivu';
 import Tuoteryhma from './inc/Tuoteryhma';
+import Tilaus from './inc/Tilaus';
 import Footer from './inc/Footer';
 import Yhteystiedot from './inc/Yhteystiedot';
 import TietoaMeista from './inc/TietoaMeista';
@@ -89,6 +90,11 @@ function App() {
             }
           />        
           <Route path="/" component={Kotisivu} exact/>
+
+          <Route path="/Tilaus" render={() =>
+          <Tilaus />
+          } />
+
           <Route path="/Yhteystiedot" component={Yhteystiedot}/>
           <Route path="/TietoaMeista" component={TietoaMeista} />
           <Route path="/UKK" component={UKK} />
