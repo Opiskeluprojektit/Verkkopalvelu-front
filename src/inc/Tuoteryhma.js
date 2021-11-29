@@ -34,6 +34,7 @@ export default function Tuoteryhma({url, category, addToCart}) {
                           state: {
                             id: product.id,
                             name: product.name,
+                            image: product.image
                           }
                         }}>
                         <p>{product.name}</p>

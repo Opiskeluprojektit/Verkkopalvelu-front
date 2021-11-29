@@ -34,7 +34,7 @@ function App() {
       if (location.pathname ==="/Tuotteet") {  //tuoteryhmän tuotteen näyttäminen
         setCategory({id: location.state.id,name:location.state.name});
       } else if(location.pathname==="/Tuote") {  //klikataan yksittäistä tuotetta
-        setProduct({id: location.state.id,name:location.state.name});
+        setProduct({id: location.state.id,name:location.state.name, image:location.state.image});
       }
     }
   }, [location.state])
