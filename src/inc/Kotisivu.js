@@ -80,7 +80,7 @@ export default function Kotisivu(addToCart) {
             <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
                 <div className="carousel-item active" data-bs-interval="4000">
-                <img src="http://localhost/verkkopalveluback/img/Tarvikkeet_Kynä2.png" class="d-block w-100" alt="..."/>
+                <img src="http://localhost/verkkopalveluback/img/Tarvikkeet_Kyna2.png" class="d-block w-100" alt="..."/>
                 </div>
                 <div className="carousel-item" data-bs-interval="4000">
                 <img src="http://localhost/verkkopalveluback/img/Tarvikkeet_Pensseli3.png" class="d-block w-100" alt="..."/>
