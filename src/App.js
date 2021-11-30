@@ -34,7 +34,7 @@ function App() {
       if (location.pathname ==="/Tuotteet") {  //tuoteryhmän tuotteen näyttäminen
         setCategory({id: location.state.id,name:location.state.name});
       } else if(location.pathname==="/Tuote") {  //klikataan yksittäistä tuotetta
-        setProduct({id: location.state.id,name:location.state.name, image:location.state.image});
+        setProduct({id: location.state.id,name:location.state.name, price:location.state.price, image:location.state.image});
       }
     }
   }, [location.state])
@@ -54,12 +54,24 @@ function App() {
 
 //ostoskori-funktio, jota voidaan kutsua eri sivuilla. Saa kotisivulta tuotteen(lisää productin kohdalle)-AK
   function addToCart(product) {
-    const newCart = [...cart,product];
-    setCart(newCart);
-    localStorage.setItem('cart', JSON.stringify(cart));
+    if (cart.some(item => item.id === product.id))  {
+      const existingProduct = cart.filter(item => item.id === product.id);
+      updateAmount(parseInt(existingProduct[0].amount) + 1,product);
+    } else {
+      product["amount"] = 1;
+      const newCart = [...cart,product];
+      setCart(newCart);
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
   }
 
-  
+  function updateAmount(amount,product) {
+    product.amount = amount;
+    const index = cart.findIndex((item => item.id === product.id))
+    const modifiedCart = Object.assign([...cart],{[index]:product});
+    setCart(modifiedCart);
+    localStorage.setItem('cart',JSON.stringify(modifiedCart));
+  }
   
   
   
@@ -92,7 +104,10 @@ function App() {
           <Route path="/" component={Kotisivu} exact/>
 
           <Route path="/Tilaus" render={() =>
-          <Tilaus />
+            <Tilaus 
+              cart={cart}
+              updateAmount={updateAmount}
+              />
           } />
 
           <Route path="/Yhteystiedot" component={Yhteystiedot}/>

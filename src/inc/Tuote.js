@@ -5,7 +5,8 @@ export default function Tuote({ url,product,addToCart }) {
   return (
     <div>
       {/* yksittäisen tuotteen näyttäminen / AK */}
-      <p>{product?.name}</p>
+      <h5>{product?.name}</h5>
+      <p>{product?.price}</p>
       <div>
         <img src={url + "IMG/" + product?.image} alt="" />
       </div>
