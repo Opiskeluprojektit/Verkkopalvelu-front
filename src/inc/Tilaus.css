@@ -1,0 +1,9 @@
+.otsikot {
+    font-weight: bolder;
+    padding-bottom: 2em;
+}
+
+.tuotenimi,
+.tuotehinta {
+    padding-right: 3em;
+}
