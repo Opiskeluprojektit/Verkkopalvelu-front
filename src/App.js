@@ -73,6 +73,13 @@ function App() {
     setCart(modifiedCart);
     localStorage.setItem('cart',JSON.stringify(modifiedCart));
   }
+
+  function emptyCart() {
+    setCart([]);
+    localStorage.removeItem('cart');
+  }
+  
+  
  
   /* Ostokorista poistaminen 
     function removeFromCart(product) {
@@ -114,6 +121,8 @@ function App() {
             <Tilaus 
               cart={cart}
               updateAmount={updateAmount}
+              empty={emptyCart}
+              url={URL}
               />
           } />
 

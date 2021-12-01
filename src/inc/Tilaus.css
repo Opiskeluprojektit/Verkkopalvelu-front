@@ -7,3 +7,16 @@
 .tuotehinta {
     padding-right: 3em;
 }
+
+.tilaustiedot {
+    margin-top: 3em;
+}
+
+.tilaustiedot p {
+    margin-bottom: 0;
+}
+
+.tilaustiedot input {
+    margin-bottom: 1em;
+    width: 15em;
+}
