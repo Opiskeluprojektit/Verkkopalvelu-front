@@ -9,6 +9,7 @@ import Yhteystiedot from './inc/Yhteystiedot';
 import TietoaMeista from './inc/TietoaMeista';
 import UKK from './inc/UKK';
 import Palautukset from './inc/Palautukset';
+import Etusivu from './inc/Etusivu';
 import Tuote from './inc/Tuote';  //Yksittäisen tuotteen näyttäminen / AK
 import React, {useState,useEffect} from 'react';
 
@@ -113,6 +114,13 @@ function App() {
             <Tilaus 
               cart={cart}
               updateAmount={updateAmount}
+              />
+          } />
+
+          <Route path="/Etusivu" render={() =>
+            <Etusivu
+            url={URL}
+            category={category}
               />
           } />
           
