@@ -35,7 +35,19 @@ export default function Tilaus({cart,updateAmount}) {
                     </tr>
                 );
             })}
+           
             </table>
         </div>
+           /* Lisää poista-linkki jokaiselle tuoteriville, jossa kutsutaan tuotteen poisto funktiota
+              {cart.map((product, index) => {
+                sum+=parseFloat(product.price); 
+               return (
+                    <tr key={uuid()}>
+                    <td>{product.name}</td>
+                    <td>{product.price} €</td>
+                    <td><a href="#" onClick={() => removeFromCart(product)}>Poista</a></td>
+             </tr> 
+                ) 
+            })} */
     )
 }
