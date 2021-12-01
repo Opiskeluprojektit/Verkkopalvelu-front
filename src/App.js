@@ -79,6 +79,14 @@ function App() {
   }
   
   
+ 
+  /* Ostokorista poistaminen 
+    function removeFromCart(product) {
+      const itemsWithoutRemoved = cart.filter(item => item.id !== product.id);
+      setCart(itemsWithoutRemoved);
+      localStorage.setItem('cart',JSON.stringify(itemsWithoutRemoved));
+    }
+  */
   
   return (
 <div>
@@ -116,7 +124,8 @@ function App() {
               url={URL}
               />
           } />
-
+          
+          
           <Route path="/Yhteystiedot" component={Yhteystiedot}/>
           <Route path="/TietoaMeista" component={TietoaMeista} />
           <Route path="/UKK" component={UKK} />
@@ -126,6 +135,14 @@ function App() {
 
     <Footer />
 </div>
+   /* välitetään tilauskomponentiin ostoskorista poisto
+          <Route path="/Tilaus" render={() =>
+          <Tilaus
+            url={URL}
+            cart={cart}
+            empty={emptyCart}
+            removeFromCart={removeFromCart}
+          } /> */
   );
 }
 
