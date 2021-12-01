@@ -34,7 +34,8 @@ export default function Tuoteryhma({url, category, addToCart}) {
                           state: {
                             id: product.id,
                             name: product.name,
-                            image: product.image
+                            image: product.image,
+                            price: product.price
                           }
                         }}>
                         <p>{product.name}</p>
@@ -43,6 +44,7 @@ export default function Tuoteryhma({url, category, addToCart}) {
                         <img src={url + 'IMG/' + product.image} alt="" />
                     </div>
                     </Link>
+                    <p>{product?.price} €</p>
                     {/* Tuotteen lisäys ostoskoriin-painike /AK */}
                     <button class="btn-secondary" type="button" onClick={e => addToCart(product)}>Lisää <i className="bi bi-cart-fill mx-2"></i></button>  
                 </div>
