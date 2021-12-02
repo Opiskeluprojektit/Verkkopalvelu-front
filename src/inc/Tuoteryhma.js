@@ -48,7 +48,7 @@ export default function Tuoteryhma({url, category, addToCart}) {
                             </Link>
                             <p>{product?.price} €</p>
                             {/* Tuotteen lisäys ostoskoriin-painike /AK */}
-                            <button class="btn-secondary" type="button" onClick={e => addToCart(product)}>Lisää <i className="bi bi-cart-fill mx-2"></i></button>  
+                            <button class="btn-light" type="button" onClick={e => addToCart(product)}>Lisää <i className="bi bi-cart-fill mx-2"></i></button>  
                         </div>
                     ))}
             </div>    

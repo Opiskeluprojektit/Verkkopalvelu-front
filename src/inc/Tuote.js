@@ -11,7 +11,7 @@ export default function Tuote({ url,product,addToCart }) {
       </div>
       {/* Tuotteen lisäys ostoskoriin-painike /AK */}
       <p>{product?.price} €</p>
-      <button class="btn-secondary" type="button" onClick={e => addToCart(product)}>
+      <button class="btn-light" type="button" onClick={e => addToCart(product)}>
         Lisää <i className="bi bi-cart-fill mx-2"></i>
       </button>
     </div>
