@@ -81,13 +81,13 @@ function App() {
   
   
  
-  /* Ostokorista poistaminen 
+  /* Ostokorista poistaminen */
     function removeFromCart(product) {
       const itemsWithoutRemoved = cart.filter(item => item.id !== product.id);
       setCart(itemsWithoutRemoved);
       localStorage.setItem('cart',JSON.stringify(itemsWithoutRemoved));
     }
-  */
+  
   
   return (
 <div>
@@ -122,6 +122,7 @@ function App() {
               cart={cart}
               updateAmount={updateAmount}
               empty={emptyCart}
+              removeFromCart={removeFromCart}
               url={URL}
               />
           } />
@@ -143,14 +144,7 @@ function App() {
 
     <Footer />
 </div>
-   /* välitetään tilauskomponentiin ostoskorista poisto
-          <Route path="/Tilaus" render={() =>
-          <Tilaus
-            url={URL}
-            cart={cart}
-            empty={emptyCart}
-            removeFromCart={removeFromCart}
-          } /> */
+
   );
 }
 

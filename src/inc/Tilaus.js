@@ -3,12 +3,12 @@ import uuid from 'react-uuid';
 import './Tilaus.css';
 
 export default function Tilaus({cart,updateAmount,empty,url}) {
-    const {firstname, setFirstname} = useState('');
-    const {lastname, setLastname} = useState('');
-    const {address, setAddress} = useState('');
-    const {zip, setZip} = useState('');
-    const {city, setCity} = useState('');
-    const {finished, setFinished} = useState(false);
+    const [firstname, setFirstname] = useState('');
+    const [lastname, setLastname] = useState('');
+    const [address, setAddress] = useState('');
+    const [zip, setZip] = useState('');
+    const [city, setCity] = useState('');
+    const [finished, setFinished] = useState(false);
 
     function changeAmount(e,product) {
         updateAmount(e.target.value,product);
@@ -36,6 +36,7 @@ export default function Tilaus({cart,updateAmount,empty,url}) {
         })
         .then (
             (res) => {
+                empty();
                 setFinished(true);
             }, (error) => {
                 alert(error)
@@ -82,7 +83,7 @@ export default function Tilaus({cart,updateAmount,empty,url}) {
                 {cart.length > 0 && 
                 <>
 
-                <h3 className="tilaustiedot">Tilaustiedot</h3>
+                <h3 className="Tilaustiedot">Tilaustiedot</h3>
                 <form onSubmit={order}>
                     <div className="form-group">
                         <label>Etunimi:</label>
