@@ -6,6 +6,7 @@ import Tuoteryhma from './inc/Tuoteryhma';
 import Tilaus from './inc/Tilaus';
 import Footer from './inc/Footer';
 import Yhteystiedot from './inc/Yhteystiedot';
+import Admin from './inc/Admin';
 import TietoaMeista from './inc/TietoaMeista';
 import UKK from './inc/UKK';
 import Palautukset from './inc/Palautukset';
@@ -134,7 +135,7 @@ function App() {
               />
           } />
           
-          
+          <Route path="/Yllapito" component={Admin}/>
           <Route path="/Yhteystiedot" component={Yhteystiedot}/>
           <Route path="/TietoaMeista" component={TietoaMeista} />
           <Route path="/UKK" component={UKK} />
