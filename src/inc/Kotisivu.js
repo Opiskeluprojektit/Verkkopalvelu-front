@@ -8,7 +8,48 @@ export default function Kotisivu(addToCart) {
         <div>
         <div className="container">
         <div className="row">
-        <div className="card col m-5">
+
+        <div className="d-flex justify-content-center col-3">
+            <Link to="#">
+            <div className="card card2">
+                <div className="card-body top-card">
+                <h5>Suositut</h5>
+                </div>
+            </div>
+            <div>
+                <img src="http://localhost/verkkopalveluback/img/Piirustus16.png" className="card-img-top" alt="..."/>
+            </div> 
+            </Link>
+        </div>
+        <div className="d-flex justify-content-center col-4">
+            <Link to="/Tuotteet">
+            <div className="card card2">
+                <div className="card-body top-card">
+                <h5>Illustrointi</h5>
+                </div>
+            </div>
+            <div>
+                <img src="http://localhost/verkkopalveluback/img/Illustrointi24.png" className="card-img-top" alt="..."/>
+            </div> 
+            </Link>
+        </div>
+        <div className="d-flex justify-content-center col-4">
+            <Link to="/Tuotteet">
+            <div className="card card2">
+                <div className="card-body top-card">
+                <h5>Valokuvat</h5>
+                </div>
+            </div>
+            <div>
+                <img src="http://localhost/verkkopalveluback/img/Valokuva29.png" className="card-img-top" alt="..."/>
+            </div> 
+            </Link>
+        </div>
+        
+        
+
+
+        {/* <div className="card col m-5">
         <div className="card">
             <div className="card-body top-card">
             <h5>Suositut</h5>
@@ -49,7 +90,7 @@ export default function Kotisivu(addToCart) {
             <p className="card-text">Norsu-valokuvasta esimerkiksi asiaa.</p>
             <a href="#" className="tuotesivulle">Tuotesivulle</a><br></br>
         </div>
-        </div>
+        </div>*/}
         </div>
         <div className="row maisemajulisteet d-flex justify-content-center">
             <div className="card card2">
@@ -60,7 +101,7 @@ export default function Kotisivu(addToCart) {
             </div>
             <div>
                 <img src="http://localhost/verkkopalveluback/img/Valokuva13.jpg" className="card-img-top" alt="..."/>
-            </div>
+            </div> 
         </div>
 
         <div className="row inspiroidu">
