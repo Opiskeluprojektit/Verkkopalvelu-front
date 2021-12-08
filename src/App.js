@@ -135,7 +135,13 @@ function App() {
               />
           } />
           
-          <Route path="/Yllapito" component={Admin}/>
+          <Route path="/Yllapito" render={() =>
+          <Admin
+            url={URL}
+            />
+          
+          }
+          />
           <Route path="/Yhteystiedot" component={Yhteystiedot}/>
           <Route path="/TietoaMeista" component={TietoaMeista} />
           <Route path="/UKK" component={UKK} />
