@@ -41,12 +41,6 @@ function App() {
     }
   }, [location.state])
 
-/*   useEffect(() => {
-    if (location.state !==undefined) {
-      setCategory({id: location.state.id,name:location.state.name});
-    }
-  }, [location.state]) */
-
   // Localstoragen ostoskorin tilamäärän nollaantumisen esto sivua päivitettäessä -AK
   useEffect(() => {
     if ('cart' in localStorage) {
