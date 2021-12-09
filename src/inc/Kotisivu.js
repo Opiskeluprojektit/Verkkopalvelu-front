@@ -88,6 +88,12 @@ export default function Kotisivu(addToCart) {
             <h5>TARVIKKEET</h5>
             <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
+            <Link to={{
+                pathname: "/Tuotteet",
+                state: {
+                    id: "5",
+                    name: "Tarvikkeet"
+                }}}>
                 <div className="carousel-item active" data-bs-interval="4000">
                 <img src="http://localhost/verkkopalveluback/img/Tarvikkeet_Kyna2.png" class="d-block w-100" alt="..."/>
                 </div>
@@ -100,6 +106,7 @@ export default function Kotisivu(addToCart) {
                 <div className="carousel-item" data-bs-interval="4000">
                 <img src="http://localhost/verkkopalveluback/img/Tarvikkeet3.jpg" class="d-block w-100" alt="..."/>
                 </div>
+                </Link>
             </div> 
         </div>
         </div>
