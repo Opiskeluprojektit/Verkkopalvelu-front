@@ -18,8 +18,7 @@ export default function Admin({url}) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                newcategory: newcategory,
-
+                newcategory: newcategory
             })
         })
         .then (res => {
@@ -46,6 +45,8 @@ export default function Admin({url}) {
             return res.json();
         })
     }
+
+
     return (
         <div>
             <h3 className="Tilaustiedot">Kategorian lisäys</h3>

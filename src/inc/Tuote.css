@@ -1,0 +1,16 @@
+#tuote img {
+    width: 1000px;
+    height: auto;
+}
+
+#tuote {
+    padding-top: 20px;
+}
+
+#tuote button {
+    margin-left: 320px;
+}
+
+#tuote p {
+    color: black;
+}

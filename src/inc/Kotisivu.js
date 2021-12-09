@@ -1,14 +1,16 @@
 import React from 'react';
 import './Kotisivu.css';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
 
 //Kotisivu
 export default function Kotisivu(addToCart) {
+
+
     return (
         <div>
         <div className="container">
         <div className="row">
-
         <div className="d-flex justify-content-center col-lg-3 col-m-7">
             <Link to="#">
             <div className="card card2">
@@ -22,7 +24,12 @@ export default function Kotisivu(addToCart) {
             </Link>
         </div>
         <div className="d-flex justify-content-center col-lg-4 col-m-7">
-            <Link to="/Tuotteet">
+            <Link to={{
+                pathname: "/Tuotteet",
+                state: {
+                    id: "4",
+                    name: "Illustrointi"
+                }}}>
             <div className="card card2">
                 <div className="card-body top-card">
                 <h5>Illustrointi</h5>
@@ -34,7 +41,12 @@ export default function Kotisivu(addToCart) {
             </Link>
         </div>
         <div className="d-flex justify-content-center col-lg-4 col-m-7">
-            <Link to="/Tuotteet">
+            <Link to={{
+                pathname: "/Tuotteet",
+                state: {
+                    id: "3",
+                    name: "Valokuvat"
+                }}}>
             <div className="card card2">
                 <div className="card-body top-card">
                 <h5>Valokuvat</h5>
@@ -46,51 +58,7 @@ export default function Kotisivu(addToCart) {
             </Link>
         </div>
         
-        
 
-
-        {/* <div className="card col m-5">
-        <div className="card">
-            <div className="card-body top-card">
-            <h5>Suositut</h5>
-            <a>Tutustu</a>
-            </div>
-        </div>
-        <img src="http://localhost/verkkopalveluback/img/Piirustus16.png" className="card-img-top" alt="..."/>
-        <div className="card-body">
-            <h5 className="card-title">Kissa</h5>
-            <p className="card-text">Esimerkkitekstiä kissapiirrustuksesta.</p>
-            <a href="#" className="tuotesivulle">Tuotesivulle</a><br></br>
-        </div>
-        </div>
-        <div className="card col m-5">
-        <div className="card">
-            <div class="card-body top-card">
-            <h5>Maalaukset</h5>
-            <a>Tutustu</a>
-            </div>
-        </div>
-        <img src="http://localhost/verkkopalveluback/img/Illustrointi24.png" className="card-img-top" alt="..."/>
-        <div className="card-body">
-            <h5 className="card-title">Puut</h5>
-            <p className="card-text">Maalauksesta esimerkkiasiaa.</p>
-            <a href="#" className="tuotesivulle">Tuotesivulle</a><br></br>
-        </div>
-        </div>
-        <div className="card col m-5">
-        <div className="card">
-            <div className="card-body top-card">
-            <h5>Valokuvat</h5>
-            <a>Tutustu</a>
-            </div>
-        </div>
-        <img src="http://localhost/verkkopalveluback/img/Valokuva29.png" className="card-img-top" alt="..."/>
-        <div className="card-body">
-            <h5 className="card-title">Elefantti</h5>
-            <p className="card-text">Norsu-valokuvasta esimerkiksi asiaa.</p>
-            <a href="#" className="tuotesivulle">Tuotesivulle</a><br></br>
-        </div>
-        </div>*/}
         </div>
         <div className="row maisemajulisteet d-flex justify-content-center">
             <div className="card card2">
@@ -120,6 +88,12 @@ export default function Kotisivu(addToCart) {
             <h5>TARVIKKEET</h5>
             <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
+            <Link to={{
+                pathname: "/Tuotteet",
+                state: {
+                    id: "5",
+                    name: "Tarvikkeet"
+                }}}>
                 <div className="carousel-item active" data-bs-interval="4000">
                 <img src="http://localhost/verkkopalveluback/img/Tarvikkeet_Kyna2.png" class="d-block w-100" alt="..."/>
                 </div>
@@ -132,6 +106,7 @@ export default function Kotisivu(addToCart) {
                 <div className="carousel-item" data-bs-interval="4000">
                 <img src="http://localhost/verkkopalveluback/img/Tarvikkeet3.jpg" class="d-block w-100" alt="..."/>
                 </div>
+                </Link>
             </div> 
         </div>
         </div>
