@@ -21,16 +21,6 @@ export default function Admin({url}) {
         .then (res => {
             return res.json();
         })
-<<<<<<< HEAD
-/*         .then (
-            (res) => {
-                //  empty();  
-                setFinished(true);
-            }, (error) => {
-                alert(error)
-            }
-        ) */
-=======
         // .then (
         //     (res) => {
         //         // empty();  
@@ -39,7 +29,6 @@ export default function Admin({url}) {
         //         alert(error)
         //     }
         // )
->>>>>>> 6e40f768067d0cb1947308ed72672643d0569db4
     }
     return (
         <div>
