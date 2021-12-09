@@ -19,29 +19,6 @@
     color: black;
 }
 
-@media screen and (max-width: 1400px) {
-  .top-card {
-    top: 2em;
-    left: 5em;
-  }
-  
-}
-
-.tuotesivulle {
-    text-decoration: none;
-    color: #000000;
-}
-  
-.tuotesivulle:hover {
-    font-weight: bolder;
-    color: #000000;
-}
-  
-.bi-cart-fill,
-  .bi-cart-plus-fill {
-    font-size: 20px;
-}
-
 .top-card-maisemajulisteet {
   position: relative;
   top: 350%;
@@ -64,10 +41,17 @@
   margin-top: 3em;
 }
 
+@media screen and (max-width: 1400px) {
+  .top-card {
+    top: 2em;
+    left: 5em;
+  }
+  
+}
+
 @media screen and (max-width: 1000px) {
   .top-card-maisemajulisteet,
   .top-card {
       display: none;
-  }
-  
+  } 
 }
