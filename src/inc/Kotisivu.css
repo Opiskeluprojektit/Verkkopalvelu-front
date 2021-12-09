@@ -8,8 +8,8 @@
   
 .top-card {
     position: absolute;
-    top: 25px;
-    left: 5em;
+    top: 2em;
+    left: 7em;
     background-color: white;
     border-style: solid;
     border-width: 0.5px;
@@ -19,6 +19,13 @@
     color: black;
 }
 
+@media screen and (max-width: 1400px) {
+  .top-card {
+    top: 2em;
+    left: 5em;
+  }
+  
+}
 
 .tuotesivulle {
     text-decoration: none;
