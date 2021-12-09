@@ -95,7 +95,7 @@ export default function Tilaus({cart,updateAmount,empty,url, removeFromCart}) {
                                         <input 
                                         ref={inputs[index]} 
                                         type="number" 
-                                        step="1" min="0"
+                                        step="1" 
                                         onChange={e => changeAmount(e,product, index)}
                                         value={product.amount}/>
                                     </td>  
