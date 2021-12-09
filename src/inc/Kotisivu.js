@@ -21,7 +21,12 @@ export default function Kotisivu(addToCart) {
             </Link>
         </div>
         <div className="d-flex justify-content-center col-lg-4 col-m-7">
-            <Link to="/Tuotteet">
+            <Link to={{
+                pathname: "/Tuotteet",
+                state: {
+                    id: "4",
+                    name: "Illustrointi"
+                }}}>
             <div className="card card2">
                 <div className="card-body top-card">
                 <h5>Illustrointi</h5>
@@ -33,7 +38,12 @@ export default function Kotisivu(addToCart) {
             </Link>
         </div>
         <div className="d-flex justify-content-center col-lg-4 col-m-7">
-            <Link to="/Tuotteet">
+            <Link to={{
+                pathname: "/Tuotteet",
+                state: {
+                    id: "3",
+                    name: "Valokuvat"
+                }}}>
             <div className="card card2">
                 <div className="card-body top-card">
                 <h5>Valokuvat</h5>
