@@ -21,14 +21,14 @@ export default function Admin(url) {
         .then (res => {
             return res.json();
         })
-        .then (
+/*         .then (
             (res) => {
-                // empty();  
+                //  empty();  
                 setFinished(true);
             }, (error) => {
                 alert(error)
             }
-        )
+        ) */
     }
     return (
         <div>
