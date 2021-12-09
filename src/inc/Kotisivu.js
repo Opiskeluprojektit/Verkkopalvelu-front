@@ -8,7 +8,6 @@ export default function Kotisivu(addToCart) {
         <div>
         <div className="container">
         <div className="row">
-
         <div className="d-flex justify-content-center col-lg-3 col-m-7">
             <Link to="#">
             <div className="card card2">

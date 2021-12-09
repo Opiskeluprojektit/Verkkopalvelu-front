@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react';
+import React,{useState} from 'react';
 
 export default function Admin(url) {
     const [newcategory, setNewcategory] = useState('');
@@ -14,8 +14,7 @@ export default function Admin(url) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                newcategory: newcategory,
-
+                newcategory: newcategory
             })
         })
         .then (res => {
@@ -30,6 +29,8 @@ export default function Admin(url) {
             }
         )
     }
+
+
     return (
         <div>
             <h3 className="Tilaustiedot">Kategorian lisäys</h3>

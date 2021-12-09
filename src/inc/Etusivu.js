@@ -19,23 +19,27 @@ export default function Etusivu({url, setCategory}) {
     },[])
 
     return (
-        <div className="container">
-        <div className="row">
-            {categories.map(category =>( 
-        <div className="card col m-5" key={category.id}>
-            <Link className="card-body top-card"
+      <div className="container">
+        <div className="row m-5">
+            <div className="d-flex justify-content-center col-4">
+          {categories.map((category) => (
+            <div className="card col-4 m-5" key={category.id}>
+              <Link
+                className="card-body top-card"
                 to={{
-                    pathname: "/Tuotteet",
-                    state: {
-                        id: category.id,
-                        name: category.name,
-                    }
-                }}>
-            <h5>{category.name}</h5>
-        </Link>
+                  pathname: "/Tuotteet",
+                  state: {
+                    id: category.id,
+                    name: category.name,
+                  },
+                }}
+              >
+                <h5>{category.name}</h5>
+              </Link>
+            </div>
+          ))}
+          </div>
         </div>
-        ))}
-        </div>
-        </div>
-    )
+      </div>
+    );
 }
