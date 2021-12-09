@@ -53,6 +53,8 @@ function App() {
     }
   }, [])
 
+  
+
 //ostoskori-funktio, jota voidaan kutsua eri sivuilla. Saa kotisivulta tuotteen(lisää productin kohdalle)-AK
   function addToCart(product) {
     if (cart.some(item => item.id === product.id))  {
@@ -62,7 +64,7 @@ function App() {
       product["amount"] = 1;
       const newCart = [...cart,product];
       setCart(newCart);
-      localStorage.setItem('cart', JSON.stringify(cart));
+      localStorage.setItem('cart', JSON.stringify(newCart));
     }
   }
 
