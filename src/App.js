@@ -10,8 +10,8 @@ import Admin from './inc/Admin';
 import TietoaMeista from './inc/TietoaMeista';
 import UKK from './inc/UKK';
 import Palautukset from './inc/Palautukset';
-import Etusivu from './inc/Etusivu';
 import Tuote from './inc/Tuote';  //Yksittäisen tuotteen näyttäminen / AK
+import Popular from './inc/Popular'
 import React, {useState,useEffect} from 'react';
 
 const URL = 'http://localhost/verkkopalveluback/';
@@ -123,12 +123,7 @@ function App() {
               />
           } />
 
-          <Route path="/Etusivu" render={() =>
-            <Etusivu
-            url={URL}
-            category={category}
-              />
-          } />
+      
           
           <Route path="/Yllapito" render={() =>
           <Admin
@@ -137,6 +132,16 @@ function App() {
           
           }
           />
+
+          <Route path="/Suositut" render={() =>
+          <Popular
+            url={URL}
+            addToCart={addToCart}
+            />
+          
+          }
+          />
+
           <Route path="/Yhteystiedot" component={Yhteystiedot}/>
           <Route path="/TietoaMeista" component={TietoaMeista} />
           <Route path="/UKK" component={UKK} />
