@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react';
+import React,{useEffect, useState, createRef} from 'react';
 import uuid from 'react-uuid';
 import './Tilaus.css';
 
@@ -95,7 +95,7 @@ export default function Tilaus({cart,updateAmount,empty,url, removeFromCart}) {
                                         <input 
                                         ref={inputs[index]} 
                                         type="number" 
-                                        step="1" min="1"
+                                        step="1" min="0"
                                         onChange={e => changeAmount(e,product, index)}
                                         value={product.amount}/>
                                     </td>  
