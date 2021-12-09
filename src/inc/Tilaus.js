@@ -138,7 +138,7 @@ export default function Tilaus({cart,updateAmount,empty,url, removeFromCart}) {
                         <input className="form-control" onChange={e => setCity(e.target.value)}/>
                     </div>
                     <div className="buttons">
-                        <button className="btn btn-primary">Tilaa</button>
+                        <button className="btn btn-primary mt-2">Tilaa</button>
                     </div>
                 </form>
                 </>

@@ -12,7 +12,7 @@ export default function Kotisivu(addToCart) {
         <div className="container">
         <div className="row">
         <div className="d-flex justify-content-center col-lg-3 col-m-7">
-            <Link to="Suositut">
+            <Link to="/Suositut">
             <div className="card card2">
                 <div className="card-body top-card">
                 <h5>Suositut</h5>
@@ -61,6 +61,7 @@ export default function Kotisivu(addToCart) {
 
         </div>
         <div className="row maisemajulisteet d-flex justify-content-center">
+            <Link to="/Maisemajulisteet">
             <div className="card card2">
                 <div className="card-body top-card-maisemajulisteet">
                 <h5>Maisemajulisteet</h5>
@@ -69,7 +70,8 @@ export default function Kotisivu(addToCart) {
             </div>
             <div>
                 <img src="http://localhost/verkkopalveluback/img/Valokuva13.jpg" className="card-img-top" alt="..."/>
-            </div> 
+            </div>
+            </Link>
         </div>
 
         <div className="row inspiroidu">

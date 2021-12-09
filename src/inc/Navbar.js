@@ -54,6 +54,9 @@ export default function Navbar({cart, setCategory, url}) {
                         </Link>
                       </li>
                     ))}
+                    <li>
+                    <Link className="dropdown-item" to="/Suositut">Suositut</Link>
+                    </li>
                   </ul>
                 </li>
             </ul>

@@ -3,14 +3,14 @@ import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 
 export default function Popular({url, addToCart}) {
-    const [populars, setPopulars] = useState([]);
+    const [products, setProducts] = useState([]);
 
 
     useEffect(() => {
-        axios.get(url + 'tuote/getpopular.php')
+        axios.get(url + 'tuote/getmaisema.php')
           .then((response) => {
             const json = response.data;
-            setPopulars(json);
+            setProducts(json);
           }).catch (error => {
             if (error.response === undefined) {
               alert(error);
@@ -24,8 +24,8 @@ export default function Popular({url, addToCart}) {
         <div>
              <div id="tuoteryhma" className="container">
             <div className="row">
-                    <h3>Suositut</h3>
-                    {populars.map(product => (
+                    <h3>Maisemajulisteet</h3>
+                    {products.map(product => (
                         <div key={product.id} className="col-12 col-lg-4 col-xl-3 col">
                                 <Link
                                 to={{

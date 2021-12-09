@@ -12,6 +12,7 @@ import UKK from './inc/UKK';
 import Palautukset from './inc/Palautukset';
 import Tuote from './inc/Tuote';  //Yksittäisen tuotteen näyttäminen / AK
 import Popular from './inc/Popular'
+import Maisema from './inc/Maisema'
 import React, {useState,useEffect} from 'react';
 
 const URL = 'http://localhost/verkkopalveluback/';
@@ -129,7 +130,6 @@ function App() {
           <Admin
             url={URL}
             />
-          
           }
           />
 
@@ -138,7 +138,14 @@ function App() {
             url={URL}
             addToCart={addToCart}
             />
-          
+          }
+          />
+
+          <Route path="/Maisemajulisteet" render={() =>
+          <Maisema
+            url={URL}
+            addToCart={addToCart}
+            />
           }
           />
 

@@ -29,7 +29,7 @@ export default function Tuoteryhma({url, category, addToCart}) {
             <div className="row">
                     <h3>{category?.name}</h3>
                     {products.map(product => (
-                        <div key={product.id} className="col-3">
+                        <div key={product.id} className="col-12 col-lg-4 col-xl-3 col">
                                 <Link
                                 to={{
                                 pathname: '/Tuote',
