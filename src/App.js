@@ -48,6 +48,7 @@ function App() {
     }
   }, [])
 
+
 //ostoskori-funktio, jota voidaan kutsua eri sivuilla. Saa kotisivulta tuotteen(lisää productin kohdalle)-AK
   function addToCart(product) {
     if (cart.some(item => item.id === product.id))  {
@@ -57,14 +58,14 @@ function App() {
       product["amount"] = 1;
       const newCart = [...cart,product];
       setCart(newCart);
-      localStorage.setItem('cart', JSON.stringify(cart));
+      localStorage.setItem('cart', JSON.stringify(newCart));
     }
   }
 
   function updateAmount(amount,product) {
     product.amount = amount;
     const index = cart.findIndex((item => item.id === product.id))
-    const modifiedCart = Object.assign([...cart],{[index]:product});
+    const modifiedCart = Object.assign([...cart],{[index]: product});
     setCart(modifiedCart);
     localStorage.setItem('cart',JSON.stringify(modifiedCart));
   }
@@ -129,7 +130,13 @@ function App() {
               />
           } />
           
-          <Route path="/Yllapito" component={Admin}/>
+          <Route path="/Yllapito" render={() =>
+          <Admin
+            url={URL}
+            />
+          
+          }
+          />
           <Route path="/Yhteystiedot" component={Yhteystiedot}/>
           <Route path="/TietoaMeista" component={TietoaMeista} />
           <Route path="/UKK" component={UKK} />

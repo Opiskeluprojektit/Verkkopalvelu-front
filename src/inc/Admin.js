@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 
-export default function Admin(url) {
+export default function Admin({url}) {
     const [newcategory, setNewcategory] = useState('');
     const [finished, setFinished] = useState(false);
 
@@ -20,14 +20,14 @@ export default function Admin(url) {
         .then (res => {
             return res.json();
         })
-        .then (
-            (res) => {
-                // empty();  
-                setFinished(true);
-            }, (error) => {
-                alert(error)
-            }
-        )
+        // .then (
+        //     (res) => {
+        //         // empty();  
+        //         setFinished(true);
+        //     }, (error) => {
+        //         alert(error)
+        //     }
+        // )
     }
 
 
