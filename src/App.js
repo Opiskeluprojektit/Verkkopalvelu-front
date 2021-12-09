@@ -48,7 +48,6 @@ function App() {
     }
   }, [])
 
-  
 
 //ostoskori-funktio, jota voidaan kutsua eri sivuilla. Saa kotisivulta tuotteen(lisää productin kohdalle)-AK
   function addToCart(product) {
@@ -66,7 +65,7 @@ function App() {
   function updateAmount(amount,product) {
     product.amount = amount;
     const index = cart.findIndex((item => item.id === product.id))
-    const modifiedCart = Object.assign([...cart],{[index]:product});
+    const modifiedCart = Object.assign([...cart],{[index]: product});
     setCart(modifiedCart);
     localStorage.setItem('cart',JSON.stringify(modifiedCart));
   }
