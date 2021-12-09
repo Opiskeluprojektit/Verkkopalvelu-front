@@ -6,6 +6,7 @@ import Tuoteryhma from './inc/Tuoteryhma';
 import Tilaus from './inc/Tilaus';
 import Footer from './inc/Footer';
 import Yhteystiedot from './inc/Yhteystiedot';
+import Admin from './inc/Admin';
 import TietoaMeista from './inc/TietoaMeista';
 import UKK from './inc/UKK';
 import Palautukset from './inc/Palautukset';
@@ -39,12 +40,6 @@ function App() {
       }
     }
   }, [location.state])
-
-/*   useEffect(() => {
-    if (location.state !==undefined) {
-      setCategory({id: location.state.id,name:location.state.name});
-    }
-  }, [location.state]) */
 
   // Localstoragen ostoskorin tilamäärän nollaantumisen esto sivua päivitettäessä -AK
   useEffect(() => {
@@ -136,7 +131,13 @@ function App() {
               />
           } />
           
+          <Route path="/Yllapito" render={() =>
+          <Admin
+            url={URL}
+            />
           
+          }
+          />
           <Route path="/Yhteystiedot" component={Yhteystiedot}/>
           <Route path="/TietoaMeista" component={TietoaMeista} />
           <Route path="/UKK" component={UKK} />

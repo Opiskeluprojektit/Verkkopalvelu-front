@@ -1,7 +1,7 @@
 /*Footerin css alkaa tästä:*/
 
 footer {
-    margin-top: 2.5em;
+    margin-top: 1.5em;
 }
 
 .footer_area {
@@ -9,7 +9,7 @@ footer {
     z-index: 1;
     overflow: hidden;
     box-shadow: 0 8px 40px 8px rgba(47, 91, 234, 0.175);
-    padding:60px;
+    padding:30px;
   }
   .footer_area .row {
     margin-left: -25px;

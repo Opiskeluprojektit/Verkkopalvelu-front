@@ -1,6 +1,7 @@
 .otsikot {
     font-weight: bolder;
     padding-bottom: 2em;
+    padding-right: 2em;
 }
 
 .tuotenimi,
@@ -9,7 +10,7 @@
 }
 
 .tilaustiedot {
-    margin-top: 3em;
+    margin-top: 5em;
 }
 
 .tilaustiedot p {
@@ -20,3 +21,4 @@
     margin-bottom: 1em;
     width: 15em;
 }
+

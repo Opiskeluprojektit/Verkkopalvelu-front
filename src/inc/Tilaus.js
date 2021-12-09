@@ -2,6 +2,7 @@ import React,{useEffect, useState} from 'react';
 import uuid from 'react-uuid';
 import './Tilaus.css';
 
+//Tilausnäkymä
 export default function Tilaus({cart,updateAmount,empty,url, removeFromCart}) {
     const [firstname, setFirstname] = useState('');
     const [lastname, setLastname] = useState('');
@@ -118,6 +119,13 @@ export default function Tilaus({cart,updateAmount,empty,url, removeFromCart}) {
         )
     }
     else {
-        return (<h3 style={{'padding-top': '100px'}}>Kiitos, kun tilasit!</h3>);
+        return (
+            <div>
+                <h3 style={{'padding-top': '100px'}}>Kiitos tilauksestasi!</h3>
+                <p className="col-6">Toivomme, että olet tyytyväinen tilaukseesi. Mikäli sinulla on jotain kysyttävää, otathan yhteyttä asiakaspalveluumme. Puhelinnumero: 012-3456789.</p>
+                <p className="col-6">Mikäli haluat palauttaa tuotteen taikka useampia tuotteita tilauksesta, tutustuthan palautuskäytänteisiin.
+                    Tuotteillamme on 14 päivän palautusoikeus.</p>
+            </div>
+        );
     }
 }
