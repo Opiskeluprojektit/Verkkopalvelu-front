@@ -1,9 +1,12 @@
 import React from 'react';
 import './Kotisivu.css';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
 
 //Kotisivu
 export default function Kotisivu(addToCart) {
+
+
     return (
         <div>
         <div className="container">
@@ -46,51 +49,7 @@ export default function Kotisivu(addToCart) {
             </Link>
         </div>
         
-        
 
-
-        {/* <div className="card col m-5">
-        <div className="card">
-            <div className="card-body top-card">
-            <h5>Suositut</h5>
-            <a>Tutustu</a>
-            </div>
-        </div>
-        <img src="http://localhost/verkkopalveluback/img/Piirustus16.png" className="card-img-top" alt="..."/>
-        <div className="card-body">
-            <h5 className="card-title">Kissa</h5>
-            <p className="card-text">Esimerkkitekstiä kissapiirrustuksesta.</p>
-            <a href="#" className="tuotesivulle">Tuotesivulle</a><br></br>
-        </div>
-        </div>
-        <div className="card col m-5">
-        <div className="card">
-            <div class="card-body top-card">
-            <h5>Maalaukset</h5>
-            <a>Tutustu</a>
-            </div>
-        </div>
-        <img src="http://localhost/verkkopalveluback/img/Illustrointi24.png" className="card-img-top" alt="..."/>
-        <div className="card-body">
-            <h5 className="card-title">Puut</h5>
-            <p className="card-text">Maalauksesta esimerkkiasiaa.</p>
-            <a href="#" className="tuotesivulle">Tuotesivulle</a><br></br>
-        </div>
-        </div>
-        <div className="card col m-5">
-        <div className="card">
-            <div className="card-body top-card">
-            <h5>Valokuvat</h5>
-            <a>Tutustu</a>
-            </div>
-        </div>
-        <img src="http://localhost/verkkopalveluback/img/Valokuva29.png" className="card-img-top" alt="..."/>
-        <div className="card-body">
-            <h5 className="card-title">Elefantti</h5>
-            <p className="card-text">Norsu-valokuvasta esimerkiksi asiaa.</p>
-            <a href="#" className="tuotesivulle">Tuotesivulle</a><br></br>
-        </div>
-        </div>*/}
         </div>
         <div className="row maisemajulisteet d-flex justify-content-center">
             <div className="card card2">
