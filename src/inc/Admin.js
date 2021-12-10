@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 
 export default function Admin({url}) {
     const [newcategory, setNewcategory] = useState('');
-    const [finished, setFinished] = useState(false);
+    // const [finished, setFinished] = useState(false);
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
     const [image, setImage] = useState('');
@@ -37,7 +37,7 @@ export default function Admin({url}) {
                 name: name,
                 price: price,
                 image: image,
-                category_id: category_id,
+                category_id: category_id
 
             })
         })
