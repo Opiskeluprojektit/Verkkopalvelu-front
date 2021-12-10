@@ -1,5 +1,5 @@
  .card {
-    width: 18rem;
+  width: 18rem;
 }
 
 .card2 {
@@ -7,16 +7,16 @@
 }
   
 .top-card {
-    position: absolute;
-    top: 2em;
-    left: 7em;
-    background-color: white;
-    border-style: solid;
-    border-width: 0.5px;
-    padding-left: 2em;
-    padding-right: 2em;
-    opacity: .7;
-    color: black;
+  position: absolute;
+  top: 2em;
+  left: 7em;
+  background-color: white;
+  border-style: solid;
+  border-width: 0.5px;
+  padding-left: 2em;
+  padding-right: 2em;
+  opacity: .7;
+  color: black;
 }
 
 .top-card-maisemajulisteet {
@@ -33,12 +33,19 @@
 }
 
 .inspiroidu {
-    margin-top: 5em;
-    width: 70%;
+  margin-top: 5em;
+  text-align: center;
+  padding-left: 5em;
+  padding-right: 5em;
 }
 
 .tarvikkeet {
   margin-top: 3em;
+  text-align: center;
+}
+
+.tarvikkeet h5 {
+  padding-bottom: 0.5em;
 }
 
 @media screen and (max-width: 1400px) {
@@ -62,10 +69,11 @@
 @media screen and (max-width: 1000px) {
   .top-card-maisemajulisteet,
   .top-card {
-      display: none;
+    display: none;
   } 
 
   .inspiroidu {
-    width: 100%;
+    padding-left: 3em;
+    padding-right: 3em;
 }
 }
