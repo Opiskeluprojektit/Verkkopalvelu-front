@@ -58,7 +58,10 @@ export default function Navbar({cart, setCategory, url}) {
                     <Link className="dropdown-item" to="/Suositut">Suositut</Link>
                     </li>
                   </ul>
-                </li>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" aria-current="page" to="/Yllapito">Ylläpito</Link>
+              </li>
             </ul>
             <form className="d-flex">
               <input className="form-control me-2" type="search" placeholder="Haku" aria-label="Search" />
