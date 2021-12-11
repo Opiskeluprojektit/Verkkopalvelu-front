@@ -7,7 +7,15 @@ export default function Admin({url}) {
     const [price, setPrice] = useState('');
     const [image, setImage] = useState('');
     const [category_id, setCategory_id] = useState('');
+    const [files, setFiles] = useState();
 
+    console.log(files)
+
+
+    const onImageChange = (event) => {
+        setFiles(event.target.files[0]);
+        setImage(event.target.files[0].name)
+    }
 
     function addCategory(e) {
         e.preventDefault();
@@ -46,6 +54,15 @@ export default function Admin({url}) {
         })
     }
 
+  /*   const addPhoto = (event) => {
+        event.preventDefault();
+        const formData = new FormData();
+        formData.append('File', files)
+        fetch(url + 'yllapito/addphoto.php',{
+            method: 'POST',
+            body: formData,
+            })
+    } */
 
     return (
         <div>
@@ -70,13 +87,17 @@ export default function Admin({url}) {
                             <label>Tuotteen hinta:</label>
                             <input className="form-control" onChange={e => setPrice(e.target.value)}/>
                         </div>
-                        <div className="form-group">
+                       {/*  <div className="form-group">
                             <label>Tuotteen kuvan nimi kokonaisuudessaan:</label>
                             <input className="form-control" onChange={e => setImage(e.target.value)}/>
-                        </div>
+                        </div> */}
                         <div className="form-group">
                             <label>Tuotteen kategorianumero:</label>
                             <input className="form-control" onChange={e => setCategory_id(e.target.value)}/>
+                        </div>
+                        <div class="mb-3">
+                        <label for="formFile" class="form-label">Tuotteen kuvan lisäys:</label>
+                        <input class="form-control" onChange={onImageChange} type="file" id="formFile" name="file[]" />
                         </div>
                         <div className="buttons">
                             <button className="btn btn-primary">Lisää tuote</button>
