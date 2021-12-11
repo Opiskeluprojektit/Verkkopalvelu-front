@@ -103,6 +103,17 @@ export default function Admin({url}) {
                             <button className="btn btn-primary">Lisää tuote</button>
                         </div>
                     </form>
+
+
+
+            <h3 className='Tilaustiedot'>Asiakkaan ostamat tuotteet</h3>
+            <div>
+                        {/* Asiakas, tilaus, tuotteen nimi, määrä, hinta? */}
+            </div>
+
+
+
+
         </div>
     )
 
