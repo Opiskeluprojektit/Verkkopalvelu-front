@@ -13,6 +13,7 @@ import Palautukset from './inc/Palautukset';
 import Tuote from './inc/Tuote';  //Yksittäisen tuotteen näyttäminen / AK
 import Popular from './inc/Popular'
 import Maisema from './inc/Maisema'
+import Asiakas from './inc/Asiakas'
 import React, {useState,useEffect} from 'react';
 
 const URL = 'http://localhost/verkkopalveluback/';
@@ -48,7 +49,7 @@ function App() {
   useEffect(() => {
     if (location.state !==undefined) {
       if (location.pathname ==="/Asiakas") {  //asiakkaan tilausten näyttäminen
-        setAsiakas({id: location.state.id,name:location.state.name});
+        setAsiakas({id: location.state.id,name:location.state.name,firstname:location.state.firstname,lastname:location.state.lastname});
       } 
     }
   }, [location.state])
@@ -134,12 +135,19 @@ function App() {
               url={URL}
               />
           } />
-
-      
           
           <Route path="/Yllapito" render={() =>
           <Admin
             url={URL}
+            setAsiakas={setAsiakas}
+            />
+          }
+          />
+
+          <Route path="/Asiakas" render={() =>
+          <Asiakas
+            url={URL}
+            asiakas={asiakas}
             />
           }
           />

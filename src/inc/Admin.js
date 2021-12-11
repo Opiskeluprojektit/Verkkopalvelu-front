@@ -2,7 +2,7 @@ import React,{useState, useEffect} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-export default function Admin({url}) {
+export default function Admin({url, setAsiakas}) {
     const [newcategory, setNewcategory] = useState('');
     // const [finished, setFinished] = useState(false);
     const [name, setName] = useState('');
@@ -73,6 +73,7 @@ export default function Admin({url}) {
           .then((response) => {
             const json = response.data;
             setOrdered(json);
+            setAsiakas(json[0]);
           }).catch (error => {
             if (error.response === undefined) {
               alert(error);
@@ -129,19 +130,22 @@ export default function Admin({url}) {
                         <h3 className='Tilaustiedot'>Asiakkaan ostamat tuotteet</h3>
                         {/* Asiakas, tilaus, tuotteen nimi, määrä, hinta? */}
 
-                            {ordered.map(product => (
-                                <div key={product.id} className="col-12 col-lg-4 col-xl-3 col">
+                            {ordered.map(asiakas => (
+                                <div key={asiakas.id} className="col-12 col-lg-4 col-xl-3 col">
                                         <Link
                                         to={{
-                                        pathname: '/Tuote',
+                                        pathname: '/Asiakas',
                                         state: {
-                                            id: product.id,
-                                            name: product.name,
-                                            price: product.price,
-                                            image: product.image
+                                            id: asiakas.id,
+                                            name: asiakas.name,
+                                            firstname: asiakas.firstname,
+                                            lastname: asiakas.lastname,
+                                            price: asiakas.price,
+                                            image: asiakas.image
                                         }
                                         }}>
-                                        <p>{product.firstname} {product.lastname}</p>
+
+                                        <p>{asiakas.firstname} {asiakas.lastname}</p>
                                     </Link>
                                 </div>
                             ))}
