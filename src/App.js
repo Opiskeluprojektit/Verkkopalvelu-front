@@ -26,6 +26,9 @@ function App() {
   //Tuotteen tilamuuttuja  / yksittäisen tuotteen näyttö /AK
   const [product,setProduct] = useState(null);
 
+  //Asiakkaan tilamuuttuja / asiakkaan tilaamien tuotteiden näyttäminen
+  const [asiakas, setAsiakas] = useState(null);
+
   //ostoskorin tilamuuttuja taulukkomuodossa-AK
   const [cart, setCart] = useState([]);
   
@@ -39,6 +42,14 @@ function App() {
       } else if(location.pathname==="/Tuote") {  //klikataan yksittäistä tuotetta
         setProduct({id: location.state.id,name:location.state.name, price:location.state.price, image:location.state.image});
       }
+    }
+  }, [location.state])
+
+  useEffect(() => {
+    if (location.state !==undefined) {
+      if (location.pathname ==="/Asiakas") {  //asiakkaan tilausten näyttäminen
+        setAsiakas({id: location.state.id,name:location.state.name});
+      } 
     }
   }, [location.state])
 

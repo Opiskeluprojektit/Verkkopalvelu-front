@@ -1,4 +1,6 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default function Admin({url}) {
     const [newcategory, setNewcategory] = useState('');
@@ -8,8 +10,10 @@ export default function Admin({url}) {
     const [image, setImage] = useState('');
     const [category_id, setCategory_id] = useState('');
     const [files, setFiles] = useState();
+    const [ordered, setOrdered] = useState([]);
 
     console.log(files)
+    console.log(ordered);
 
 
     const onImageChange = (event) => {
@@ -64,6 +68,20 @@ export default function Admin({url}) {
             })
     } */
 
+    useEffect(() => {
+        axios.get(url + 'yllapito/orderedproducts.php')
+          .then((response) => {
+            const json = response.data;
+            setOrdered(json);
+          }).catch (error => {
+            if (error.response === undefined) {
+              alert(error);
+            } else {
+              alert(error.response.data.error);
+            }
+          })
+      },[])
+
     return (
         <div>
             <h3 className="Tilaustiedot">Kategorian lisäys</h3>
@@ -106,10 +124,29 @@ export default function Admin({url}) {
 
 
 
-            <h3 className='Tilaustiedot'>Asiakkaan ostamat tuotteet</h3>
-            <div>
+
+                    <div className="row">
+                        <h3 className='Tilaustiedot'>Asiakkaan ostamat tuotteet</h3>
                         {/* Asiakas, tilaus, tuotteen nimi, määrä, hinta? */}
-            </div>
+
+                            {ordered.map(product => (
+                                <div key={product.id} className="col-12 col-lg-4 col-xl-3 col">
+                                        <Link
+                                        to={{
+                                        pathname: '/Tuote',
+                                        state: {
+                                            id: product.id,
+                                            name: product.name,
+                                            price: product.price,
+                                            image: product.image
+                                        }
+                                        }}>
+                                        <p>{product.firstname} {product.lastname}</p>
+                                    </Link>
+                                </div>
+                            ))}
+                    </div>    
+
 
 
 
