@@ -8,6 +8,7 @@ import Ostoskori from './Ostoskori';
 //Navi
 export default function Navbar({cart, setCategory, url}) {
   const [categories, setCategories] = useState([]);
+  const [name, setName] = useState('');
 
   useEffect(() => {
     axios.get(url + 'tuote/getcategories.php')
@@ -23,6 +24,23 @@ export default function Navbar({cart, setCategory, url}) {
         }
       })
   },[])
+
+  function search(e) {
+    e.preventDefault();
+    fetch(url + 'tuote/search.php',{
+        method: 'POST',
+        header: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            name: name,
+        })
+    })
+    .then (res => {
+        return res.json();
+    })
+}
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -63,8 +81,9 @@ export default function Navbar({cart, setCategory, url}) {
                 <Link className="nav-link" aria-current="page" to="/Yllapito">Ylläpito</Link>
               </li>
             </ul>
-            <form className="d-flex">
-              <input className="form-control me-2" type="search" placeholder="Haku" aria-label="Search" />
+            <form onSubmit={search} className="d-flex">
+              <input className="form-control me-2" type="search" placeholder="Haku" aria-label="Search" 
+              onChange={e => setName(e.target.value)}/>
               <button className="btn btn-outline-success" type="submit">Haku</button>
             </form>
             {/* Ostoskori */}
