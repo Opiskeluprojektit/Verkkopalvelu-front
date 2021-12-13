@@ -108,7 +108,7 @@ export default function Tilaus({cart,updateAmount,empty,url, removeFromCart}) {
                         <tr key={uuid()}>
                             <td className="sumrow"></td>
                             <td className="sumrow">{sum.toFixed(2)} €</td>
-                            <td className="sumrow"><a href="#" onClick={e => empty()}>Empty</a></td>
+                            <td className="sumrow"><a href="#" className="empty" onClick={e => empty()}>Tyhjennä</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -138,7 +138,7 @@ export default function Tilaus({cart,updateAmount,empty,url, removeFromCart}) {
                         <input className="form-control" onChange={e => setCity(e.target.value)}/>
                     </div>
                     <div className="buttons">
-                        <button className="btn btn-primary mt-2">Tilaa</button>
+                        <button className="btn btn-light mt-2 tilaa">Tilaa</button>
                     </div>
                 </form>
                 </>
