@@ -1,6 +1,6 @@
 import React from 'react';
 
-//Tietoa meistä-sivu
+//Tietoa meistä-sivun näyttäminen
 export default function TietoaMeista() {
     return (
         <div className="tietoameista">
@@ -8,7 +8,6 @@ export default function TietoaMeista() {
                 <p>Visual on vuonna 2021 perustettu moderni taidekauppa. Visual 
                     on suunnattu heille, jotka haluavat luoda sekä hankkia itselleen 
                     uniikkia taidetta ja samalla tukea suomalaisia taiteentekijöitä.</p>
-
 
                 <p>Idea Visualiin syntyi ammattikorkeakoulukurssin luennolla. Idean 
                     takana on viisi innokasta ja innovatiivista opiskelijaa, jotka halusivat 

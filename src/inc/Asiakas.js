@@ -6,6 +6,7 @@ export default function Asiakas({ url,asiakas }) {
 
     const [asiakastuotteet, setAsiakasTuotteet] = useState();
 
+    {/* Asiakkaan tekemän tilauksen tietojen hakeminen tietokannasta */}
     useEffect(() => {
         if (asiakas !== null) {
             axios.get(url + 'yllapito/orderedproducts2.php/' + asiakastuotteet?.id)
@@ -22,6 +23,7 @@ export default function Asiakas({ url,asiakas }) {
         }
     }, [asiakas])
 
+  {/* Asiakkaan tekemän tilauksen tietojen näyttäminen */}
   return (
     <div className="container justify-content-center">
       <div className="row justify-content-center">

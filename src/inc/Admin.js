@@ -16,7 +16,7 @@ export default function Admin({url, setAsiakas}) {
     console.log(ordered);
 
 
- 
+    {/* Kuvan lisäys tietokantaan ja IMG-kansioon tuotteen lisäyksen yhteydessä */}
     const onImageChange = (event) => {
         setFiles(event.target.files[0]);
         setImage(event.target.files[0].name)
@@ -41,6 +41,8 @@ export default function Admin({url, setAsiakas}) {
         })
         };
 
+
+    {/* Uuden tuotekategorian lisäys */}
     function addCategory(e) {
         e.preventDefault();
         fetch(url + 'yllapito/admin.php',{
@@ -57,6 +59,8 @@ export default function Admin({url, setAsiakas}) {
             return res.json();
         })
     }
+
+    {/* Uuden tuotteen lisäys */}
     function addProduct(e) {
         e.preventDefault();
         fetch(url + 'yllapito/addproduct.php',{
@@ -78,6 +82,7 @@ export default function Admin({url, setAsiakas}) {
         })
     }
 
+    {/* Tilauksien haku tietokannasta */}
     useEffect(() => {
         axios.get(url + 'yllapito/orderedproducts.php')
           .then((response) => {
@@ -93,6 +98,8 @@ export default function Admin({url, setAsiakas}) {
           })
       },[])
 
+
+    {/* Uusien tuoteryhmän (= kategorian) ja tuotteen lisäyksen ylläpitäjälle näkyvä osuus */}
     return (
         <div>
             <h3 className="Tilaustiedot">Kategorian lisäys</h3>
@@ -134,12 +141,9 @@ export default function Admin({url, setAsiakas}) {
                     </form>
 
 
-
-
+                    {/* Asiakkaan tilaamien tuotteiden näyttäminen tilauksittain */}
                     <div className="row">
                         <h3 className='Tilaustiedot'>Asiakkaan ostamat tuotteet</h3>
-                        {/* Asiakas, tilaus, tuotteen nimi, määrä, hinta? */}
-
                             {ordered.map(asiakas => (
                                 <div key={asiakas.id} className="col-12 col-lg-4 col-xl-3 col">
                                         <Link
@@ -160,11 +164,6 @@ export default function Admin({url, setAsiakas}) {
                                 </div>
                             ))}
                     </div>    
-
-
-
-
-
         </div>
     )
 

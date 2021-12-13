@@ -2,7 +2,7 @@ import './UKK.css';
 import React from 'react';
 import Collapsible from 'react-collapsible';
 
-//UKK-sivu
+//Usein kysytyt kysymykset -sivun sisällön näyttäminen
 export default function UKK() {
     return (
         <div>

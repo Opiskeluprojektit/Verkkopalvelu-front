@@ -1,6 +1,6 @@
 import React from 'react';
 
-//Palautukset-sivu
+//Palautukset-sivun sisällön näyttäminen
 export default function Palautukset() {
     return (
         <div className="palautukset">

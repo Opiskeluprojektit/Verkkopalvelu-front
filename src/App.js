@@ -46,6 +46,7 @@ function App() {
     }
   }, [location.state])
 
+  // Asiakkaan tilausten näyttäminen
   useEffect(() => {
     if (location.state !==undefined) {
       if (location.pathname ==="/Asiakas") {  //asiakkaan tilausten näyttäminen
@@ -75,6 +76,7 @@ function App() {
     }
   }
 
+  // Ostoskorin tuotteen määrän päivittäminen
   function updateAmount(amount,product) {
     product.amount = amount;
     const index = cart.findIndex((item => item.id === product.id))
@@ -83,13 +85,12 @@ function App() {
     localStorage.setItem('cart',JSON.stringify(modifiedCart));
   }
 
+  // Ostoskorin tyhjentäminen
   function emptyCart() {
     setCart([]);
     localStorage.removeItem('cart');
   }
-  
-  
- 
+   
   /* Ostokorista poistaminen */
     function removeFromCart(product) {
       const itemsWithoutRemoved = cart.filter(item => item.id !== product.id);
@@ -174,7 +175,6 @@ function App() {
           <Route path="/Palautukset" component={Palautukset} />
         </Switch>
       </div>
-
     <Footer />
 </div>
 
