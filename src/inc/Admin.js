@@ -111,7 +111,7 @@ export default function Admin({url, setAsiakas}) {
                     </div>
 
                     <div className="buttons">
-                        <button className="btn btn-primary">Lisää</button>
+                        <button className="btn btn-light">Lisää</button>
                     </div>
                 </form>
             <h3 className="Tilaustiedot">Tuotteen lisäys: </h3>
@@ -137,7 +137,7 @@ export default function Admin({url, setAsiakas}) {
                         <input class="form-control" onChange={onImageChange} type="file" id="formFile" />
                         </div>
                         <div className="buttons">
-                            <button onClick={uploadImage} className="btn btn-primary">Lisää tuote</button>
+                            <button onClick={uploadImage} className="btn btn-light">Lisää tuote</button>
                         </div>
                     </form>
 
@@ -146,7 +146,7 @@ export default function Admin({url, setAsiakas}) {
                     <div className="row">
                         <h3 className="Tilaustiedot">Asiakkaan ostamat tuotteet</h3>
                             {ordered.map(asiakas => (
-                                <div key={asiakas.id} className="col-12 col-lg-4 col-xl-3 col">
+                                <div key={asiakas.id} className="col-12">
                                         <Link
                                         to={{
                                         pathname: '/Asiakas',
@@ -161,6 +161,7 @@ export default function Admin({url, setAsiakas}) {
                                         }}>
 
                                         <p>{asiakas.firstname} {asiakas.lastname}</p>
+                                        
                                     </Link>
                                 </div>
                             ))}
