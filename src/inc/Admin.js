@@ -118,7 +118,7 @@ export default function Admin({url, setAsiakas}) {
                     </div>      
                     <div className="buttons">
                         <button className="btn btn-light lisaa">Lisää</button>
-                        <button onClick={handleReset} className="btn btn-primary">Reset</button>
+                        <button onClick={handleReset} className="btn btn-light lisaa">Reset</button>
                     </div>
                 </form>
             <h3 className="Tilaustiedot">Tuotteen lisäys: </h3>
@@ -158,12 +158,9 @@ export default function Admin({url, setAsiakas}) {
                                         to={{
                                         pathname: '/Asiakas',
                                         state: {
-                                            id: asiakas.id,
-                                            name: asiakas.name,
+                                            id: asiakas.order_id,
                                             firstname: asiakas.firstname,
                                             lastname: asiakas.lastname,
-                                            price: asiakas.price,
-                                            image: asiakas.image
                                         }
                                         }}>
 

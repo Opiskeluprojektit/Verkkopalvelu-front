@@ -1,48 +1,51 @@
-import React,{useState, useEffect} from "react";
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 //Näyttää yhden tuotteen sivustolla
-export default function Asiakas({ url,asiakas }) {
+export default function Asiakas({ url, asiakas }) {
+  const [asiakastuotteet, setAsiakastuotteet] = useState([]);
 
-    const [asiakastuotteet, setAsiakasTuotteet] = useState();
+  console.log(asiakas);
 
-    {/* Asiakkaan tekemän tilauksen tietojen hakeminen tietokannasta */}
-    useEffect(() => {
-        if (asiakas !== null) {
-            axios.get(url + 'yllapito/orderedproducts2.php/' + asiakastuotteet?.id)
-            .then((response) => {
-                const json = response.data;
-                setAsiakasTuotteet(json);
-            }).catch(error => {
-                if (error.response === undefined) {
-                    alert(error);
-                } else {
-                    alert(error.response.data.error);
-                }
-            })
-        }
-    }, [asiakas])
+  /* Asiakkaan tekemän tilauksen tietojen hakeminen tietokannasta */
+  useEffect(() => {
+    if (asiakas !== null) {
+      axios
+        .get(url + "yllapito/orderedproducts2.php/" + asiakas?.id)
+        .then((response) => {
+          const json = response.data;
+          setAsiakastuotteet(json);
+        })
+        .catch((error) => {
+          if (error.response === undefined) {
+            alert(error);
+          } else {
+            alert(error.response.data.error);
+          }
+        });
+    }
+  }, [asiakas]);
 
-  {/* Asiakkaan tekemän tilauksen tietojen näyttäminen */}
+  /* Asiakkaan tekemän tilauksen tietojen näyttäminen */
   return (
-    <div className="container justify-content-center">
-      <div className="row justify-content-center">
-        <div className="col-6">
-            {asiakastuotteet.map(asiakastuote => (
-                <div key={asiakastuote.id}>
+    <div id="tuoteryhma" className="container">
+      <div className="row">
+        <h3>
+          {asiakas?.firstname} {asiakas?.lastname}
+        </h3>
+        {asiakastuotteet.map((asiakastuote) => (
+          <div key={asiakastuote.id} className="col-12 col-lg-4 col-xl-3 col">
+            <p>{asiakastuote?.name}</p>
 
-      {/* yksittäisen tuotteen näyttäminen / AK */}
-      <h5>{asiakastuote.name}</h5>
-      <p>{asiakastuote.firstname}</p>
-      <div>
-        <img src={url + "IMG/" + asiakastuote.image} alt="" />
-      </div>
-      </div>
-      ))}
+            <div>
+              <img src={url + "IMG/" + asiakastuote?.image} alt="" />
+            </div>
 
-        </div>
+            <p>{asiakastuote?.price} €</p>
+          </div>
+        ))}
       </div>
-      
     </div>
-  )
-} 
+  );
+}

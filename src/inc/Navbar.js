@@ -9,6 +9,7 @@ import Ostoskori from './Ostoskori';
 export default function Navbar({cart, setCategory, url}) {
   const [categories, setCategories] = useState([]);
   const [name, setName] = useState('');
+  const [haku, setHaku] = useState([]);
 
   {/* Tuoteryhmien haku tietokannasta */}
   useEffect(() => {
@@ -39,8 +40,15 @@ export default function Navbar({cart, setCategory, url}) {
             name: name,
         })
     })
-    .then (res => {
-        return res.json();
+    .then ((response) => {
+        const json = response.data;
+        setHaku(json);
+    }).catch (error =>{
+      if (error.response === undefined) {
+        alert(error);
+      } else {
+        alert(error.response.data.error);
+      }
     })
 }
 
