@@ -111,7 +111,7 @@ export default function Admin({url, setAsiakas}) {
                     </div>
 
                     <div className="buttons">
-                        <button className="btn btn-light">Lisää</button>
+                        <button className="btn btn-light lisaa">Lisää</button>
                     </div>
                 </form>
             <h3 className="Tilaustiedot">Tuotteen lisäys: </h3>
@@ -137,7 +137,7 @@ export default function Admin({url, setAsiakas}) {
                         <input class="form-control" onChange={onImageChange} type="file" id="formFile" />
                         </div>
                         <div className="buttons">
-                            <button onClick={uploadImage} className="btn btn-light">Lisää tuote</button>
+                            <button onClick={uploadImage} className="btn btn-light lisaa">Lisää tuote</button>
                         </div>
                     </form>
 
