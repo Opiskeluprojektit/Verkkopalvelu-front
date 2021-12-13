@@ -22,7 +22,6 @@ export default function Admin({url}) {
         setImage(event.target.files[0].name)
     } 
 
-
     const uploadImage = () => {
         const formData = new FormData();
         formData.append('File', files);
@@ -39,7 +38,7 @@ export default function Admin({url}) {
         }).catch((error) => {
             console.log('Error:', error);
         })
-        };
+    };
 
     function addCategory(e) {
         e.preventDefault();
@@ -75,6 +74,7 @@ export default function Admin({url}) {
         })
         .then (res => {
             return res.json();
+            
         })
     }
 
@@ -92,6 +92,12 @@ export default function Admin({url}) {
           })
       },[])
 
+       const handleReset = () => {
+        Array.from(document.querySelectorAll("input")).forEach(
+          input => (input.value = "")
+        );
+      };
+ 
     return (
         <div>
             <h3 className="Tilaustiedot">Kategorian lisäys</h3>
@@ -101,8 +107,9 @@ export default function Admin({url}) {
                         <input className="form-control" onChange={e => setNewcategory(e.target.value)}/>
                     </div>
 
-                    <div className="buttons">
-                        <button className="btn btn-primary">Lisää</button>
+                    <div className="buttons mt-2">
+                        <button className="btn btn-primary me-2">Lisää</button>
+                        <button onClick={handleReset} className="btn btn-primary">Reset</button>
                     </div>
                 </form>
             <h3 className="Tilaustiedot">Tuotteen lisäys: </h3>
