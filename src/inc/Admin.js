@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import './Admin.css';
 
 export default function Admin({url, setAsiakas}) {
     const [newcategory, setNewcategory] = useState('');
@@ -143,7 +144,7 @@ export default function Admin({url, setAsiakas}) {
 
                     {/* Asiakkaan tilaamien tuotteiden näyttäminen tilauksittain */}
                     <div className="row">
-                        <h3 className='Tilaustiedot'>Asiakkaan ostamat tuotteet</h3>
+                        <h3 className="Tilaustiedot">Asiakkaan ostamat tuotteet</h3>
                             {ordered.map(asiakas => (
                                 <div key={asiakas.id} className="col-12 col-lg-4 col-xl-3 col">
                                         <Link
