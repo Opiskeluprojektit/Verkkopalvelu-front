@@ -8,7 +8,9 @@ import Ostoskori from './Ostoskori';
 //Navi
 export default function Navbar({cart, setCategory, url}) {
   const [categories, setCategories] = useState([]);
+  const [name, setName] = useState('');
 
+  {/* Tuoteryhmien haku tietokannasta */}
   useEffect(() => {
     axios.get(url + 'tuote/getcategories.php')
       .then((response) => {
@@ -24,6 +26,25 @@ export default function Navbar({cart, setCategory, url}) {
       })
   },[])
 
+  {/* Tuotteiden haku Haku-toiminnolla tietokannasta */}
+  function search(e) {
+    e.preventDefault();
+    fetch(url + 'tuote/search.php',{
+        method: 'POST',
+        header: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            name: name,
+        })
+    })
+    .then (res => {
+        return res.json();
+    })
+}
+
+    {/* Navigointinapit etusivulle ja tuoteryhmiin */}
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
@@ -63,8 +84,10 @@ export default function Navbar({cart, setCategory, url}) {
                 <Link className="nav-link" aria-current="page" to="/Yllapito">Ylläpito</Link>
               </li>
             </ul>
-            <form className="d-flex">
-              <input className="form-control me-2" type="search" placeholder="Haku" aria-label="Search" />
+            {/* Haku-kenttä */}
+            <form onSubmit={search} className="d-flex">
+              <input className="form-control me-2" type="search" placeholder="Haku" aria-label="Search" 
+              onChange={e => setName(e.target.value)}/>
               <button className="btn btn-outline-success" type="submit">Haku</button>
             </form>
             {/* Ostoskori */}

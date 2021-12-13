@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-//Yhteystiedot-sivu
+//Yhteystiedot-sivun sisällön näyttäminen
 export default function Yhteystiedot() {
     return (
         <div className="yhteystiedot">

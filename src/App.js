@@ -13,6 +13,7 @@ import Palautukset from './inc/Palautukset';
 import Tuote from './inc/Tuote';  //Yksittäisen tuotteen näyttäminen / AK
 import Popular from './inc/Popular'
 import Maisema from './inc/Maisema'
+import Asiakas from './inc/Asiakas'
 import React, {useState,useEffect} from 'react';
 
 const URL = 'http://localhost/verkkopalveluback/';
@@ -45,10 +46,11 @@ function App() {
     }
   }, [location.state])
 
+  // Asiakkaan tilausten näyttäminen
   useEffect(() => {
     if (location.state !==undefined) {
       if (location.pathname ==="/Asiakas") {  //asiakkaan tilausten näyttäminen
-        setAsiakas({id: location.state.id,name:location.state.name});
+        setAsiakas({id: location.state.id,name:location.state.name,firstname:location.state.firstname,lastname:location.state.lastname});
       } 
     }
   }, [location.state])
@@ -74,6 +76,7 @@ function App() {
     }
   }
 
+  // Ostoskorin tuotteen määrän päivittäminen
   function updateAmount(amount,product) {
     product.amount = amount;
     const index = cart.findIndex((item => item.id === product.id))
@@ -82,13 +85,12 @@ function App() {
     localStorage.setItem('cart',JSON.stringify(modifiedCart));
   }
 
+  // Ostoskorin tyhjentäminen
   function emptyCart() {
     setCart([]);
     localStorage.removeItem('cart');
   }
-  
-  
- 
+   
   /* Ostokorista poistaminen */
     function removeFromCart(product) {
       const itemsWithoutRemoved = cart.filter(item => item.id !== product.id);
@@ -134,12 +136,19 @@ function App() {
               url={URL}
               />
           } />
-
-      
           
           <Route path="/Yllapito" render={() =>
           <Admin
             url={URL}
+            setAsiakas={setAsiakas}
+            />
+          }
+          />
+
+          <Route path="/Asiakas" render={() =>
+          <Asiakas
+            url={URL}
+            asiakas={asiakas}
             />
           }
           />
@@ -166,7 +175,6 @@ function App() {
           <Route path="/Palautukset" component={Palautukset} />
         </Switch>
       </div>
-
     <Footer />
 </div>
 

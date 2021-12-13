@@ -1,8 +1,9 @@
 import React,{useState, useEffect} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import './Admin.css';
 
-export default function Admin({url}) {
+export default function Admin({url, setAsiakas}) {
     const [newcategory, setNewcategory] = useState('');
     // const [finished, setFinished] = useState(false);
     const [name, setName] = useState('');
@@ -16,7 +17,7 @@ export default function Admin({url}) {
     console.log(ordered);
 
 
- 
+    /* Kuvan lisäys tietokantaan ja IMG-kansioon tuotteen lisäyksen yhteydessä */
     const onImageChange = (event) => {
         setFiles(event.target.files[0]);
         setImage(event.target.files[0].name)
@@ -40,6 +41,8 @@ export default function Admin({url}) {
         })
     };
 
+
+    /* Uuden tuotekategorian lisäys */
     function addCategory(e) {
         e.preventDefault();
         fetch(url + 'yllapito/admin.php',{
@@ -56,6 +59,8 @@ export default function Admin({url}) {
             return res.json();
         })
     }
+
+    /* Uuden tuotteen lisäys */
     function addProduct(e) {
         e.preventDefault();
         fetch(url + 'yllapito/addproduct.php',{
@@ -78,11 +83,13 @@ export default function Admin({url}) {
         })
     }
 
+    /* Tilauksien haku tietokannasta */
     useEffect(() => {
         axios.get(url + 'yllapito/orderedproducts.php')
           .then((response) => {
             const json = response.data;
             setOrdered(json);
+            setAsiakas(json[0]);
           }).catch (error => {
             if (error.response === undefined) {
               alert(error);
@@ -92,12 +99,15 @@ export default function Admin({url}) {
           })
       },[])
 
+      /* Kenttien resetointi reset napilla */
        const handleReset = () => {
         Array.from(document.querySelectorAll("input")).forEach(
           input => (input.value = "")
         );
       };
  
+
+    /* Uusien tuoteryhmän (= kategorian) ja tuotteen lisäyksen ylläpitäjälle näkyvä osuus */
     return (
         <div>
             <h3 className="Tilaustiedot">Kategorian lisäys</h3>
@@ -105,10 +115,9 @@ export default function Admin({url}) {
                     <div className="form-group">
                         <label>Kategorian nimi:</label>
                         <input className="form-control" onChange={e => setNewcategory(e.target.value)}/>
-                    </div>
-
-                    <div className="buttons mt-2">
-                        <button className="btn btn-primary me-2">Lisää</button>
+                    </div>      
+                    <div className="buttons">
+                        <button className="btn btn-light lisaa">Lisää</button>
                         <button onClick={handleReset} className="btn btn-primary">Reset</button>
                     </div>
                 </form>
@@ -135,39 +144,35 @@ export default function Admin({url}) {
                         <input class="form-control" onChange={onImageChange} type="file" id="formFile" />
                         </div>
                         <div className="buttons">
-                            <button onClick={uploadImage} className="btn btn-primary">Lisää tuote</button>
+                            <button onClick={uploadImage} className="btn btn-light lisaa">Lisää tuote</button>
                         </div>
                     </form>
 
 
-
-
+                    {/* Asiakkaan tilaamien tuotteiden näyttäminen tilauksittain */}
                     <div className="row">
-                        <h3 className='Tilaustiedot'>Asiakkaan ostamat tuotteet</h3>
-                        {/* Asiakas, tilaus, tuotteen nimi, määrä, hinta? */}
-
-                            {ordered.map(product => (
-                                <div key={product.id} className="col-12 col-lg-4 col-xl-3 col">
+                        <h3 className="Tilaustiedot">Asiakkaan ostamat tuotteet</h3>
+                            {ordered.map(asiakas => (
+                                <div key={asiakas.id} className="col-12">
                                         <Link
                                         to={{
-                                        pathname: '/Tuote',
+                                        pathname: '/Asiakas',
                                         state: {
-                                            id: product.id,
-                                            name: product.name,
-                                            price: product.price,
-                                            image: product.image
+                                            id: asiakas.id,
+                                            name: asiakas.name,
+                                            firstname: asiakas.firstname,
+                                            lastname: asiakas.lastname,
+                                            price: asiakas.price,
+                                            image: asiakas.image
                                         }
                                         }}>
-                                        <p>{product.firstname} {product.lastname}</p>
+
+                                        <p>{asiakas.firstname} {asiakas.lastname}</p>
+                                        
                                     </Link>
                                 </div>
                             ))}
                     </div>    
-
-
-
-
-
         </div>
     )
 

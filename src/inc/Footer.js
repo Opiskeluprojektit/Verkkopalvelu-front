@@ -25,7 +25,6 @@ export default function Footer() {
                     <div className="copywrite-text mb-5">
                         <p className="mb-0">This footer is made with <i class="lni-heart mr-1"></i> by<a class="ml-1" href="https://wrapbootstrap.com/user/DesigningWorld"> Designing World</a></p>
                     </div>
-                    <div className="footer_social_area"><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Pinterest"><i class="fa fa-pinterest"></i></a><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Skype"><i class="fa fa-skype"></i></a><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></div>
                     </div>
                 </div>
                 <div className="col-12 col-sm-6 col-lg">
@@ -35,9 +34,6 @@ export default function Footer() {
                     <ul>
                         <li><Link to="/TietoaMeista">Tietoa meistä</Link></li>
                         <li><Link to="/Yhteystiedot">Yhteystiedot</Link></li>
-                        <li><Link to="#">Työpaikat</Link></li>
-                        <li><Link to="#">Taiteilijat</Link></li>
-                        <li><Link to="#">Visual Yhteisö</Link></li>
                         </ul>
                     </div>
                     </div>
@@ -49,9 +45,6 @@ export default function Footer() {
                     <ul>
                         <li><Link to="/UKK">Usein kysytyt kysymykset</Link></li>
                         <li><Link to="/Palautukset">Palautukset</Link></li>
-                        <li><Link to="#">Tilaus- ja toimitusehdot</Link></li>
-                        <li><Link to="#">Reklamaatio</Link></li>
-                        <li><Link to="#">Evästeet</Link></li>
                         </ul>
                     </div>
                     </div>

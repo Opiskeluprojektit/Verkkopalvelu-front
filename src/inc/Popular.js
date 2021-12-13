@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export default function Popular({url, addToCart}) {
     const [populars, setPopulars] = useState([]);
 
-
+    {/* Suosoittujen tuotteiden haku tietokannasta */}
     useEffect(() => {
         axios.get(url + 'tuote/getpopular.php')
           .then((response) => {
@@ -20,6 +20,7 @@ export default function Popular({url, addToCart}) {
           })
       },[])
 
+    {/* Suosittujen tuotteiden näyttäminen */}
     return (
         <div>
              <div id="tuoteryhma" className="container">

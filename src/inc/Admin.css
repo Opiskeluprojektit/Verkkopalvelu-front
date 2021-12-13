@@ -1,0 +1,14 @@
+/* Admin.js-tiedoston css*/
+
+.Tilaustiedot {
+    margin-top: 1.5em;
+}
+
+.lisaa {
+    margin-top: 0.5em;
+    box-shadow: #cccccc 2px 2px 2px 2px;
+    border-radius: 0 !important;
+    padding: 0 2px 0 2px!important;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+}

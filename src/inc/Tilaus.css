@@ -1,3 +1,5 @@
+/* Tilaus.js-tiedoston css*/
+
 .otsikot {
     font-weight: bolder;
     padding-bottom: 2em;
@@ -22,3 +24,19 @@
     width: 15em;
 }
 
+.bi-trash-fill {
+    color: black;
+}
+
+.empty{
+    color: black !important;
+}
+
+.tilaa {
+    margin-top: 0.5em;
+    box-shadow: #cccccc 2px 2px 2px 2px;
+    border-radius: 0 !important;
+    padding: 0 3px 0 3px!important;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+}
