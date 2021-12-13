@@ -141,7 +141,6 @@ export default function Admin({url, setAsiakas}) {
                         </div>
                     </form>
 
-
                     {/* Asiakkaan tilaamien tuotteiden näyttäminen tilauksittain */}
                     <div className="row">
                         <h3 className="Tilaustiedot">Asiakkaan ostamat tuotteet</h3>
