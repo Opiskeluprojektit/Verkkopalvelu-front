@@ -4,6 +4,10 @@
     margin-top: 1.5em;
 }
 
+.tilauslista p {
+    color: #747794;
+}
+
 .lisaa,
 .reset {
     margin-top: 0.5em;
@@ -17,3 +21,4 @@
 .reset {
     margin-left: 1em;
 }
+

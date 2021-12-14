@@ -102,8 +102,8 @@ export default function Navbar({cart, setCategory, url}) {
             <form onSubmit={search} className="d-flex">
               <input className="form-control me-2" type="search" placeholder="Haku" aria-label="Search" 
               onChange={e => setName(e.target.value)}/>
-              <button className="btn btn-outline-success" type="submit">Haku</button>
-         <div>
+                              <button className="btn btn-outline-success" type="submit">Haku</button>
+            <div>
                    {haut?.map(haku => (
                         <div key={haku.id}>
                                 <Link
@@ -116,13 +116,10 @@ export default function Navbar({cart, setCategory, url}) {
                                     image: haku.image
                                 }
                                 }}> 
-
-                              
-
                             </Link>
-                            </div>
-                    ))} 
                         </div>
+                    ))} 
+            </div>
             </form>
             </div>
 
