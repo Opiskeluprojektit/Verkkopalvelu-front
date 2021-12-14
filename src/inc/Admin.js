@@ -118,7 +118,7 @@ export default function Admin({url, setAsiakas}) {
                     </div>      
                     <div className="buttons">
                         <button className="btn btn-light lisaa">Lisää</button>
-                        <button onClick={handleReset} className="btn btn-light lisaa">Reset</button>
+                        <button onClick={handleReset} className="btn btn-light reset">Reset</button>
                     </div>
                 </form>
             <h3 className="Tilaustiedot">Tuotteen lisäys: </h3>
@@ -131,10 +131,6 @@ export default function Admin({url, setAsiakas}) {
                             <label>Tuotteen hinta:</label>
                             <input className="form-control" onChange={e => setPrice(e.target.value)}/>
                         </div>
-                       {/*  <div className="form-group">
-                            <label>Tuotteen kuvan nimi kokonaisuudessaan:</label>
-                            <input className="form-control" onChange={e => setImage(e.target.value)}/>
-                        </div> */}
                         <div className="form-group">
                             <label>Tuotteen kategorianumero:</label>
                             <input className="form-control" onChange={e => setCategory_id(e.target.value)}/>
@@ -145,6 +141,7 @@ export default function Admin({url, setAsiakas}) {
                         </div>
                         <div className="buttons">
                             <button onClick={uploadImage} className="btn btn-light lisaa">Lisää tuote</button>
+                            <button onClick={handleReset} className="btn btn-light reset">Reset</button>
                         </div>
                     </form>
 
