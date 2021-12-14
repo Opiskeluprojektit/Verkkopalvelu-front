@@ -6,6 +6,11 @@
 
 .tilauslista p {
     color: #747794;
+    text-decoration: #747794 underline;
+}
+
+.tilauslista:hover p {
+    color: #0d6efd;
 }
 
 .lisaa,
