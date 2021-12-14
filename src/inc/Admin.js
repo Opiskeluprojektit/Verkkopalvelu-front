@@ -17,12 +17,11 @@ export default function Admin({url, setAsiakas}) {
     console.log(ordered);
 
 
-    {/* Kuvan lisäys tietokantaan ja IMG-kansioon tuotteen lisäyksen yhteydessä */}
+    /* Kuvan lisäys tietokantaan ja IMG-kansioon tuotteen lisäyksen yhteydessä */
     const onImageChange = (event) => {
         setFiles(event.target.files[0]);
         setImage(event.target.files[0].name)
     } 
-
 
     const uploadImage = () => {
         const formData = new FormData();
@@ -40,10 +39,10 @@ export default function Admin({url, setAsiakas}) {
         }).catch((error) => {
             console.log('Error:', error);
         })
-        };
+    };
 
 
-    {/* Uuden tuotekategorian lisäys */}
+    /* Uuden tuotekategorian lisäys */
     function addCategory(e) {
         e.preventDefault();
         fetch(url + 'yllapito/admin.php',{
@@ -61,7 +60,7 @@ export default function Admin({url, setAsiakas}) {
         })
     }
 
-    {/* Uuden tuotteen lisäys */}
+    /* Uuden tuotteen lisäys */
     function addProduct(e) {
         e.preventDefault();
         fetch(url + 'yllapito/addproduct.php',{
@@ -80,10 +79,11 @@ export default function Admin({url, setAsiakas}) {
         })
         .then (res => {
             return res.json();
+            
         })
     }
 
-    {/* Tilauksien haku tietokannasta */}
+    /* Tilauksien haku tietokannasta */
     useEffect(() => {
         axios.get(url + 'yllapito/orderedproducts.php')
           .then((response) => {
@@ -99,8 +99,15 @@ export default function Admin({url, setAsiakas}) {
           })
       },[])
 
+      /* Kenttien resetointi reset napilla */
+       const handleReset = () => {
+        Array.from(document.querySelectorAll("input")).forEach(
+          input => (input.value = "")
+        );
+      };
+ 
 
-    {/* Uusien tuoteryhmän (= kategorian) ja tuotteen lisäyksen ylläpitäjälle näkyvä osuus */}
+    /* Uusien tuoteryhmän (= kategorian) ja tuotteen lisäyksen ylläpitäjälle näkyvä osuus */
     return (
         <div>
             <h3 className="Tilaustiedot">Kategorian lisäys</h3>
@@ -108,10 +115,10 @@ export default function Admin({url, setAsiakas}) {
                     <div className="form-group">
                         <label>Kategorian nimi:</label>
                         <input className="form-control" onChange={e => setNewcategory(e.target.value)}/>
-                    </div>
-
+                    </div>      
                     <div className="buttons">
                         <button className="btn btn-light lisaa">Lisää</button>
+                        <button onClick={handleReset} className="btn btn-light lisaa">Reset</button>
                     </div>
                 </form>
             <h3 className="Tilaustiedot">Tuotteen lisäys: </h3>
@@ -150,12 +157,9 @@ export default function Admin({url, setAsiakas}) {
                                         to={{
                                         pathname: '/Asiakas',
                                         state: {
-                                            id: asiakas.id,
-                                            name: asiakas.name,
+                                            id: asiakas.order_id,
                                             firstname: asiakas.firstname,
                                             lastname: asiakas.lastname,
-                                            price: asiakas.price,
-                                            image: asiakas.image
                                         }
                                         }}>
 

@@ -50,7 +50,7 @@ function App() {
   useEffect(() => {
     if (location.state !==undefined) {
       if (location.pathname ==="/Asiakas") {  //asiakkaan tilausten näyttäminen
-        setAsiakas({id: location.state.id,name:location.state.name,firstname:location.state.firstname,lastname:location.state.lastname});
+        setAsiakas({id: location.state.id,firstname:location.state.firstname,lastname:location.state.lastname});
       } 
     }
   }, [location.state])

@@ -31,11 +31,11 @@ export default function Tilaus({cart,updateAmount,empty,url, removeFromCart}) {
         }
     }, [cart.length])  
     
-      useEffect(() => {
+        useEffect(() => {
       if (inputs.length > 0 && inputIndex > -1 && inputs[inputIndex.current] !== null) {
         inputs[inputIndex].current.focus();
       }
-    }, [cart]) 
+    }, [cart])   
 
     function changeAmount(e,product, index) {
         updateAmount(e.target.value,product);
