@@ -28,10 +28,11 @@ export default function Navbar({cart, setCategory, url}) {
   },[])
 
   {/* Tuotteiden haku Haku-toiminnolla tietokannasta */}
-  function search(e) {
+   function search(e) {
     e.preventDefault();
+    console.log(name)
     fetch(url + 'tuote/search.php',{
-        method: 'POST',
+        method: 'GET',
         header: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -43,6 +44,7 @@ export default function Navbar({cart, setCategory, url}) {
     .then ((response) => {
         const json = response.data;
         setHaut(json);
+        console.log(response.data);
     }).catch (error =>{
       if (error.response === undefined) {
         alert(error);
@@ -50,7 +52,10 @@ export default function Navbar({cart, setCategory, url}) {
         alert(error.response.data.error);
       }
     })
-}
+} 
+
+
+
 
     {/* Navigointinapit etusivulle ja tuoteryhmiin */}
     return (
@@ -97,27 +102,27 @@ export default function Navbar({cart, setCategory, url}) {
             <form onSubmit={search} className="d-flex">
               <input className="form-control me-2" type="search" placeholder="Haku" aria-label="Search" 
               onChange={e => setName(e.target.value)}/>
-
-{/*            <div>
-                   {haut.map(haku => (
+              <button className="btn btn-outline-success" type="submit">Haku</button>
+         <div>
+                   {haut?.map(haku => (
                         <div key={haku.id}>
-                                <Link className="btn btn-outline-success" type="submit"
+                                <Link
                                 to={{
-                                pathname: '/Tuote',
+                                pathname: '/Suositut',
                                 state: {
                                     id: haku.id,
                                     name: haku.name,
                                     price: haku.price,
                                     image: haku.image
                                 }
-                                }}> */}
+                                }}> 
 
-                              <button className="btn btn-outline-success" type="submit">Haku</button>
+                              
 
-{/*                             </Link>
+                            </Link>
                             </div>
                     ))} 
-                        </div>*/}
+                        </div>
             </form>
             </div>
 
