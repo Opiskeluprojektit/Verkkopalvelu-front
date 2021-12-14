@@ -149,7 +149,7 @@ export default function Admin({url, setAsiakas}) {
                     <div className="row">
                         <h3 className="Tilaustiedot">Asiakkaan ostamat tuotteet</h3>
                             {ordered.map(asiakas => (
-                                <div key={asiakas.id} className="col-12">
+                                <div key={asiakas.id} className="col-12 tilauslista">
                                         <Link
                                         to={{
                                         pathname: '/Asiakas',

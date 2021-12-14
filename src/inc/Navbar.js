@@ -30,6 +30,7 @@ export default function Navbar({cart, setCategory, url}) {
   {/* Tuotteiden haku Haku-toiminnolla tietokannasta */}
   function search(e) {
     e.preventDefault();
+    console.log("search");
     fetch(url + 'tuote/search.php',{
         method: 'POST',
         header: {
@@ -43,6 +44,7 @@ export default function Navbar({cart, setCategory, url}) {
     .then ((response) => {
         const json = response.data;
         setHaut(json);
+        console.log(json);
     }).catch (error =>{
       if (error.response === undefined) {
         alert(error);
@@ -97,9 +99,9 @@ export default function Navbar({cart, setCategory, url}) {
             <form onSubmit={search} className="d-flex">
               <input className="form-control me-2" type="search" placeholder="Haku" aria-label="Search" 
               onChange={e => setName(e.target.value)}/>
-
-{/*            <div>
-                   {haut.map(haku => (
+                              <button className="btn btn-outline-success" type="submit">Haku</button>
+            <div>
+                   {haut?.map(haku => (
                         <div key={haku.id}>
                                 <Link className="btn btn-outline-success" type="submit"
                                 to={{
@@ -110,14 +112,11 @@ export default function Navbar({cart, setCategory, url}) {
                                     price: haku.price,
                                     image: haku.image
                                 }
-                                }}> */}
-
-                              <button className="btn btn-outline-success" type="submit">Haku</button>
-
-{/*                             </Link>
-                            </div>
+                                }}> 
+                            </Link>
+                        </div>
                     ))} 
-                        </div>*/}
+            </div>
             </form>
             </div>
 
