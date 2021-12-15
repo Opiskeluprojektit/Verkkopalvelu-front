@@ -28,32 +28,20 @@ export default function Navbar({cart, setCategory, url}) {
   },[])
 
   {/* Tuotteiden haku Haku-toiminnolla tietokannasta */}
-   function search(e) {
-    e.preventDefault();
-    console.log(name)
-    fetch(url + 'tuote/search.php',{
-        method: 'GET',
-        header: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            name: name,
-        })
-    })
-    .then ((response) => {
+  useEffect(() => {
+    axios.get(url + 'tuote/search.php/' + name)
+      .then((response) => {
         const json = response.data;
         setHaut(json);
-        console.log(response.data);
-    }).catch (error =>{
-      if (error.response === undefined) {
-        alert(error);
-      } else {
-        alert(error.response.data.error);
-      }
-    })
-} 
-
+        console.log(json);
+      }).catch (error => {
+        if (error.response === undefined) {
+          alert(error);
+        } else {
+          alert(error.response.data.error);
+        }
+      })
+  },[])
 
 
 
@@ -99,12 +87,12 @@ export default function Navbar({cart, setCategory, url}) {
             </ul>
             {/* Haku-kenttä */}
             <div>
-            <form onSubmit={search} className="d-flex">
+            <form className="d-flex">
               <input className="form-control me-2" type="search" placeholder="Haku" aria-label="Search" 
               onChange={e => setName(e.target.value)}/>
                               <button className="btn btn-outline-success" type="submit">Haku</button>
             <div>
-                   {haut?.map(haku => (
+                   {haut.map(haku => (
                         <div key={haku.id}>
                                 <Link
                                 to={{
