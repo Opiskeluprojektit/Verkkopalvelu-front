@@ -73,7 +73,6 @@ export default function Tilaus({cart,updateAmount,empty,url, removeFromCart}) {
     }
 
     let sum = 0;
-    let yhteishinta = 0;
 
     if (finished === false) {
         return (
@@ -87,7 +86,7 @@ export default function Tilaus({cart,updateAmount,empty,url, removeFromCart}) {
                             <td className="otsikot">Määrä</td>
                         </tr>
                         {cart?.map((product, index) => {
-                            sum+=parseFloat(product.price * product.amount);
+                            sum+=parseFloat(product.price) * parseInt(product.amount);
                             return (
                                 <tr key={uuid()}>
                                     <td className="tuotenimi">{product.name}</td>   
