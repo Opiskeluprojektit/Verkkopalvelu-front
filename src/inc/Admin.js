@@ -105,6 +105,11 @@ export default function Admin({url, setAsiakas}) {
           input => (input.value = "")
         );
       };
+
+      const add = () => {
+            handleReset();
+            uploadImage();
+      };
  
 
     /* Uusien tuoteryhmän (= kategorian) ja tuotteen lisäyksen ylläpitäjälle näkyvä osuus */
@@ -117,8 +122,7 @@ export default function Admin({url, setAsiakas}) {
                         <input className="form-control" onChange={e => setNewcategory(e.target.value)}/>
                     </div>      
                     <div className="buttons">
-                        <button className="btn btn-light lisaa">Lisää</button>
-                        <button onClick={handleReset} className="btn btn-light reset">Reset</button>
+                        <button onClick={handleReset} className="btn btn-light lisaa">Lisää kategoria</button>
                     </div>
                 </form>
             <h3 className="Tilaustiedot">Tuotteen lisäys: </h3>
@@ -140,8 +144,7 @@ export default function Admin({url, setAsiakas}) {
                         <input class="form-control" onChange={onImageChange} type="file" id="formFile" />
                         </div>
                         <div className="buttons">
-                            <button onClick={uploadImage} className="btn btn-light lisaa">Lisää tuote</button>
-                            <button onClick={handleReset} className="btn btn-light reset">Reset</button>
+                            <button onClick={add} className="btn btn-light lisaa">Lisää tuote</button>
                         </div>
                     </form>
 

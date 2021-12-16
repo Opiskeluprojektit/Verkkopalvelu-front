@@ -32,6 +32,10 @@ function App() {
 
   //ostoskorin tilamuuttuja taulukkomuodossa-AK
   const [cart, setCart] = useState([]);
+
+  const [searchName, setSearchName] = useState("");
+
+  console.log(cart)
   
   let location = useLocation();
 
@@ -40,6 +44,7 @@ function App() {
     if (location.state !==undefined) {
       if (location.pathname ==="/Tuotteet") {  //tuoteryhmän tuotteen näyttäminen
         setCategory({id: location.state.id,name:location.state.name});
+        setSearchName("");
       } else if(location.pathname==="/Tuote") {  //klikataan yksittäistä tuotetta
         setProduct({id: location.state.id,name:location.state.name, price:location.state.price, image:location.state.image, 
           description:location.state.description});
@@ -99,11 +104,16 @@ function App() {
       setCart(itemsWithoutRemoved);
       localStorage.setItem('cart',JSON.stringify(itemsWithoutRemoved));
     }
+
+    function search(name) {
+        setCategory(null);
+        setSearchName(name);
+    }
   
   
   return (
 <div>
-  <Navbar cart={cart} setCategory={setCategory} url={URL}/>   
+  <Navbar cart={cart} setCategory={setCategory} url={URL} search={search}/>   
 
   <div className="container">
         <Switch>
@@ -114,6 +124,7 @@ function App() {
                 url={URL}
                 category={category}
                 addToCart={addToCart}
+                searchName={searchName}
               />
             }
           />

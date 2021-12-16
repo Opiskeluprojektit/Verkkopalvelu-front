@@ -1,15 +1,20 @@
 import './Navbar.css';
 import React, {useState,useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import Ostoskori from './Ostoskori';
 
 
 //Navi
-export default function Navbar({cart, setCategory, url}) {
+export default function Navbar({cart, setCategory, url, search}) {
   const [categories, setCategories] = useState([]);
   const [name, setName] = useState('');
-  const [haut, setHaut] = useState([]);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    search(name)
+    handleReset()
+  };
 
   {/* Tuoteryhmien haku tietokannasta */}
   useEffect(() => {
@@ -27,23 +32,11 @@ export default function Navbar({cart, setCategory, url}) {
       })
   },[])
 
-  {/* Tuotteiden haku Haku-toiminnolla tietokannasta */}
-  useEffect(() => {
-    axios.get(url + 'tuote/search.php/' + name)
-      .then((response) => {
-        const json = response.data;
-        setHaut(json);
-        console.log(json);
-      }).catch (error => {
-        if (error.response === undefined) {
-          alert(error);
-        } else {
-          alert(error.response.data.error);
-        }
-      })
-  },[])
-
-
+  const handleReset = () => {
+    Array.from(document.querySelectorAll("input")).forEach(
+      input => (input.value = "")
+    );
+  };
 
     {/* Navigointinapit etusivulle ja tuoteryhmiin */}
     return (
@@ -87,27 +80,10 @@ export default function Navbar({cart, setCategory, url}) {
             </ul>
             {/* Haku-kenttä */}
             <div>
-            <form className="d-flex">
+            <form onSubmit={handleSubmit} className="d-flex" >
               <input className="form-control me-2" type="search" placeholder="Haku" aria-label="Search" 
               onChange={e => setName(e.target.value)}/>
-                              <button className="btn btn-outline-success" type="submit">Haku</button>
-            <div>
-                   {haut.map(haku => (
-                        <div key={haku.id}>
-                                <Link
-                                to={{
-                                pathname: '/Suositut',
-                                state: {
-                                    id: haku.id,
-                                    name: haku.name,
-                                    price: haku.price,
-                                    image: haku.image
-                                }
-                                }}> 
-                            </Link>
-                        </div>
-                    ))} 
-            </div>
+            <button className="btn btn-outline-success" type="submit" onClick={handleSubmit}><Link to="Tuotteet">Haku</Link></button>
             </form>
             </div>
 
