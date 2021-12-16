@@ -35,7 +35,7 @@ export default function Tilaus({cart,updateAmount,empty,url,removeFromCart}) {
     }, [cart.length])  
     
         useEffect(() => {
-      if (inputs.length > 0 && inputIndex > -1 && inputs[inputIndex.current] !== null) {
+      if (inputs.length > 0 && inputIndex > -1 && inputs[inputIndex].current !== null) {
         inputs[inputIndex].current.focus();
       }
     }, [cart])   
