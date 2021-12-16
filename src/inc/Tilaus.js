@@ -3,7 +3,7 @@ import uuid from 'react-uuid';
 import './Tilaus.css';
 
 //Tilausnäkymä
-export default function Tilaus({cart,updateAmount,empty,url, removeFromCart}) {
+export default function Tilaus({cart,updateAmount,empty,url,removeFromCart}) {
     const [firstname, setFirstname] = useState('');
     const [lastname, setLastname] = useState('');
     const [address, setAddress] = useState('');
@@ -13,18 +13,21 @@ export default function Tilaus({cart,updateAmount,empty,url, removeFromCart}) {
     const [inputs,setInputs] = useState([]);
     const [inputIndex,setInputIndex] = useState(-1);
 
-   class CustomInputs extends React.Component {
+
+    class CustomeInputs extends React.Component {
         constructor(props) {
             super(props);
             this.inputs = React.createRef();
-            this.focusInputs = this.focusInputs.bind(this);
+            this.focusInputs = this.FocusInputs.bind(this);
         
         }
-        focusInputs() {
+        FocusInputs() {
             this.inputs.current.focus();
         }
-      }
- 
+    
+    }
+   
+   
     useEffect(() => {
         for (let i = 0;i<cart.length;i++) {
             inputs[i] = createRef();
@@ -40,6 +43,7 @@ export default function Tilaus({cart,updateAmount,empty,url, removeFromCart}) {
     function changeAmount(e,product, index) {
         updateAmount(e.target.value,product);
         setInputIndex(index);
+        
     }
 
     function order(e) {
@@ -93,16 +97,16 @@ export default function Tilaus({cart,updateAmount,empty,url, removeFromCart}) {
                                     <td className="tuotenimi">{product.name}</td>   
                                     <td className="tuotehinta">{(product.price * product.amount).toFixed(2)}</td>   
                                     <td className="tuotemäärä">
-                                        <input 
+                                        <input
                                         ref={inputs[index]} 
                                         type="number" 
-                                        step="1" 
+                                        step="1" min="1"
                                         onChange={e => changeAmount(e,product, index)}
                                         value={product.amount}/>
                                     </td>  
                                     <td><a href="#" onClick={() => removeFromCart(product)}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
   <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
-</svg></a></td>                      
+</svg></a></td>                    
                                 </tr>
                             );
                         })}

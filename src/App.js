@@ -41,7 +41,8 @@ function App() {
       if (location.pathname ==="/Tuotteet") {  //tuoteryhmän tuotteen näyttäminen
         setCategory({id: location.state.id,name:location.state.name});
       } else if(location.pathname==="/Tuote") {  //klikataan yksittäistä tuotetta
-        setProduct({id: location.state.id,name:location.state.name, price:location.state.price, image:location.state.image});
+        setProduct({id: location.state.id,name:location.state.name, price:location.state.price, image:location.state.image, 
+          description:location.state.description});
       }
     }
   }, [location.state])
@@ -75,6 +76,7 @@ function App() {
       localStorage.setItem('cart', JSON.stringify(newCart));
     }
   }
+  
 
   // Ostoskorin tuotteen määrän päivittäminen
   function updateAmount(amount,product) {

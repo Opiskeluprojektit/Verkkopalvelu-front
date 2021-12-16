@@ -11,7 +11,10 @@ export default function Tuote({ url,product,addToCart }) {
           <h5>{product?.name}</h5>
           <div>
             <img src={url + "IMG/" + product?.image} alt="" />
-          </div>
+           { /*Tuote kuvauksen näyttäminen*/}
+           <h2>TUOTEKUVAUS:</h2>
+            <p>{product?.description}</p>
+            </div>
           {/* Tuotteen lisäys ostoskoriin-painike /AK */}
           <p>{product?.price} €</p>
         </div>
