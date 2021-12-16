@@ -7,7 +7,7 @@
 .card2 {
   border: 0;
 }
-  
+
 .top-card {
   position: absolute;
   top: 2em;
@@ -69,13 +69,26 @@
 }
 
 @media screen and (max-width: 1000px) {
-  .top-card-maisemajulisteet,
-  .top-card {
-    display: none;
+  .top-card-maisemajulisteet {
+    top: 2em;
+    left: 3em;
+    padding: 1em 1.5em 1em 1.5em;
+    opacity: .7;
+    color: black;
   } 
+
+  .mobiiliversio {
+    display: none;
+  }
 
   .inspiroidu {
     padding-left: 3em;
     padding-right: 3em;
 }
+}
+
+@media screen and (max-width: 500px) {
+  .mobiili {
+    top: 4em;
+  }
 }

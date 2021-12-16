@@ -9,7 +9,7 @@ import Ostoskori from './Ostoskori';
 export default function Navbar({cart, setCategory, url}) {
   const [categories, setCategories] = useState([]);
   const [name, setName] = useState('');
-  const [haku, setHaku] = useState([]);
+  const [haut, setHaut] = useState([]);
 
   {/* Tuoteryhmien haku tietokannasta */}
   useEffect(() => {
@@ -28,29 +28,22 @@ export default function Navbar({cart, setCategory, url}) {
   },[])
 
   {/* Tuotteiden haku Haku-toiminnolla tietokannasta */}
-  function search(e) {
-    e.preventDefault();
-    fetch(url + 'tuote/search.php',{
-        method: 'POST',
-        header: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            name: name,
-        })
-    })
-    .then ((response) => {
+  useEffect(() => {
+    axios.get(url + 'tuote/search.php/' + name)
+      .then((response) => {
         const json = response.data;
-        setHaku(json);
-    }).catch (error =>{
-      if (error.response === undefined) {
-        alert(error);
-      } else {
-        alert(error.response.data.error);
-      }
-    })
-}
+        setHaut(json);
+        console.log(json);
+      }).catch (error => {
+        if (error.response === undefined) {
+          alert(error);
+        } else {
+          alert(error.response.data.error);
+        }
+      })
+  },[])
+
+
 
     {/* Navigointinapit etusivulle ja tuoteryhmiin */}
     return (
@@ -93,11 +86,31 @@ export default function Navbar({cart, setCategory, url}) {
               </li>
             </ul>
             {/* Haku-kenttä */}
-            <form onSubmit={search} className="d-flex">
+            <div>
+            <form className="d-flex">
               <input className="form-control me-2" type="search" placeholder="Haku" aria-label="Search" 
               onChange={e => setName(e.target.value)}/>
-              <button className="btn btn-outline-success" type="submit">Haku</button>
+                              <button className="btn btn-outline-success" type="submit">Haku</button>
+            <div>
+                   {haut.map(haku => (
+                        <div key={haku.id}>
+                                <Link
+                                to={{
+                                pathname: '/Suositut',
+                                state: {
+                                    id: haku.id,
+                                    name: haku.name,
+                                    price: haku.price,
+                                    image: haku.image
+                                }
+                                }}> 
+                            </Link>
+                        </div>
+                    ))} 
+            </div>
             </form>
+            </div>
+
             {/* Ostoskori */}
             <ul className="navbar-nav ml-auto">
               <li className="nav-item"></li>

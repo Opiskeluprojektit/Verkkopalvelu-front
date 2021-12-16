@@ -13,7 +13,7 @@ export default function Kotisivu(addToCart) {
         <div className="row">
         <div className="d-flex justify-content-center col-lg-3 col-m-7">
             <Link to="/Suositut">
-            <div className="card card2">
+            <div className="card card2 mobiili">
                 <div className="card-body top-card">
                 <h5>Suositut</h5>
                 </div>
@@ -23,6 +23,7 @@ export default function Kotisivu(addToCart) {
             </div> 
             </Link>
         </div>
+
         <div className="d-flex justify-content-center col-lg-4 col-m-7">
             <Link to={{
                 pathname: "/Tuotteet",
@@ -40,6 +41,7 @@ export default function Kotisivu(addToCart) {
             </div> 
             </Link>
         </div>
+
         <div className="d-flex justify-content-center col-lg-4 col-m-7">
             <Link to={{
                 pathname: "/Tuotteet",
@@ -57,15 +59,14 @@ export default function Kotisivu(addToCart) {
             </div> 
             </Link>
         </div>
-        
-
         </div>
+
         <div className="row maisemajulisteet d-flex justify-content-center">
             <Link to="/Maisemajulisteet">
             <div className="card card2">
                 <div className="card-body top-card-maisemajulisteet">
                 <h5>Maisemajulisteet</h5>
-                <a>Tutustu</a>
+                <a className="mobiiliversio">Tutustu</a>
                 </div>
             </div>
             <div>
