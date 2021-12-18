@@ -5,7 +5,6 @@ import './Admin.css';
 
 export default function Admin({url, setAsiakas}) {
     const [newcategory, setNewcategory] = useState('');
-    // const [finished, setFinished] = useState(false);
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
     const [image, setImage] = useState('');
@@ -142,21 +141,6 @@ export default function Admin({url, setAsiakas}) {
                             <button onClick={add} className="btn btn-light lisaa">Lisää tuote</button>
                         </div>
                     </form>
-
-                    {/* Asiakkaan tilaamien tuotteiden näyttäminen tilauksittain */}
-                    <div className="row">
-                        <h3 className="Tilaustiedot">Asiakkaan ostamat tuotteet</h3>
-                            {ordered.map(asiakas => (
-                                <div key={asiakas.id} className="col-12 tilauslista">
-                                        <Link
-                                        to={{
-                                        pathname: '/Asiakas',
-                                        state: {
-                                            id: asiakas.order_id,
-                                            firstname: asiakas.firstname,
-                                            lastname: asiakas.lastname,
-                                        }
-                                        }}>
 
             {/* Asiakkaan tilaamien tuotteiden näyttäminen tilauksittain */}
             <div className="row">

@@ -57,14 +57,14 @@ export default function Navbar({cart, setCategory, url, search}) {
                       <li key={category.id}>
                         <Link className="dropdown-item"
                         to={{
-                        pathname: '/Suositut',
-                        state: {
-                            id: haku.id,
-                            name: haku.name,
-                            price: haku.price,
-                            image: haku.image
-                        }
-                        }}> 
+                          pathname: '/Tuotteet',
+                          state: {
+                            id: category.id,
+                            name: category.name,
+                          }
+                        }}
+                        >
+                        {category.name}
                         </Link>
                       </li>
                     ))}
@@ -92,13 +92,6 @@ export default function Navbar({cart, setCategory, url, search}) {
               <Ostoskori cart={cart}/>
             </ul>
           </div>
-        </div>
-        {/* Ostoskori */}
-        <ul className="navbar-nav ml-auto">
-          <li className="nav-item"></li>
-          <Ostoskori cart={cart}/>
-        </ul>
-      </div>
     </div>
     </nav>   
   )

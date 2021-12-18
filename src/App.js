@@ -103,6 +103,7 @@ function App() {
       localStorage.setItem('cart',JSON.stringify(itemsWithoutRemoved));
     }
 
+  // Haku-toiminto
     function search(name) {
         setCategory(null);
         setSearchName(name);
