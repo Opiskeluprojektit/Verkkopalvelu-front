@@ -101,6 +101,15 @@ export default function Admin({url, setAsiakas}) {
           input => (input.value = "")
         );
       };
+<<<<<<< HEAD
+=======
+
+      const add = () => {
+            handleReset();
+            uploadImage();
+      };
+ 
+>>>>>>> cd3f64f120fb039855958aba4584c82ac37db616
 
     /* Uusien tuoteryhmän (= kategorian) ja tuotteen lisäyksen ylläpitäjälle näkyvä osuus */
     return (
@@ -112,8 +121,7 @@ export default function Admin({url, setAsiakas}) {
                         <input className="form-control" onChange={e => setNewcategory(e.target.value)}/>
                     </div>      
                     <div className="buttons">
-                        <button className="btn btn-light lisaa">Lisää</button>
-                        <button onClick={handleReset} className="btn btn-light reset">Reset</button>
+                        <button onClick={handleReset} className="btn btn-light lisaa">Lisää kategoria</button>
                     </div>
                 </form>
             <h3 className="Tilaustiedot">Tuotteen lisäys: </h3>
@@ -133,12 +141,35 @@ export default function Admin({url, setAsiakas}) {
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Tuotteen kuvan lisäys:</label>
                         <input class="form-control" onChange={onImageChange} type="file" id="formFile" />
+<<<<<<< HEAD
                     </div>
                     <div className="buttons">
                         <button onClick={uploadImage} className="btn btn-light lisaa">Lisää tuote</button>
                         <button onClick={handleReset} className="btn btn-light reset">Reset</button>
                     </div>
                 </form>
+=======
+                        </div>
+                        <div className="buttons">
+                            <button onClick={add} className="btn btn-light lisaa">Lisää tuote</button>
+                        </div>
+                    </form>
+
+                    {/* Asiakkaan tilaamien tuotteiden näyttäminen tilauksittain */}
+                    <div className="row">
+                        <h3 className="Tilaustiedot">Asiakkaan ostamat tuotteet</h3>
+                            {ordered.map(asiakas => (
+                                <div key={asiakas.id} className="col-12 tilauslista">
+                                        <Link
+                                        to={{
+                                        pathname: '/Asiakas',
+                                        state: {
+                                            id: asiakas.order_id,
+                                            firstname: asiakas.firstname,
+                                            lastname: asiakas.lastname,
+                                        }
+                                        }}>
+>>>>>>> cd3f64f120fb039855958aba4584c82ac37db616
 
             {/* Asiakkaan tilaamien tuotteiden näyttäminen tilauksittain */}
             <div className="row">

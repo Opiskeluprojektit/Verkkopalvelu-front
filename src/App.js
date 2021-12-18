@@ -32,6 +32,10 @@ function App() {
 
   //ostoskorin tilamuuttuja 
   const [cart, setCart] = useState([]);
+
+  const [searchName, setSearchName] = useState("");
+
+  console.log(cart)
   
   let location = useLocation();
 
@@ -40,6 +44,7 @@ function App() {
     if (location.state !==undefined) {
       if (location.pathname ==="/Tuotteet") {  //tuoteryhmän tuotteen näyttäminen
         setCategory({id: location.state.id,name:location.state.name});
+        setSearchName("");
       } else if(location.pathname==="/Tuote") {  //klikataan yksittäistä tuotetta
         setProduct({id: location.state.id,name:location.state.name, price:location.state.price, image:location.state.image, 
           description:location.state.description});
@@ -92,6 +97,7 @@ function App() {
   }
    
   /* Ostokorista poistaminen */
+<<<<<<< HEAD
   function removeFromCart(product) {
     const itemsWithoutRemoved = cart.filter(item => item.id !== product.id);
     setCart(itemsWithoutRemoved);
@@ -101,6 +107,25 @@ function App() {
     <div>
       <Navbar cart={cart} setCategory={setCategory} url={URL}/>   
       <div className="container">
+=======
+    function removeFromCart(product) {
+      const itemsWithoutRemoved = cart.filter(item => item.id !== product.id);
+      setCart(itemsWithoutRemoved);
+      localStorage.setItem('cart',JSON.stringify(itemsWithoutRemoved));
+    }
+
+    function search(name) {
+        setCategory(null);
+        setSearchName(name);
+    }
+  
+  
+  return (
+<div>
+  <Navbar cart={cart} setCategory={setCategory} url={URL} search={search}/>   
+
+  <div className="container">
+>>>>>>> cd3f64f120fb039855958aba4584c82ac37db616
         <Switch>
           <Route
             path="/Tuotteet"
@@ -109,6 +134,7 @@ function App() {
                 url={URL}
                 category={category}
                 addToCart={addToCart}
+                searchName={searchName}
               />
             }
           />
