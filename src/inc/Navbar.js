@@ -82,7 +82,7 @@ export default function Navbar({cart, setCategory, url, search}) {
             <form onSubmit={handleSubmit} className="d-flex" >
               <input className="form-control me-2" type="search" placeholder="Haku" aria-label="Search" 
               onChange={e => setName(e.target.value)}/>
-            <button className="btn btn-outline-success" type="submit" onClick={handleSubmit}><Link to="Tuotteet">Haku</Link></button>
+            <button className="btn btn-outline-success" onClick={handleSubmit}><Link to="/Tuotteet">Haku</Link></button>
             </form>
             </div>
 
