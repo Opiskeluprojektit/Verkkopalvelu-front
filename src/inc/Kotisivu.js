@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 
 //Kotisivu
 export default function Kotisivu(addToCart) {
-
-
     return (
         <div>
         <div className="container">
@@ -23,7 +21,6 @@ export default function Kotisivu(addToCart) {
             </div> 
             </Link>
         </div>
-
         <div className="d-flex justify-content-center col-lg-4 col-m-7">
             <Link to={{
                 pathname: "/Tuotteet",
@@ -41,7 +38,6 @@ export default function Kotisivu(addToCart) {
             </div> 
             </Link>
         </div>
-
         <div className="d-flex justify-content-center col-lg-4 col-m-7">
             <Link to={{
                 pathname: "/Tuotteet",
@@ -60,7 +56,6 @@ export default function Kotisivu(addToCart) {
             </Link>
         </div>
         </div>
-
         <div className="row maisemajulisteet d-flex justify-content-center">
             <Link to="/Maisemajulisteet">
             <div className="card card2">
@@ -74,7 +69,6 @@ export default function Kotisivu(addToCart) {
             </div>
             </Link>
         </div>
-
         <div className="row inspiroidu">
             <h5>INSPIROIDU</h5>
             <p>Visual tuo sinulle modernin taiteen monissa eri muodoissa. Kauneus on katsojan silmissä, ja Visualin 
@@ -85,9 +79,7 @@ export default function Kotisivu(addToCart) {
                 eri tyyleistä. 
             </p>
         </div>
-
-
-         <div className="row tarvikkeet">
+        <div className="row tarvikkeet">
             <h5>TARVIKKEET</h5>
             <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">

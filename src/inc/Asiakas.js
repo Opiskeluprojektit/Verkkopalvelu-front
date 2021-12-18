@@ -37,11 +37,9 @@ export default function Asiakas({ url, asiakas }) {
         {asiakastuotteet.map((asiakastuote) => (
           <div key={asiakastuote.id} className="col-12 col-lg-4 col-xl-3 col">
             <p>{asiakastuote?.name}</p>
-
             <div>
               <img src={url + "IMG/" + asiakastuote?.image} alt="" />
             </div>
-
             <p>{asiakastuote?.price} €</p>
           </div>
         ))}

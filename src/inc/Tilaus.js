@@ -13,28 +13,24 @@ export default function Tilaus({cart,updateAmount,empty,url,removeFromCart}) {
     const [inputs,setInputs] = useState([]);
     const [inputIndex,setInputIndex] = useState(-1);
 
-
     class CustomeInputs extends React.Component {
         constructor(props) {
             super(props);
             this.inputs = React.createRef();
             this.focusInputs = this.FocusInputs.bind(this);
-        
         }
         FocusInputs() {
             this.inputs.current.focus();
         }
-    
     }
-   
    
     useEffect(() => {
         for (let i = 0;i<cart.length;i++) {
             inputs[i] = createRef();
         }
     }, [cart.length])  
-    
-        useEffect(() => {
+
+    useEffect(() => {
       if (inputs.length > 0 && inputIndex > -1 && inputs[inputIndex].current !== null) {
         inputs[inputIndex].current.focus();
       }
@@ -43,7 +39,6 @@ export default function Tilaus({cart,updateAmount,empty,url,removeFromCart}) {
     function changeAmount(e,product, index) {
         updateAmount(e.target.value,product);
         setInputIndex(index);
-        
     }
 
     function order(e) {
@@ -104,8 +99,8 @@ export default function Tilaus({cart,updateAmount,empty,url,removeFromCart}) {
                                         value={product.amount}/>
                                     </td>  
                                     <td><a href="#" onClick={() => removeFromCart(product)}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-  <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
-</svg></a></td>                    
+                                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                    </svg></a></td>                    
                                 </tr>
                             );
                         })}
@@ -118,7 +113,6 @@ export default function Tilaus({cart,updateAmount,empty,url,removeFromCart}) {
                 </table>
                 {cart.length > 0 && 
                 <>
-
                 <h3 className="Tilaustiedot">Tilaustiedot</h3>
                 <form onSubmit={order}>
                     <div className="form-group">
@@ -146,11 +140,10 @@ export default function Tilaus({cart,updateAmount,empty,url,removeFromCart}) {
                     </div>
                 </form>
                 </>
-            }
+                }
             </div>
         )
-    }
-    else {
+    } else {
         return (
             <div>
                 <h3 style={{'padding-top': '100px'}}>Kiitos tilauksestasi!</h3>

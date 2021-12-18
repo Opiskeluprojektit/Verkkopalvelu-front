@@ -1,4 +1,4 @@
-/*Footerin css alkaa tästä:*/
+/*Footerin css:*/
 
 footer {
     margin-top: 1.5em;
@@ -11,10 +11,12 @@ footer {
     box-shadow: 0 8px 40px 8px rgba(47, 91, 234, 0.175);
     padding:30px;
   }
+
   .footer_area .row {
     margin-left: -25px;
     margin-right: -25px;
   }
+
   .footer_area .row .col,
   .footer_area .row .col-1,
   .footer_area .row .col-10,
@@ -93,27 +95,33 @@ footer {
     position: relative;
     z-index: 1;
   }
+
   .single-footer-widget .copywrite-text a {
     color: #747794;
     font-size: 1rem;
   }
+
   .single-footer-widget .copywrite-text a:hover,
   .single-footer-widget .copywrite-text a:focus {
     color: #3f43fd;
   }
+
   .single-footer-widget .widget-title {
     margin-bottom: 1.5rem;
   }
+  
   .single-footer-widget .footer_menu li a {
     color: #747794;
     margin-bottom: 1rem;
     display: block;
     font-size: 1rem;
   }
+
   .single-footer-widget .footer_menu li a:hover,
   .single-footer-widget .footer_menu li a:focus {
     color: #3f43fd;
   }
+
   .single-footer-widget .footer_menu li:last-child a {
     margin-bottom: 0;
   }
@@ -122,6 +130,7 @@ footer {
     position: relative;
     z-index: 1;
   }
+
   .footer_social_area a {
     border-radius: 50%;
     height: 40px;
@@ -134,9 +143,11 @@ footer {
     box-shadow: none;
     margin-right: 10px;
   }
+
   .footer_social_area a i {
     line-height: 36px;
   }
+
   .footer_social_area a:hover,
   .footer_social_area a:focus {
     color: #ffffff;
@@ -159,6 +170,7 @@ footer {
         left: 100%;
     }
   }
+
   ol li, ul li {
     list-style: none;
   }
@@ -167,5 +179,3 @@ footer {
     margin: 0;
     padding: 0;
   }
-  
-  /*Footerin css loppuu tähän.*/

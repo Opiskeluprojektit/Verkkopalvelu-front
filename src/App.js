@@ -10,7 +10,7 @@ import Admin from './inc/Admin';
 import TietoaMeista from './inc/TietoaMeista';
 import UKK from './inc/UKK';
 import Palautukset from './inc/Palautukset';
-import Tuote from './inc/Tuote';  //Yksittäisen tuotteen näyttäminen / AK
+import Tuote from './inc/Tuote'; 
 import Popular from './inc/Popular'
 import Maisema from './inc/Maisema'
 import Asiakas from './inc/Asiakas'
@@ -24,18 +24,18 @@ function App() {
   //kategorian tilamuutuja
   const [category, setCategory] = useState(null);
 
-  //Tuotteen tilamuuttuja  / yksittäisen tuotteen näyttö /AK
+  //Tuotteen tilamuuttuja  / yksittäisen tuotteen näyttö
   const [product,setProduct] = useState(null);
 
   //Asiakkaan tilamuuttuja / asiakkaan tilaamien tuotteiden näyttäminen
   const [asiakas, setAsiakas] = useState(null);
 
-  //ostoskorin tilamuuttuja taulukkomuodossa-AK
+  //ostoskorin tilamuuttuja 
   const [cart, setCart] = useState([]);
   
   let location = useLocation();
 
-// Yksittäisen tuotteen näyttäminen /AK / Alla vielä toimiva location-state
+  // Yksittäisen tuotteen näyttäminen
   useEffect(() => {
     if (location.state !==undefined) {
       if (location.pathname ==="/Tuotteet") {  //tuoteryhmän tuotteen näyttäminen
@@ -50,21 +50,20 @@ function App() {
   // Asiakkaan tilausten näyttäminen
   useEffect(() => {
     if (location.state !==undefined) {
-      if (location.pathname ==="/Asiakas") {  //asiakkaan tilausten näyttäminen
+      if (location.pathname ==="/Asiakas") { 
         setAsiakas({id: location.state.id,firstname:location.state.firstname,lastname:location.state.lastname});
       } 
     }
   }, [location.state])
 
-  // Localstoragen ostoskorin tilamäärän nollaantumisen esto sivua päivitettäessä -AK
+  // Localstoragen ostoskorin tilamäärän nollaantumisen esto sivua päivitettäessä
   useEffect(() => {
     if ('cart' in localStorage) {
       setCart(JSON.parse(localStorage.getItem('cart')))
     }
   }, [])
 
-
-//ostoskori-funktio, jota voidaan kutsua eri sivuilla. Saa kotisivulta tuotteen(lisää productin kohdalle)-AK
+  //ostoskori-funktio, jota voidaan kutsua eri sivuilla
   function addToCart(product) {
     if (cart.some(item => item.id === product.id))  {
       const existingProduct = cart.filter(item => item.id === product.id);
@@ -77,7 +76,6 @@ function App() {
     }
   }
   
-
   // Ostoskorin tuotteen määrän päivittäminen
   function updateAmount(amount,product) {
     product.amount = amount;
@@ -94,18 +92,15 @@ function App() {
   }
    
   /* Ostokorista poistaminen */
-    function removeFromCart(product) {
-      const itemsWithoutRemoved = cart.filter(item => item.id !== product.id);
-      setCart(itemsWithoutRemoved);
-      localStorage.setItem('cart',JSON.stringify(itemsWithoutRemoved));
-    }
-  
-  
+  function removeFromCart(product) {
+    const itemsWithoutRemoved = cart.filter(item => item.id !== product.id);
+    setCart(itemsWithoutRemoved);
+    localStorage.setItem('cart',JSON.stringify(itemsWithoutRemoved));
+  }
   return (
-<div>
-  <Navbar cart={cart} setCategory={setCategory} url={URL}/>   
-
-  <div className="container">
+    <div>
+      <Navbar cart={cart} setCategory={setCategory} url={URL}/>   
+      <div className="container">
         <Switch>
           <Route
             path="/Tuotteet"
@@ -128,7 +123,6 @@ function App() {
             }
           />        
           <Route path="/" component={Kotisivu} exact/>
-
           <Route path="/Tilaus" render={() =>
             <Tilaus 
               cart={cart}
@@ -137,8 +131,8 @@ function App() {
               removeFromCart={removeFromCart}
               url={URL}
               />
-          } />
-          
+          } 
+          />
           <Route path="/Yllapito" render={() =>
           <Admin
             url={URL}
@@ -146,7 +140,6 @@ function App() {
             />
           }
           />
-
           <Route path="/Asiakas" render={() =>
           <Asiakas
             url={URL}
@@ -154,7 +147,6 @@ function App() {
             />
           }
           />
-
           <Route path="/Suositut" render={() =>
           <Popular
             url={URL}
@@ -162,7 +154,6 @@ function App() {
             />
           }
           />
-
           <Route path="/Maisemajulisteet" render={() =>
           <Maisema
             url={URL}
@@ -170,17 +161,14 @@ function App() {
             />
           }
           />
-
           <Route path="/Yhteystiedot" component={Yhteystiedot}/>
           <Route path="/TietoaMeista" component={TietoaMeista} />
           <Route path="/UKK" component={UKK} />
           <Route path="/Palautukset" component={Palautukset} />
         </Switch>
       </div>
-    <Footer />
-</div>
-
+      <Footer />
+    </div>
   );
 }
-
 export default App;

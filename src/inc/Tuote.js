@@ -7,7 +7,7 @@ export default function Tuote({ url,product,addToCart }) {
     <div id="tuote" className="container justify-content-center">
       <div className="row justify-content-center">
         <div className="col-6">
-          {/* yksittäisen tuotteen näyttäminen / AK */}
+          {/* yksittäisen tuotteen näyttäminen */}
           <h5>{product?.name}</h5>
           <div>
             <img src={url + "IMG/" + product?.image} alt="" />
@@ -15,7 +15,7 @@ export default function Tuote({ url,product,addToCart }) {
            <h2>TUOTEKUVAUS:</h2>
             <p>{product?.description}</p>
             </div>
-          {/* Tuotteen lisäys ostoskoriin-painike /AK */}
+          {/* Tuotteen lisäys ostoskoriin-painike */}
           <p>{product?.price} €</p>
         </div>
       </div>

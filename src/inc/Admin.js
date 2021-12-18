@@ -16,7 +16,6 @@ export default function Admin({url, setAsiakas}) {
     console.log(files)
     console.log(ordered);
 
-
     /* Kuvan lisäys tietokantaan ja IMG-kansioon tuotteen lisäyksen yhteydessä */
     const onImageChange = (event) => {
         setFiles(event.target.files[0]);
@@ -40,7 +39,6 @@ export default function Admin({url, setAsiakas}) {
             console.log('Error:', error);
         })
     };
-
 
     /* Uuden tuotekategorian lisäys */
     function addCategory(e) {
@@ -74,12 +72,10 @@ export default function Admin({url, setAsiakas}) {
                 price: price,
                 image: image,
                 category_id: category_id
-
             })
         })
         .then (res => {
-            return res.json();
-            
+            return res.json();      
         })
     }
 
@@ -105,7 +101,6 @@ export default function Admin({url, setAsiakas}) {
           input => (input.value = "")
         );
       };
- 
 
     /* Uusien tuoteryhmän (= kategorian) ja tuotteen lisäyksen ylläpitäjälle näkyvä osuus */
     return (
@@ -123,49 +118,47 @@ export default function Admin({url, setAsiakas}) {
                 </form>
             <h3 className="Tilaustiedot">Tuotteen lisäys: </h3>
                 <form onSubmit={addProduct}>
-                        <div className="form-group">
-                            <label>Tuotteen nimi:</label>
-                            <input className="form-control" onChange={e => setName(e.target.value)}/>
-                        </div>
-                        <div className="form-group">
-                            <label>Tuotteen hinta:</label>
-                            <input className="form-control" onChange={e => setPrice(e.target.value)}/>
-                        </div>
-                        <div className="form-group">
-                            <label>Tuotteen kategorianumero:</label>
-                            <input className="form-control" onChange={e => setCategory_id(e.target.value)}/>
-                        </div>
-                        <div class="mb-3">
+                    <div className="form-group">
+                        <label>Tuotteen nimi:</label>
+                        <input className="form-control" onChange={e => setName(e.target.value)}/>
+                    </div>
+                    <div className="form-group">
+                        <label>Tuotteen hinta:</label>
+                        <input className="form-control" onChange={e => setPrice(e.target.value)}/>
+                    </div>
+                    <div className="form-group">
+                        <label>Tuotteen kategorianumero:</label>
+                        <input className="form-control" onChange={e => setCategory_id(e.target.value)}/>
+                    </div>
+                    <div class="mb-3">
                         <label for="formFile" class="form-label">Tuotteen kuvan lisäys:</label>
                         <input class="form-control" onChange={onImageChange} type="file" id="formFile" />
-                        </div>
-                        <div className="buttons">
-                            <button onClick={uploadImage} className="btn btn-light lisaa">Lisää tuote</button>
-                            <button onClick={handleReset} className="btn btn-light reset">Reset</button>
-                        </div>
-                    </form>
+                    </div>
+                    <div className="buttons">
+                        <button onClick={uploadImage} className="btn btn-light lisaa">Lisää tuote</button>
+                        <button onClick={handleReset} className="btn btn-light reset">Reset</button>
+                    </div>
+                </form>
 
-                    {/* Asiakkaan tilaamien tuotteiden näyttäminen tilauksittain */}
-                    <div className="row">
-                        <h3 className="Tilaustiedot">Asiakkaan ostamat tuotteet</h3>
-                            {ordered.map(asiakas => (
-                                <div key={asiakas.id} className="col-12 tilauslista">
-                                        <Link
-                                        to={{
-                                        pathname: '/Asiakas',
-                                        state: {
-                                            id: asiakas.order_id,
-                                            firstname: asiakas.firstname,
-                                            lastname: asiakas.lastname,
-                                        }
-                                        }}>
-
-                                        <p>{asiakas.firstname} {asiakas.lastname}</p>
-                                        
-                                    </Link>
-                                </div>
-                            ))}
-                    </div>    
+            {/* Asiakkaan tilaamien tuotteiden näyttäminen tilauksittain */}
+            <div className="row">
+                <h3 className="Tilaustiedot">Asiakkaan ostamat tuotteet</h3>
+                    {ordered.map(asiakas => (
+                        <div key={asiakas.id} className="col-12 tilauslista">
+                                <Link
+                                to={{
+                                pathname: '/Asiakas',
+                                state: {
+                                    id: asiakas.order_id,
+                                    firstname: asiakas.firstname,
+                                    lastname: asiakas.lastname,
+                                }
+                                }}>
+                                <p>{asiakas.firstname} {asiakas.lastname}</p>
+                            </Link>
+                        </div>
+                    ))}
+            </div>    
         </div>
     )
 
