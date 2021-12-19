@@ -9,6 +9,7 @@ export default function Kotisivu(addToCart) {
         <div>
             <div className="container">
                 <div className="row">
+                    {/* Linkit Suositut-, Illustrointi- ja Valokuvat-tuotteisiin */}
                     <div className="d-flex justify-content-center col-lg-3 col-m-7">
                         <Link to="/Suositut">
                         <div className="card card2 mobiili">
@@ -56,6 +57,8 @@ export default function Kotisivu(addToCart) {
                         </Link>
                         </div>
                     </div>
+
+                    {/* Maisemajulisteet-suodattimeen linkki */}
                     <div className="row maisemajulisteet d-flex justify-content-center">
                         <Link to="/Maisemajulisteet">
                         <div className="card card2">
@@ -79,6 +82,8 @@ export default function Kotisivu(addToCart) {
                             eri tyyleistä. 
                         </p>
                     </div>
+
+                    {/* Tarvikkeet-karuselli */}
                     <div className="row tarvikkeet">
                         <h5>TARVIKKEET</h5>
                         <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">

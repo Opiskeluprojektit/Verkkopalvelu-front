@@ -12,6 +12,7 @@ export default function Tuoteryhma({url, category, addToCart, searchName}) {
     console.log(products)
     console.log(searchName)
 
+    // Tuoteryhmien haku tietokannasta
     useEffect(() => {
         if (category !== null) {
             axios.get(url + 'tuote/getproducts.php/' + category?.id)

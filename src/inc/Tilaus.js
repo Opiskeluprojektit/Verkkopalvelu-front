@@ -13,6 +13,7 @@ export default function Tilaus({cart,updateAmount,empty,url,removeFromCart}) {
     const [inputs,setInputs] = useState([]);
     const [inputIndex,setInputIndex] = useState(-1);
 
+    // Tuotemäärän muuttamisen fokusointi
     class CustomeInputs extends React.Component {
         constructor(props) {
             super(props);
@@ -36,11 +37,13 @@ export default function Tilaus({cart,updateAmount,empty,url,removeFromCart}) {
       }
     }, [cart])   
 
+    // Toiminto, jolla muutetaan tuotteiden määrää
     function changeAmount(e,product, index) {
         updateAmount(e.target.value,product);
         setInputIndex(index);
     }
 
+    // Hakee tilaustiedot tietokannasta
     function order(e) {
         e.preventDefault();
         fetch(url + 'tilaus/add.php',{
@@ -76,6 +79,7 @@ export default function Tilaus({cart,updateAmount,empty,url,removeFromCart}) {
     if (finished === false) {
         return (
             <div>
+                {/* Näyttää ostoskorissa olevat tuotteet sekä niiden määrän ja hinnan */}
                 <h3>Ostoskori</h3>
                 <table>
                     <tbody>
@@ -113,6 +117,7 @@ export default function Tilaus({cart,updateAmount,empty,url,removeFromCart}) {
                 </table>
                 {cart.length > 0 && 
                 <>
+                {/* Tilaukseen tarvittavat tiedot */}
                 <h3 className="Tilaustiedot">Tilaustiedot</h3>
                 <form onSubmit={order}>
                     <div className="form-group">
@@ -144,6 +149,7 @@ export default function Tilaus({cart,updateAmount,empty,url,removeFromCart}) {
             </div>
         )
     } else {
+        // Näyttää tekstin, joka tulee tilauksen tekemisen jälkeen
         return (
             <div>
                 <h3 style={{'padding-top': '100px'}}>Kiitos tilauksestasi!</h3>
