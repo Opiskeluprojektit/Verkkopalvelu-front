@@ -16,3 +16,17 @@
 #tuote p {
     color: black;
 }
+#tuote h2 {
+    font-size: medium;
+}
+
+.card-w-100 {
+    border-style: groove;
+    border-color: black;
+    border-width: medium;
+    margin-top: 5px;
+    }
+
+.btn-light {
+    align-content: left;
+}
