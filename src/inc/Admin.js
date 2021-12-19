@@ -164,8 +164,8 @@ export default function Admin({url, setAsiakas}) {
                             <button onClick={add} className="btn btn-light lisaa">Lisää tuote</button>
                         </div>
                     </form>
-                {/* LOMAKE TUOTTEEN POISTOLLE */}
-                <h3 className="Tilaustiedot">Tuotteen poistaminen: </h3>
+                {/* LOMAKE TUOTTEEN POISTOLLE /Jäi kesken*/}
+            <h3 className="Tilaustiedot">Tuotteen poistaminen: </h3>
                 <form onSubmit={deleteProduct}>
                     <div className="form-group">
                         <label>Tuotteen nimi:</label>
@@ -184,10 +184,10 @@ export default function Admin({url, setAsiakas}) {
                         <label for="formFile" class="form-label">Tuotteen kuvan poistaminen:</label>
                         <input class="form-control" onChange={onImageChange} type="file" id="formFile" />
                         </div> */}
-                        <div className="buttons">
-                            <button onClick={() => deleteProduct} className="btn btn-light lisaa">Poista tuote</button>
-                        </div>
-                    </form>
+                    <div className="buttons">
+                        <button onClick={() => deleteProduct} className="btn btn-light lisaa">Poista tuote</button>
+                    </div>
+                </form>
             {/* Asiakkaan tilaamien tuotteiden näyttäminen tilauksittain */}
             <div className="row">
                 <h3 className="Tilaustiedot">Asiakkaan ostamat tuotteet</h3>
