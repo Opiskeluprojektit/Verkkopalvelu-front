@@ -105,7 +105,30 @@ export default function Admin({url, setAsiakas}) {
             handleReset();
             uploadImage();
       };
- 
+
+    //   Tuotteen poisto
+    function deleteProduct() {
+        fetch(url + 'yllapito/deleteproduct.php',{
+            method: 'POST',
+            header: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: name,
+                price: price,
+                //image: image, 
+                category_id: category_id
+            })
+        })
+        .then (res => {
+            return res.json();      
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
+
     /* Uusien tuoteryhmän (= kategorian) ja tuotteen lisäyksen ylläpitäjälle näkyvä osuus */
     return (
         <div>
@@ -141,7 +164,30 @@ export default function Admin({url, setAsiakas}) {
                             <button onClick={add} className="btn btn-light lisaa">Lisää tuote</button>
                         </div>
                     </form>
-
+                {/* LOMAKE TUOTTEEN POISTOLLE */}
+                <h3 className="Tilaustiedot">Tuotteen poistaminen: </h3>
+                <form onSubmit={deleteProduct}>
+                    <div className="form-group">
+                        <label>Tuotteen nimi:</label>
+                        <input className="form-control" onChange={e => setName(e.target.value)}/>
+                    </div>
+                    <div className="form-group">
+                        <label>Tuotteen hinta:</label>
+                        <input className="form-control" onChange={e => setPrice(e.target.value)}/>
+                    </div>
+                    <div className="form-group">
+                        <label>Tuotteen kategorianumero:</label>
+                        <input className="form-control" onChange={e => setCategory_id(e.target.value)}/>
+                    </div>
+                    {/* Kuvan poisto
+                        <div class="mb-3">
+                        <label for="formFile" class="form-label">Tuotteen kuvan poistaminen:</label>
+                        <input class="form-control" onChange={onImageChange} type="file" id="formFile" />
+                        </div> */}
+                        <div className="buttons">
+                            <button onClick={() => deleteProduct} className="btn btn-light lisaa">Poista tuote</button>
+                        </div>
+                    </form>
             {/* Asiakkaan tilaamien tuotteiden näyttäminen tilauksittain */}
             <div className="row">
                 <h3 className="Tilaustiedot">Asiakkaan ostamat tuotteet</h3>
@@ -163,5 +209,4 @@ export default function Admin({url, setAsiakas}) {
             </div>    
         </div>
     )
-
 }
