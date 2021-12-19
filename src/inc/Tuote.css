@@ -10,11 +10,12 @@
 }
 
 #tuote button {
-    margin-left: 320px;
-}
+    margin-top: 2px;
+} 
 
 #tuote p {
     color: black;
+    
 }
 #tuote h2 {
     font-size: medium;
@@ -29,4 +30,9 @@
 
 .btn-light {
     align-content: left;
+}
+.hinta {
+     margin-right: 15px;
+     margin-top: 5px;
+     
 }
